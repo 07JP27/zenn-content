@@ -91,7 +91,7 @@ Actionは`manifest.json`ファイルにActionUuid属性と一致するUuidを使
 `property_inspector/property_inspector.html`で設定モデルクラスとマッピングするプロパティ名を指定します。
 ![](https://storage.googleapis.com/zenn-user-upload/cf80256c0c639090ad22d1ef.png)
 より詳細なサンプルは[公式GitHub](https://github.com/elgatosf/streamdeck-pisamples)や[公式サイト](https://developer.elgato.com/documentation/stream-deck/sdk/property-inspector/)に掲載されています。
-
+設定項目追加などでSettingModelが変わる場合は`property_inspector/js/property_inspector.js`の内容を変更してマッピングされるようにします。（これが地味にめんどくさかった）
 
 # デバッグ実行
 **Visual Studioで一度ビルドした後に**、テンプレートを使用してプロジェクトを作成した際に生成される`RegisterPluginAndStartStreamDeck.sh`を実行します。(Windowsの場合は.ps1の方)
