@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "upload": "open https://zenn.dev/dashboard/uploader",
-    "help": "open https://zenn.dev/zenn/articles/markdown-guide",
+    "help": "open https://zenn.dev/zenn/articles/markdown-guide; open https://zenn.dev/zenn/articles/zenn-cli-guide",
     "preview": "npx zenn preview"
   },
   "repository": {
