@@ -27,7 +27,7 @@ https://zenn.dev/okazuki/articles/azure-function-powerapps
 「データ」→「データの追加」をクリックして前提で作成したカスタムコネクタを読み込みます。
 ![](https://storage.googleapis.com/zenn-user-upload/73a76fc1ec14c452250481a5.png)
 
-## 2.API呼び出し処理の実装
+## 3.API呼び出し処理の実装
 IfError関数を使用します。
 ```
 IfError(
