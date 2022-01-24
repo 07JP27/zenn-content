@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/07JP27/zenn-content#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.89"
+    "zenn-cli": "^0.1.103"
   }
 }
