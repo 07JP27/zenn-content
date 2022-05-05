@@ -23,4 +23,4 @@ title: "MobiFlightのインストールと準備"
 1. Mobiflight Connectorの組み込みアップロード機能を使用してMobiFlightファームウェアをArduinoにアップロードします。
 
 これで、MobiFlightボードができました!
-いよいよ次のセクションから実際にMSFS2020と連携をしてみます。
+いよいよ次のチャプターから実際にMSFS2020と連携をしてみます。

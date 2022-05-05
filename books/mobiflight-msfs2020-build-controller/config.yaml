@@ -7,3 +7,11 @@ price: 0 # 有料の場合200〜5000
 chapters:
   - getting-started
   - installation
+  - parking-break-led
+  - parking-break-switch
+  - com-radio-7seg-led
+  - com-radio-rotary-encoder
+  - throttle-volume-resistor
+  - flap-servomotor
+  - air-speed-stepper-motor
+  - air-speed-lcd
