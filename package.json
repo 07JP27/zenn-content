@@ -8,7 +8,7 @@
     "upload": "open https://zenn.dev/dashboard/uploader",
     "help": "open https://zenn.dev/zenn/articles/markdown-guide; open https://zenn.dev/zenn/articles/zenn-cli-guide",
     "preview": "npx zenn preview",
-    "lint" : "npx textlint **/*.md"
+    "lint": "npx textlint **/*.md"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/07JP27/zenn-content#readme",
   "dependencies": {
+    "textlint-filter-rule-allowlist": "^4.0.0",
     "zenn-cli": "^0.1.103"
   },
   "devDependencies": {

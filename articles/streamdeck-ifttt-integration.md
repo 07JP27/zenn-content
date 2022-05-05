@@ -42,7 +42,7 @@ SwitchBotのアクションを追加・設定してAppletを作成します。
 Webhookトップから「Settings」をクリックします。
 ![](https://storage.googleapis.com/zenn-user-upload/9304f72c25fd60baa9f358f0.png)
 
-**「URL」の`https://maker.ifttt.com/use/`以下のランダム文字列がMaker Keyととなるのでメモします。**
+**「URL」の`https://maker.ifttt.com/use/`以下のランダム文字列がMaker Keyとなるのでメモします。**
 ![](https://storage.googleapis.com/zenn-user-upload/86dc44da4825f7c3419f1641.png)
 
 ## 2.Stream Deckの設定
@@ -65,10 +65,10 @@ Stream Deckの空きスロットに「カスタム」カテゴリからIFTTTの�
 ![](https://storage.googleapis.com/zenn-user-upload/9b86cd928147a6482c01f0d5.png)
 
 ## Tips
-- Event Nameが同じWebhookを複数作成して呼び出すと複数のAppletを同時起動することができます。
+- Event Nameが同じWebhookを複数作成して呼び出すと複数のAppletを同時起動できます。
 - （今後使用して気づいた点を追記していきます。）
 
 # 最後に
 これでStream Deckを使用してスマートホームを集中管理できるようになりました。
 Stream Deckのフォルダ機能を使用して部屋ごとにフォルダを分けるなど様々な応用が考えられます。
-IFTTTは無料ユーザーだとAppletの上限が３つまでなので、しばらく使ってみて便利そうなら有料プランを契約してすべてのSwitchBotと連携したいと思います。
+IFTTTは無料ユーザーだとAppletの上限が３つまでなので、しばらく使ってみて便利そうなら有料プランを契約してすべてのSwitchBotと連携する予定です。

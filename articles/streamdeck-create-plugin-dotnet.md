@@ -11,7 +11,7 @@ published: true
 
 # はじめに
 [Elgato Stream Deck](https://www.elgato.com/ja/stream-deck)はライブストリーミング配信等での使用を主目的としたマクロキーパッドです。
-Stream Deckでは様々な機能をプラグインとしてインストールして使用することができます。
+Stream Deckでは様々な機能をプラグインとしてインストールして使用できます。
 公式でサポートされているプラグイン開発のための言語はJavascript, C++, Objective-Cですが、サードパーティのSDKを使用することでC#での開発も可能です。
 
 ## 前提条件
@@ -47,13 +47,13 @@ dotnet new streamdeck-plugin --plugin-name MyPluginName
 - MyPluginAction.cs
   プラグインの挙動が実際に記述してあるファイル
 
-一部省略
+※一部省略しています。
 
 ## ロジックの開発
 ### ベースクラス
 プラグインを作成する際には、Stream Deckボタンが実行するアクションを作成する必要があります。アクションを作成する際、継承できるベースクラスは2つあります。
 #### BaseStreamDeckAction 
-このクラスには、Stream Deckとの通信に必要なすべての統合機能が、「素」のレベルで含まれています。このクラスを継承することで、アクションがソフトウェアからデータを送受信する方法を最大限にコントロールすることができます。
+このクラスには、Stream Deckとの通信に必要なすべての統合機能が、「素」のレベルで含まれています。このクラスを継承することで、アクションがソフトウェアからデータを送受信する方法を最大限にコントロールできます。
 ```cs
 public class MyPluginAction : BaseStreamDeckAction
 { 
@@ -104,7 +104,7 @@ cp -R "$projectDir/bin/Debug/netcoreapp2.2/osx-x64/." $pluginName.sdPlugin
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 cp -R "$projectDir/bin/Debug/netcoreapp3.1/osx-x64/." $pluginName.sdPlugin
 ```
-Stream Deckの設定アプリを開くと`manifest.json`で指定したメタ情報でプラグインが登録されているのでドラッグ&ドロップしてキーに割り当てます。
+Stream Deckの設定アプリを開くと`manifest.json`に指定したメタ情報でプラグインが登録されているのでドラッグ&ドロップしてキーに割り当てます。
 ![](https://storage.googleapis.com/zenn-user-upload/d5b89397997ece465be11472.png)
 
 # リリースビルド

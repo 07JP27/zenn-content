@@ -12,12 +12,11 @@ published: true
 先日以下の記事でIFTTTと連携してStream DeckからSwitchBotを操作する方法について書きました。
 https://zenn.dev/07jp27/articles/streamdeck-ifttt-integration
 
-その記事の中で
-> IFTTTは無料ユーザーだとAppletの上限が３つまでなので、しばらく使ってみて便利そうなら有料プランを契約してすべてのSwitchBotと連携したいと思います。
+その記事の中で以下ように書いたものの、`SwitchBotのAPIがあれば直接呼べるのでは？`と考えていました。
+> IFTTTは無料ユーザーだとAppletの上限が３つまでなので、しばらく使ってみて便利そうなら有料プランを契約してすべてのSwitchBotと連携する予定です。
 
-と書いたものの、`SwitchBotのAPIがあれば直接呼べるのでは？`と考えていました。
 実は2020年6月に初めてSwitchBotを購入した際にAPIの提供について調べたことがあり、そのときはAPIが提供されていなかったので期待はしてませんでした。
-しかし調べてみたところ、なんと2020年の12月にAPIのドキュメントページが公開されていました！🎉
+しかし調べてみたところ、なんと2020年の12月にAPIのドキュメントページが公開されていました🎉！
 
 https://github.com/OpenWonderLabs/SwitchBotAPI
 
@@ -26,7 +25,7 @@ https://github.com/OpenWonderLabs/SwitchBotAPI
 # やってみる
 
 ## SwitchBotAPIトークンの取得
-SwichBotAPIのトークンはSwichBotアプリから取得することができます。
+SwichBotAPIのトークンはSwichBotアプリから取得できます。
 1. SwichBotアプリの「設定」を開いて **「アプリバージョン」を10回タップ** します。
 ![](https://storage.googleapis.com/zenn-user-upload/9a33e5da76de737d19d105df.png =300x)
 
@@ -74,6 +73,6 @@ SwichBotAPIのトークンはSwichBotアプリから取得することができ�
 好きなアイコンを設定して完成です。実際に押してみてテストします。
 
 # 最後に
-これでIFTTTを使用せずにSwitchBotの機器を操作することができ、有料プランからの脱出に成功しました。
-今回使用したプラグインのAPI NinjaがWindowsのみでしかリリースされていなかったため、本記事の方法ではWinsowsでしか設定することはできませんが、内部処理としてはURLにアクセスしているだけなのでMacでも実現できそうです。
+これでIFTTTを使用せずにSwitchBotの機器を操作でき、有料プランからの脱出に成功しました。
+今回使用したプラグインのAPI NinjaがWindowsのみでしかリリースされていなかったため、本記事の方法ではWinsowsでしか設定できませんが、内部処理としてはURLにアクセスしているだけなのでMacでも実現できそうです。
 SwitchBot公式でStream Deckプラグインがリリースされるのを(あまり期待せずに)待ちつつ、自分でもプラグインを作ってみようと思いました（まだSDKも無いようなのでそれも含めて実装してみようかと思います）。
