@@ -32,7 +32,7 @@ Windows 10の場合、ドライバーは既定でOSにインストールされ�
 ![](/images/mobiflight-msfs2020-build-controller/installation/launch-connector.png)
 1. 起動するとMobiFlight用として使用することができる( = MobiFlightブートローダーがまだ書き込まれていない)Arduinoのスキャンが開始します。
 ![](/images/mobiflight-msfs2020-build-controller/installation/scan-arduino.png)
-1. Arduinoが互換性のあるデバイスとして検出されます。ファームウェアをアップロードするか問われるので`OK`を選択してMobiFlightファームウェアをArduinoにアップロードします。(明示的にOKを選択しなくても一定時間操作をしないと自動的に書き込まれます)
+1. Arduinoが互換性のあるデバイスとして検出されます。ファームウェアをアップロードするか問われるので`OK`を選択してMobiFlightファームウェアをArduinoにアップロードします。
 ![](/images/mobiflight-msfs2020-build-controller/installation/upload-firmware.png)
 1. 以下のような画面が表示されたらセットアップ完了です。
 ![](/images/mobiflight-msfs2020-build-controller/installation/compleate-prepare.png)
