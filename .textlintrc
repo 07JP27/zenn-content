@@ -18,7 +18,8 @@
         "allowFullWidthExclamation": true,
         "allowHalfWidthQuestion": true,
         "allowFullWidthQuestion": true
-      }
+      },
+      "no-doubled-joshi": false
     }
   }
 }

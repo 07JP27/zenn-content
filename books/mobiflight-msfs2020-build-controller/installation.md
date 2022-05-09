@@ -1,10 +1,15 @@
 ---
-title: "MobiFlightのインストールと準備"
+title: "[WIP]MobiFlightのインストールと準備"
 ---
+
+:::message alert
+このチャプターは執筆途中です。
+:::
 
 :::message
 #### 前提条件
-初めてArduinoを使用する場合はArduinoとPCをUSBで接続し、Windows用のドライバーを使用してボードを認識させる必要があります。Windows 10の場合、ドライバーは既定でOSにインストールされてるため、ArduionoとPCをUSB接続するだけで認識します。
+初めてArduinoを使用する場合はArduinoとPCをUSBで接続し、Windows用のドライバーを使用してボードを認識させる必要があります。
+Windows 10の場合、ドライバーは既定でOSにインストールされてるため、ArduionoとPCをUSB接続するだけで認識します。
 古いWindowsを使用する場合やドライバーを削除してしまった場合は[Arduinoソフトウエアのインストールプロセス](https://docs.arduino.cc/software/ide-v1/tutorials/Windows#toc4)を実行してドライバーをインストールします。
 
 [参考：公式サイト](https://www.mobiflight.com/en/documentation/module.html#installation)

@@ -19,9 +19,9 @@ title: "[WIP]パーキングブレーキの状態をLEDで表示する"
 - ジャンパーワイヤー
 
 # 回路図
-Arduinoと準備したLEDと抵抗を以下のように接続します。
-![](/images/mobiflight-msfs2020-build-controller/parking-break-led/bredboard.png =400x)
-上記の接続をを回路図で表すと、このようになります。
+Arduinoと準備した電子部品を以下のように接続します。
+![](/images/mobiflight-msfs2020-build-controller/parking-break-led/breadboard.png =400x)
+回路図で表すと、このようになります。
 ![](/images/mobiflight-msfs2020-build-controller/parking-break-led/circuit.png =700x)
 
 
@@ -35,5 +35,5 @@ Arduinoと準備したLEDと抵抗を以下のように接続します。
 
 
 # まとめ
-これでON/OFFの二値状態をLEDで表示することができました。
+これでON/OFFの二値状態をLEDで表示できました。
 今回のパーキングブレーキだけではなく、ギアの状態やストロボ灯インジケーターなど様々な部分に応用可能です！
