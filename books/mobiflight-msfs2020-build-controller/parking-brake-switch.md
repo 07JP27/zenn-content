@@ -26,6 +26,7 @@ Arduinoと準備した電子部品を以下のように接続します。前チ�
 回路図で表すと、このようになります。
 ![](/images/mobiflight-msfs2020-build-controller/parking-brake-switch/circuit.png =700x)
 
+この回路図で電子工作をしている人はわかると思いますが、タクトスイッチは[プルアップ](https://miraiworks.org/?p=6213#i)で接続をしています。MobiFlightではArduinoに付属している内部プルアップ抵抗を使用するため外部プロアップ抵抗は必要ありません。(出典：[公式フォーラム](https://www.mobiflight.com/forum/topic/2888.html))
 
 # MobiFlightの設定
 ### デバイスの設定
@@ -65,7 +66,7 @@ Arduinoと準備した電子部品を以下のように接続します。前チ�
 1. MSFS2020で適当なフリーフライトを開始します。
 1. ON/OFFボタンを押してMSFS2020のパーキングブレーキが連動して動作すること、LEDがある場合はそれも連動して点灯/消灯することを確認します。
 
-https://www.youtube.com/watch?v=W96cWgCxOTs
+https://www.youtube.com/watch?v=6tybPh-r-j4
 
 
 # まとめ

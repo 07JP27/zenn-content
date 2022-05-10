@@ -20,6 +20,8 @@ Arduinoと準備した電子部品を以下のように接続します。
 ![](/images/mobiflight-msfs2020-build-controller/parking-brake-led/circuit.png =700x)
 
 # MobiFlightの設定
+最初のチャプターなのでMobiFlightの使い方も含めてスクリーンショット多めで解説します。
+
 MobiFlightでは大きく分けて２つ設定を行います。
 1. デバイスの設定
 MobiFlightではLEDやスイッチなどの電子部品を「デバイス」と呼びます。
