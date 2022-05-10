@@ -1,5 +1,5 @@
 ---
-title: "[WIP]対地速度をLCDで出力する"
+title: "[WIP]対気速度をLCDで出力する"
 ---
 
 :::message alert
