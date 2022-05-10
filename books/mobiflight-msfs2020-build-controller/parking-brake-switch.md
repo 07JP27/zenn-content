@@ -71,7 +71,7 @@ https://www.youtube.com/watch?v=6tybPh-r-j4
 
 
 # コラム
-### 実行のタイミングを変えたい
+### 実行のタイミングを変えたい / 長押しを設定したい
 今回はボタンを押した瞬間にパーキングブレーキがON/OFFされるように設定をしました。
 これをボタンを押して離した瞬間に操作するようにするにはどうすればよいでしょう。
 `InputConfigWizard`画面の`Input settings`には`On Press`と`On Release`の２つのタブがあります。
