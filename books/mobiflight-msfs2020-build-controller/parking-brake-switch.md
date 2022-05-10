@@ -56,7 +56,7 @@ Arduinoと準備した電子部品を以下のように接続します。前チ�
 
 # 実行
 1. MSFS2020を起動します。
-1. MSFS2020が起動していればMobiFlight ConnectorのRunボタンがクリックできるようになるので、Runボタンをクリックします。
+1. MSFS2020が起動していればMobiFlight Connectorの`Run`ボタンがクリックできるようになるので、`Run`ボタンをクリックします。
 ![](/images/mobiflight-msfs2020-build-controller/parking-brake-switch/201.png)
 1. MSFS2020で適当なフリーフライトを開始します。
 1. ON/OFFボタンを押してMSFS2020のパーキングブレーキが連動して動作すること、LEDがある場合はそれも連動して点灯/消灯することを確認します。

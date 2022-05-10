@@ -62,7 +62,7 @@ LEDが画面の表示に合わせて点滅します。これでMobiFlightの設�
 
 # 実行
 1. MSFS2020を起動します。
-1. MSFS2020が起動していればMobiFlight ConnectorのRunボタンがクリックできるようになるので、Runボタンをクリックします。
+1. MSFS2020が起動していればMobiFlight Connectorの`Run`ボタンがクリックできるようになるので、`Run`ボタンをクリックします。
 ![](/images/mobiflight-msfs2020-build-controller/parking-brake-led/201.png)
 1. MSFS2020で適当なフリーフライトを開始します。
 1. 飛行機のパーキングブレーキを画面上でON/OFFし、LEDの点灯/消灯が連動することを確認します。
