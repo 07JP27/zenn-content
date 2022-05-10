@@ -79,4 +79,4 @@ https://www.youtube.com/watch?v=W96cWgCxOTs
 ではパーキングブレーキがONのときにLEDをOFFに、パーキングブレーキがOFFのときにLEDをONにするにはどうすればよいでしょう。
 この設定を追加するにはマッピングを設定した`ConfigWizard`画面の`Compare`タブで`Comparation Settings`を設定します。
 具体的には以下の画像の通り、パーキングブレーキの状態(current value)が1(ON)ならLEDへの出力を0(OFF)、それ以外のときはLEDの出力を1(ON)になるようにします。
-![](/images/mobiflight-msfs2020-build-controller/parking-brake-led/colum.png)
+![](/images/mobiflight-msfs2020-build-controller/parking-brake-led/column.png)

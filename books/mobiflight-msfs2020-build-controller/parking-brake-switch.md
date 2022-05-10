@@ -1,11 +1,6 @@
 ---
-title: "[WIP]パーキングブレーキをタクトスイッチでON/OFFする"
+title: "パーキングブレーキをタクトスイッチでON/OFFする"
 ---
-
-:::message alert
-このチャプターは執筆途中です。
-:::
-
 # 本チャプターの内容
 前チャプターではLEDを使ったシンプルな出力をしました。
 このチャプターではパーキングブレーキの状態をタクトスイッチで切り替えることを題材に、シンプルな入力を学びます。
@@ -77,3 +72,12 @@ https://www.youtube.com/watch?v=6tybPh-r-j4
 
 # コラム
 ### 実行のタイミングを変えたい
+今回はボタンを押した瞬間にパーキングブレーキがON/OFFされるように設定をしました。
+これをボタンを押して離した瞬間に操作するようにするにはどうすればよいでしょう。
+`InputConfigWizard`画面の`Input settings`には`On Press`と`On Release`の２つのタブがあります。
+タブの名前からわかるようにここで「押したとき」と「離したとき」それぞれの設定ができます。
+もちろんどちらか一方のみ設定できますし、どちらも設定することによって長押しの挙動なども設定できます。
+例えば、ボタンを離したときにパーキングブレーキのON/OFFをしたい場合は`On Press`タブの設定を`On Release`タブに移行すればOKです。
+さらに、ボタンを押しているときだけパーキングブレーキをONにするという挙動も`On Press`にパーキングブレーキのON、`On Release`にパーキングブレーキのOFFを設定することで実現可能です。
+![](/images/mobiflight-msfs2020-build-controller/parking-brake-switch/column.png)
+![](/images/mobiflight-msfs2020-build-controller/parking-brake-switch/column2.png)
