@@ -17,7 +17,7 @@ title: "[WIP]パーキングブレーキをタクトスイッチでON/OFFする"
 - ジャンパーワイヤー
 
 # 回路図
-Arduinoと準備した電子部品を以下のように接続します。
+Arduinoと準備した電子部品を以下のように接続します。前チャプターで接続したLEDをそのまま使用して追加でパーキングブレーキのON/OFF用タクトスイッチを２つ接続します。
 ![](/images/mobiflight-msfs2020-build-controller/parking-break-switch/breadboard.png =400x)
 回路図で表すと、このようになります。
 ![](/images/mobiflight-msfs2020-build-controller/parking-break-switch/circuit.png =700x)
