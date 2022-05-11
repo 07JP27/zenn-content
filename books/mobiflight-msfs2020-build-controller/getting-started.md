@@ -2,11 +2,11 @@
 title: "はじめに"
 ---
 # まえがき
-狭い空間にところ狭しと並べられたトグルスイッチやノブ、夜にはオレンジ色のバックライトに照らされる飛行機のコックピットはガジェット好きであれば誰しも一度は憧れたことがあるのではないでしょうか。
+狭い空間にところ狭しと並べられたトグルスイッチやノブ、夜にはオレンジ色のバックライトに照らされる航空機のコックピットはガジェット好きであれば誰しも一度は憧れたことがあるのではないでしょうか。
 ![](/images/mobiflight-msfs2020-build-controller/getting-started/cockpit.png)
 
-この世にはフライトシミュレーターと呼ばれるゲームが存在し、忠実に再現された飛行機をパソコンの中で操縦できます。
-特にそのリアルさからフライトシミュレーターの代表格として取り上げられるのがMicrosoft Flight Simulator 2020です。MSFS2020とも略されるこのゲームはダイナミックで生き生きとした世界での飛行、リアルタイムの大気シミュレーションなど、飛行機の機体のみならず周囲の環境も含めてさまざまなシチュエーションを再現できます。(実は上の画像もMSFS2020のキャプチャ画像です)
+この世にはフライトシミュレーターと呼ばれるゲームが存在し、忠実に再現された航空機をパソコンの中で操縦できます。
+特にそのリアルさからフライトシミュレーターの代表格として取り上げられるのがMicrosoft Flight Simulator 2020です。MSFS2020とも略されるこのゲームはダイナミックで生き生きとした世界での飛行、リアルタイムの大気シミュレーションなど、航空機の機体のみならず周囲の環境も含めてさまざまなシチュエーションを再現できます。(実は上の画像もMSFS2020のキャプチャ画像です)
 https://www.xbox.com/ja-JP/games/microsoft-flight-simulator
 
 
@@ -22,7 +22,8 @@ MobiFlightとArduinoを使用してMicrosoft Flight Simulator 2020の物理操�
 なお、本書では筐体の制作に3Dプリンターを使用していますが、必ずしも3Dプリンターが必要なわけではありません。代わりにMDF板を使用するなど、他の方法でも創意工夫によって可能性は無限大です！
 
 # 本書に記載していない内容
-本書ではArduinoとはなにか？や電子部品の動作原理（例えばロータリーエンコーダーはどのように動作するか）などの電子工作の基礎知識については説明していません。
+- 本書ではArduinoとはなにか？や電子部品の動作原理（例えばロータリーエンコーダーはどのように動作するか）などの電子工作の基礎知識について
+- MSFS2020でA320のオートパイロットを設定するにはどうすればよいか？などMSFS2020自体や航空機の操作方法
 
 # MobiFlightとは？
 MobiFlightは、標準的な電子部品をフライトシミュレータに統合するソフトウエアで、以下のような特徴があります。
@@ -44,8 +45,11 @@ MobiFlightは一般的に入手可能な電子部品で動作するため、コ�
 #### オープンソース
 MobiFlightは100％オープンソースであり、コミュニティによって維持されている他のプロジェクトとともに[GitHubでホスト](https://github.com/MobiFlight)されています。
 
-
 https://www.mobiflight.com/en/index.html
+
+#### 公式フォーラム
+本書で基本を習得したら公式フォーラムで、より高度な使用方法や他のユーザーの事例を知ることができます。もちろん自らスレッドを立てて発信をすることも可能です。
+https://www.mobiflight.com/forum.html
 
 
 # 前提条件
@@ -54,13 +58,15 @@ https://www.mobiflight.com/en/index.html
 
 ## Arduino
 MobiFlightはArduinoを使用して電子部品とMSFS2020を連携しますが、すべてのArduinoシリーズが使用できるわけではありません。本書ではArduino Unoを使用していますが、安定しない場合はArduino Megaの使用を検討してください。
+[参考:公式サイト](https://www.mobiflight.com/en/documentation/module.html)
+
 #### サポートされているArduinoシリーズ
 - [Arduino Mega 2560 R3](https://docs.arduino.cc/hardware/mega-2560) もしくは互換ボード
 - [Arduino Mega Pro Mini](https://www.amazon.co.jp/WINGONEER-Arduino-MINI%E3%82%A8%E3%83%B3%E3%83%99%E3%83%87%E3%83%83%E3%83%89%E3%80%81MCU-ATmega2560%E3%80%81USB-CH340G%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AD%E3%83%8B%E3%82%AF%E3%82%B9/dp/B07HBR257M) もしくは互換ボード
 - [Sparkfun Micro Pro](https://www.switch-science.com/catalog/1623/) もしくは互換ボード
 
 #### 実験的にサポートされているArduinoシリーズ
-- [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)：現時点では安定していません。もし問題が発生した場合は、代わりにArduino Megaを入手してください。
+- [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)：現時点では安定していません。もし問題が発生した場合は、代わりに動作がサポートされているArduino Megaを使用してください。
 
 #### サポートされて`いない`Arduinoシリーズ
 - Arduino Mini
@@ -69,8 +75,6 @@ MobiFlightはArduinoを使用して電子部品とMSFS2020を連携しますが�
 - Arduino Nano
 - Arduino Leonardo
 - その他リストに無いArduinoシリーズ
-
-[参考:公式サイト](https://www.mobiflight.com/en/documentation/module.html)
 
 ## その他
 - 本書はPCにMSFS2020がインストールされている前提で記載されています。未インストールの場合はインストール後に本書の内容を試してください。
