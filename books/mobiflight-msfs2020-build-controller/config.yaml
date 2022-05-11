@@ -11,7 +11,7 @@ chapters:
   - parking-brake-switch
   - com-radio-7seg-led
   - com-radio-rotary-encoder
-  - throttle-volume-resistor
+  - throttle-potentiometer
   - flap-servomotor
   - air-speed-stepper-motor
   - air-speed-lcd
