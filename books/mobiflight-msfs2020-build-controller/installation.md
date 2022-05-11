@@ -16,7 +16,7 @@ Windows 10の場合、ドライバーは既定でOSにインストールされ�
     ![](/images/mobiflight-msfs2020-build-controller/installation/download.png)
 1. ダウンロードした `MobiFlight-Installer.exe` インストールファイルを実行してインストールします。インストーラーを起動するだけで特に設定項目などなくインストールが完了します。
     :::message alert
-    インストーラーを起動すると、インストーラーファイルが置かれているフォルダにMobiFlight用のファイルが大量に展開されます。（インストール先を指定することができません。）
+    インストーラーを起動すると、インストーラーファイルが置かれているフォルダにMobiFlight用のファイルが大量に展開されます。（インストール先は指定できません。）
     そのため、ダウンロードフォルダなど汎用フォルダ内で起動せず、MobiFlight用のフォルダを作成してそこで起動することをお勧めします。
     :::
     以下のようなWelcome画面が表示されればインストールは完了です。
@@ -30,7 +30,7 @@ Windows 10の場合、ドライバーは既定でOSにインストールされ�
 1. Arduinoを初めてPCに接続する場合は、ボードが認識されるようにWindows用のドライバーをインストールする必要があります(前提条件に記載の内容を参照してください)。
 1. インストールしたMobiFlight Connectorを起動します。
 ![](/images/mobiflight-msfs2020-build-controller/installation/launch-connector.png)
-1. 起動するとMobiFlight用として使用することができる( = MobiFlightブートローダーがまだ書き込まれていない)Arduinoのスキャンが開始します。
+1. MobiFlight Connectorが起動するとMobiFlight用ボードとして使用可能な( = MobiFlightファームウェアがまだ書き込まれていない)Arduinoボードのスキャンが開始します。
 ![](/images/mobiflight-msfs2020-build-controller/installation/scan-arduino.png)
 1. Arduinoが互換性のあるデバイスとして検出されます。ファームウェアをアップロードするか問われるので`OK`を選択してMobiFlightファームウェアをArduinoにアップロードします。
 ![](/images/mobiflight-msfs2020-build-controller/installation/upload-firmware.png)
