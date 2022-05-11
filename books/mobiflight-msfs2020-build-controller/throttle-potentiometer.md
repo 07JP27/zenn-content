@@ -1,12 +1,9 @@
 ---
-title: "[WIP]スロットルを可変抵抗で制御する"
+title: "スロットルレバーを可変抵抗で制御する"
 ---
-
-:::message alert
-このチャプターは執筆途中です。
-:::
-
 # 本チャプターの内容
+このチャプターでは可変抵抗でアナログ値の入力を学びます。アナログ値は0/1のデジタル値とはことなり、より細かいレベルを入力することができます。
+今回はスロットルレバーを可変抵抗で制御してみます。可変抵抗の抵抗値の変化に伴ってスロットルが増加/減少します。
 
 # 準備するもの
 - Arduino
@@ -33,21 +30,17 @@ Arduinoと準備した電子部品を以下のように接続します。今ま�
 # MobiFlightの設定
 ### デバイスの設定
 1. MobiFlight Connectorを起動してメニューバーから `Extras`→`Settings`をクリックして`Settings`画面を開きます。`MobiFlight Modules`タブを開くと現在接続されているMobiFlightボードがリスト表示されます。
-1. デバイスを追加したいMobiFlightボードを選択して`Add device`→`encorder`をクリックします。
+1. デバイスを追加したいMobiFlightボードを選択して`Add device`→`Analog Input`をクリックします。
 ![](/images/mobiflight-msfs2020-build-controller/throttle-potentiometer/1.png)
-1. ボードに選択したデバイスが追加されます。接続の通り`Left Pin`を`2`、`Right Pin`を`3`にセットし、アップロードボタンをクリックしてMobiFlightボードに変更を書き込みます。OKをクリックして`Settings`画面を閉じます。
+1. ボードに選択したデバイスが追加されます。接続の通り`Pin settings`を`A0`にセットし、アップロードボタンをクリックしてMobiFlightボードに変更を書き込みます。OKをクリックして`Settings`画面を閉じます。
 ![](/images/mobiflight-msfs2020-build-controller/throttle-potentiometer/2.png)
 
 ### フライトシミュレーターとデバイスのマッピング
-1. ホーム画面で`Inputs`タブをクリックしてInputsマッピングに切り替えて、`COM Radio freq`マッピングを作成します。
+1. ホーム画面で`Inputs`タブをクリックしてInputsマッピングに切り替えて、`Throttle`マッピングを作成します。edit列の`...`をクリックして`InputConfigWizard`画面を表示します。
 ![](/images/mobiflight-msfs2020-build-controller/throttle-potentiometer/101.png)
-1. `COM Radio freq`マッピングのedit列の`...`をクリックして`InputConfigWizard`画面を表示します。
-1. ロータリーエンコーダーの場合、時計回りと反時計周りでそれぞれ動作を設定します。
-`On Left`は反時計回りを意味するので無線周波数を減少させる`COM_RADIO_KHZ_DEC_ENCODER`を設定します。ここで`COM_RADIO_MHZ_DEC_ENCODER`にするとMHz単位で変更できるようになります。
+1. デバイスを選択して、`THROTTLE_SET`を設定します。この場合、すべてのスロットルが同期して操作されます。双発機などスロットルが複数ある航空機で使用する場合は複数の可変抵抗を用意してそれぞれスロットルレバーごとにマッピングすることも可能です。
+設定ができたら`OK`をクリックして`InputConfigWizard`画面を閉じます。
 ![](/images/mobiflight-msfs2020-build-controller/throttle-potentiometer/102.png)
-1. `On Right`は時計回りを意味するので無線周波数を増加させる`COM_RADIO_KHZ_INC_ENCODER`を設定します。
-２つの設定ができたら`OK`をクリックして`InputConfigWizard`画面を閉じます。
-![](/images/mobiflight-msfs2020-build-controller/throttle-potentiometer/103.png)
 
 # 実行
 1. MSFS2020を起動します。
@@ -55,8 +48,11 @@ Arduinoと準備した電子部品を以下のように接続します。今ま�
 ![](/images/mobiflight-msfs2020-build-controller/throttle-potentiometer/201.png)
 1. MSFS2020で適当なフリーフライトを開始します。
 1. 可変抵抗を回してMSFS2020内のスロットルレバーが連動することを確認します。
-※ロータリーエンコーダーを回しやすいように3Dプリンターで作成したノブを付けています。
+
+https://www.youtube.com/watch?v=XjDd-JFavMo
+
+※可変抵抗を回しやすいように3Dプリンターで作成したノブを付けています。
 
 # まとめ
 これでMobiFlightで用意されているすべての入力方法を習得しました！
-これまで学んできたデバイスの組み合わせで、ほぼすべてのコックピットのアビオニクスを作成できることでしょう！
+これまで学んできたデバイスの組み合わせで、コックピットのほぼすべてのアビオニクスを作成できることでしょう！

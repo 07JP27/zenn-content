@@ -12,6 +12,5 @@ chapters:
   - com-radio-7seg-led
   - com-radio-rotary-encoder
   - throttle-potentiometer
-  - flap-servomotor
-  - air-speed-stepper-motor
-  - air-speed-lcd
+  - radio-panel
+  - postscript
