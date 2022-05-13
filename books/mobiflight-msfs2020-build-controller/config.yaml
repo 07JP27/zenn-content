@@ -12,5 +12,6 @@ chapters:
   - com-radio-7seg-led
   - com-radio-rotary-encoder
   - throttle-potentiometer
+  - flap-servomotor
   - radio-panel
   - postscript
