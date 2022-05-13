@@ -59,3 +59,29 @@ https://www.youtube.com/watch?v=uUOZhN9IrxE
 # まとめ
 7セグメントLEDを出力することにより、一気にコックピット感が増しました。
 次のチャプターではこの表示をダイヤルで入力してみます。
+
+
+# コラム
+### デイジーチェーン
+7セグメントLEDはホームコックピットには欠かせないデバイスですが、SPI通信のため電源の２本以外に3本の信号線が必要です。
+たとえば無線周波数のパネルはアクティブとスタンバイ２つの7セグメントLEDが必要ですが、その場合、3＊2=6本のArduinoピンを使用することになり、特にデバイスが多いオートパイロットのパネルなどは、ピンに空きがない！という状況も多く発生することがあります。
+それを解決するのが**デイジーチェーン**です。MobiflightでサポートされているMAX7219チップは最大８個までの7セグメントLEDをデイジーチェーンで連結してたった３本の信号線で最大8桁＊8デバイス=65桁の数値を表示できます！
+#### 接続図
+デイジーチェーンを使用する場合はMAX7219同士を信号線で接続します。電源(VccとGND)は並列で接続します。
+連結させる数が多い場合はArduinoの電源だけでは十分な電源を供給できないため、外部電源が必要になる場合があります。
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column.png)
+
+#### 設定
+1. 基本的にデバイスの設定は通常の7セグメントLEDと同じ流れですが、デバイスをMobiflightボードに追加した際に`Num`をデイジーチェーンで連結されているMAX7219の数を設定します。（今回は２つ連結しているので`2`を設定）
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column1.png)
+
+1. マッピングを作成する際は`Display`タブの`Display settings`の`Connector`で表示する7セグメントLEDデバイスを指定します。
+今回は２つの7セグメントLEDをデイジーチェーン接続しているので１番目と２番目を指定して、それぞれ`Select Preset`にアクティブ/スタンバイの無線周波数を選択します。
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column2.png)
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column3.png)
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column4.png)
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column5.png)
+1. デイジーチェーンを使用している場合、デバイスは１つ、マッピングは２つ（デイジーチェーンで接続している数だけ）できます。
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column6.png)
+1. これでアクティブ/スタンバイの無線周波数を3本の信号線だけで表示できました！
+![](/images/mobiflight-msfs2020-build-controller/com-radio-7seg-led/column7.png)
