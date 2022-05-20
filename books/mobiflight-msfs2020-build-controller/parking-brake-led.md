@@ -4,14 +4,16 @@ title: "パーキングブレーキの状態をLEDで表示する"
 # 本チャプターの内容
 最初の一歩として、LEDを使ったシンプルな出力から始めましょう。
 このチャプターではパーキングブレーキの状態をLEDで表示することを題材に、シンプルな二値(ON/OFF)の出力を学びます。
-パーキングブレーキがONの時はLEDは点灯し、OFFの時は消灯するような動作です。
+### 完成イメージ
+パーキングブレーキがONの時にLEDは点灯し、OFFの時は消灯するような動作です。
+https://www.youtube.com/watch?v=W96cWgCxOTs
 
 # 準備するもの
-- Arduino
-- LED
-- 抵抗(330~1kΩ程度)
-- ブレッドボード
-- ジャンパーワイヤー
+- [Arduino](https://akizukidenshi.com/catalog/c/carduino1/)
+- [LED](https://akizukidenshi.com/catalog/g/gI-01317/)
+- [抵抗(330~1kΩ程度)](https://akizukidenshi.com/catalog/g/gR-25331/)
+- [ブレッドボード](https://akizukidenshi.com/catalog/g/gP-05294/)
+- [ジャンパーワイヤー](https://akizukidenshi.com/catalog/g/gC-05159/)
 
 # 回路図
 Arduinoと準備した電子部品を以下のように接続します。

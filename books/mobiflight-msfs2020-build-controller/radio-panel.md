@@ -18,28 +18,28 @@ title: "【実践編】無線周波数操作パネルを作る"
 - [スズメッキ線](https://akizukidenshi.com/catalog/g/gP-02220/)
 
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/parts2.jpg)
-今回は使用するピン数が少ないのでArduino UNO R3を使用しますが、動作が不安定だったり、他にも機能を付けたい場合はArduino Megaを使用します。
+今回は必要なピン数が少ないのでArduino UNO R3を使用しますが、動作が不安定だったり、他にも機能を付けたい場合はArduino Megaを使用します。
 
 
 # 回路図
 このような接続になります。
 基本的には各要素で説明したものが独立してそれぞれ接続されているだけです。
-7セグメントLEDのみコラムで照会したデイジーチェーンを使用して接続しています。
+7セグメントLEDのみコラムで紹介したデイジーチェーンを使用して接続しています。
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/breadboard.png)
 
 
 # ブレッドボード上でのテスト
-いきなりハンダ付けをしてしまうと万が一回路が間違っていた場合に修正が大変なので実際にブレッドボードで同じ回路を作って試してみます。
+いきなりハンダ付けをしてしまうと万が一、回路が間違っていた場合に修正が大変なので実際にブレッドボードで同じ回路を作って試してみます。
 とりあえず動作としては良さそうということが確認できたので次に進みます。
 https://www.youtube.com/watch?v=GhuZNTBqI2c
 
 # 筐体
 回路むき出しでもそれはそれでメカメカしくて良いのですが、せっかくホームコックピットを作るのでそれっぽい外装にします。
-Fusion 360を使って筐体をCADで設計します。[Fusion 360](https://www.autodesk.co.jp/products/fusion-360/personal)は個人利用であれば無料で使用することができるCADソフトです。
+Fusion 360を使って筐体をCADで設計します。[Fusion 360](https://www.autodesk.co.jp/products/fusion-360/personal)は個人利用であれば無料で使用できるCADソフトです。
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/case1.jpeg =400x)
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/case2.png =400x)
 
-作成した3D CADモデルからSTLファイルをエクスポートし、3Dプリンターで部品を作成しました。外装になる部分は塗装してあります。
+作成した3D CADモデルからSTLファイルをエクスポートし、3Dプリンターで部品を作成しました。外装になる部分はエアブラシでそれっぽい色に塗装してあります。
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/parts.png)
 
 # 組み立て
@@ -77,7 +77,7 @@ https://www.youtube.com/watch?v=y3pY7OdbyVE
 実際に作ってみて以下のような改善点を感じました。
 ### 改善点
 - 周波数変更のノブがkHzノブしか無い【致命的】
-  MHz変更できないと意味ないやんけ・・・・
+  MHz変更できないと意味ないやんけ...
   本物はノブが２重になっていてMHzとkHzを変更できるようなちょっと複雑な機構なので今後はそれをやってみたいと思います。
 - スイッチめっちゃ重い
   パネル取り付け用のボタンを使いましたが、そこそこ押し込むのに力がいります。
