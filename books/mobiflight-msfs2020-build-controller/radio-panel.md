@@ -2,8 +2,10 @@
 title: "【実践編】無線周波数操作パネルを作る"
 ---
 # 本チャプターの内容
-いよいよ今まで１つづつ試してきた要素をまとめて１つの機能として実装します。
-今回は航空無線に使用される周波数を操作するパネルを作ります。
+いよいよ今まで１つずつ習得してきた要素をまとめて１つの機能として実装します。
+今回は航空管制無線に使用される周波数を操作するパネルを作ります。
+### 完成イメージ
+https://www.youtube.com/watch?v=y3pY7OdbyVE
 
 # 準備するもの
 - [Arduino UNO R3](https://akizukidenshi.com/catalog/g/gM-07385/)
@@ -52,31 +54,71 @@ I/O部品をパネルに取り付けます。
 
 回路図に従ってどんどん結線をしていきます。このときにケーブルの色を5V(Vcc)は赤、GNDは黒、信号線は白に色分けをするとわかりやすいです。もっと複雑になったら白を細分化して色分けしてもいいかもしれません。
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/assem4.png)
-I/Oの部品が付いたパネルをフレームに取り付け、Arduino UNO用のユニバーサル基板にピンヘッダをハンダ付けしてケーブルを接続していきます。
+I/Oの部品が付いたパネルをフレームに取り付け、Arduino UNO用のユニバーサル基板にケーブルを接続していきます。
+このユニバーサル基板は[一般的なユニバーサル基板](https://akizukidenshi.com/catalog/g/gP-03230/)に比べて割高なのですが、一般的なユニバーサル基板だとArduino UNOのピンのピッチ(穴の間隔)と合わない場合があるので、とても重宝しています。
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/assem5.png)
-それぞれの接点は密集しているので熱収縮チューブでカバーしておきます。
+それぞれの接点は密集しているのでピンヘッダをハンダ付けしてそこにケーブルを接続して熱収縮チューブでカバーしておきます。
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/assem6.png)
 
 ケーブルをまとめます。熱収縮チューブを使ってまとめていく方法もありますが、その方法だと最初からケーブルを熱収縮チューブに通して置かないといけないので、マスキングテープや結束バンドで最後にまとめるほうが簡単です。
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/assem7.png)
 
-サイドパネルやフェイルパネル・ノブを取り付けて完成です！
+サイドパネルやフェイスパネル、ノブを取り付けて完成です！
 ![](/images/mobiflight-msfs2020-build-controller/radio-panel/assem8.png)
 
 
 # MobiFlightの設定
-基本的には今まで学習してきた設定の組み合わせなので一部省略して書いています。
+基本的には今まで学習してきた設定の組み合わせなので一部省略して記載しています。
 ### デバイスの設定
+ボードにはデバイスを３つ登録します。
+- 7セグメントLED（デイジーチェーンで1つのデバイスで２つのLEDモジュールを使用します）
+- ロータリーエンコーダー
+- ボタン
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/1.png)
+7セグメントLEDの設定です。ピンは実際の接続の通りに設定します。デイジーチェーンを使用して２つの7セグメントLEDを使用するので`Num`を`2`に設定します。
+その他のデバイスは実際の接続のピン通りに設定をするだけです。
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/2.png)
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/3.png)
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/4.png)
+設定が完了したら忘れずにボードへアップロードをしましょう。
 ### フライトシミュレーターとデバイスのマッピング
+最初に出力マッピングから作成します。必要な出力は以下の２つのマッピングです。
+- Active：現在のアクティブな無線周波数を表示する7セグメントLED
+- Standby：スタンバイ無線周波数を表示する7セグメントLED
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/101.png)
+**Activeの設定**
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/102.png)
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/103.png)
+**Standbyの設定**
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/104.png)
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/105.png)
+
+次に入力マッピングを作成します。必要な入力は以下の２つのマッピングです。
+- Freq：スタンバイ無線周波数を変更するロータリーエンコーダー
+- Swap：スタンバイとアクティブの無線周波数を入れ替えるボタン
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/106.png)
+**Freqの設定**
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/107.png)
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/108.png)
+**Swapの設定**
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/109.png)
 
 # 実行
-ではいつもどおりMSFS2020を起動後にMobiFlight Connectorの`Run`ボタンで接続してフリーフライトで試してみましょう。
+1. MSFS2020を起動します。
+1. すべてのマッピングのActiveにチェックが入っていることを確認し、MobiFlight Connectorの`Run`ボタンをクリックして接続を開始します。
+![](/images/mobiflight-msfs2020-build-controller/radio-panel/201.png)
+1. MSFS2020で適当なフリーフライトを開始します。
+1. 実際に作成したコントローラーとMSFS2020内の無線パネルが連動して動作することを確認します。
+
 https://www.youtube.com/watch?v=y3pY7OdbyVE
 
 # まとめ
-というわけで今まで１つづつ試してきた要素をまとめて１機能として実装してみました！
-実際に作ってみて以下のような改善点を感じました。
+前半で１つずつ習得してきた要素を組み合わせて１つの機能として実装してみました！
+このように作成した１機能ごとのコントローラーを並べることでホームコックピットを構成していきます。
+次はオートパイロットのパネルを作ろうかなと思っています。
+
 ### 改善点
+今回、実際に作ってみて以下のような改善点を感じました。
 - 周波数変更のノブがkHzノブしか無い【致命的】
   MHz変更できないと意味ないやんけ...
   本物はノブが２重になっていてMHzとkHzを変更できるようなちょっと複雑な機構なので今後はそれをやってみたいと思います。
@@ -85,10 +127,3 @@ https://www.youtube.com/watch?v=y3pY7OdbyVE
   もっと軽いものを選ぶか、パネルに取り付けることができるタクトスイッチがあればそれにすると良いでしょう。
 - 本物の航空機の配置とは違う
   これは一長一短ですね。リアルな配置では無いと言えばネガティブですが、自分の好きな配置やスペースに合わせて作れるという点では利点になると思います。
-
-
-次はオートパイロットのパネルを作ろうかなと思っています。
-
-
-
-
