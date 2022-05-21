@@ -1,0 +1,25 @@
+{
+  "filters": {
+    "allowlist": {
+      "allow": [
+        ":::"
+      ]
+    }
+  },
+  "rules": {
+    "preset-ja-spacing": true,
+    "preset-ja-technical-writing": {
+      "sentence-length": {
+        "max":150
+      },
+      "ja-no-weak-phrase": false,
+      "no-exclamation-question-mark": {
+        "allowHalfWidthExclamation": true,
+        "allowFullWidthExclamation": true,
+        "allowHalfWidthQuestion": true,
+        "allowFullWidthQuestion": true
+      },
+      "no-doubled-joshi": false
+    }
+  }
+}

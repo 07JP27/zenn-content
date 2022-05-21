@@ -6,7 +6,7 @@ topics: ["cosmosdb", "azurefunctions"]
 published: true
 ---
 
-Azure Cosmos DBとAzure Functionsを連携させるにはバインディングなどがありますが、そこそこ規模があるような実際のプロジェクトで使えそうなRepositoryパターンでDIする形でやってみます。
+Azure Cosmos DBとAzure Functionsを連携させるにはバインディングなどがありますが、そこそこ規模があるような実際のプロジェクトで使えるようにRepositoryパターンでDIする方式を試してみます。
 
 # 完全版のソリューション
 今回作成した実行可能なサンプルはここに置いています。
