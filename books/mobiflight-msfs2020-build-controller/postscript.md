@@ -10,6 +10,6 @@ title: "あとがき"
 
 # あとがき
 ここまでお読みいただきありがとうございました。
-誤字脱字や間違いなどがあれば[筆者Twitter](https://twitter.com/07JP27)へお知らせいただけますと幸いです。
+誤字脱字や間違いなどがあれば[筆者Twitter](https://twitter.com/07JP27)へお知らせいただくか、本書の[GitHubリポジトリ](https://github.com/07JP27/zenn-content/tree/main/books/mobiflight-msfs2020-build-controller)へPull Requestをいただけますと幸いです。
 
 それではよいホームコックピットライフを！
