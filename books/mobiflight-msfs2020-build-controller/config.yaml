@@ -1,5 +1,5 @@
 title: "ArduinoとMobiFlightで作る! Microsoft Flight Simulator ホームコックピット"
-summary: "狭い空間にところ狭しと並べられたトグルスイッチやノブ、夜にはオレンジ色のバックライトに照らされる航空機のコックピットはガジェット好きであれば誰しも一度は憧れたことがあるのではないでしょうか。　本書ではフライトシミュレーターの代表格として取り上げられるMicrosoft Flight Simulator 2020用のコントローラーをArduinoとMobiFlightを使用して作成します。　自分だけのホームコックピットを作り上げましょう！"
+summary: "狭い空間にところ狭しと並べられたトグルスイッチやノブ、夜にはオレンジ色のバックライトに照らされる航空機のコックピットはガジェット好きであれば誰しも一度は憧れたことがあるのではないでしょうか。本書ではMicrosoft Flight Simulator 2020用のコントローラーをArduinoとMobiFlightを使用して自作する方法を解説します。自分だけのホームコックピットを作り上げましょう！"
 topics: [arduino, 電子工作]
 published: false
 price: 0 # 有料の場合200〜5000
