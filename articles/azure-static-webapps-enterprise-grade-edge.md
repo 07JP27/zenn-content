@@ -35,11 +35,11 @@ published: true
 - 本機能を有効にすると、追加のコストが発生します（アプリ当たり月額$17.52）
 
 ## 本機能を有効にする方法
-本機能を有効にする方法をとても簡単でAzure Portalで対象のAzure Static Web Appsを選択して`エンタープライズグレードのエッジ`メニューから`エンタープライズレベルのエッジを有効にする`にチェックを入れて`保存`をクリックするだけです。有効化処理には約20～30分かかる場合がありますが、アプリのダウンタイムは発生しません。
+本機能を有効にする方法はとても簡単でAzure Portalで対象のAzure Static Web Appsを選択して`エンタープライズグレードのエッジ`メニューから`エンタープライズレベルのエッジを有効にする`にチェックを入れて`保存`をクリックするだけです。有効化処理には約20～30分かかる場合がありますが、アプリのダウンタイムは発生しません。
 ![](/images/azure-static-webapps-enterprise-grade-edge/how-to-enable.png)
 
 # 検証
-Nuxt.jsで作成したSWAサイトを[WebPageTest](https://www.webpagetest.org/)を使用して同一条件で複数の場所からアクセスをしてみます。
+Nuxt.jsで作成したAzure Static Web Appsのサイトに[WebPageTest](https://www.webpagetest.org/)を使用して同一条件で複数の場所からアクセスをしてみます。
 
 ## アメリカ/バージニアから
 ![](/images/azure-static-webapps-enterprise-grade-edge/speedtest/usa.jpg)
