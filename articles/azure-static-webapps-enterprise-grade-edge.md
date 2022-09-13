@@ -42,13 +42,13 @@ published: true
 Nuxt.jsで作成したSWAサイトを[WebPageTest](https://www.webpagetest.org/)を使用して同一条件で複数の場所からアクセスをしてみます。
 
 ## アメリカ/バージニアから
-![](/images/azure-static-webapps-enterprise-grade-edge/speedtest/usa.png)
+![](/images/azure-static-webapps-enterprise-grade-edge/speedtest/usa.jpg)
 
 ## カナダ/トロントから
-![](/images/azure-static-webapps-enterprise-grade-edge/speedtest/canada.png)
+![](/images/azure-static-webapps-enterprise-grade-edge/speedtest/canada.jpg)
 
 ## 日本/東京から
-![](/images/azure-static-webapps-enterprise-grade-edge/speedtest/japan.png)
+![](/images/azure-static-webapps-enterprise-grade-edge/speedtest/japan.jpg)
 
 
 # 結果と考察
