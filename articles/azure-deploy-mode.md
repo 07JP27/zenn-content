@@ -12,7 +12,7 @@ Azureでリソースをデプロイする際はAzure PortalやAzure CLIなど、
 ![](/images/azure-deploy-mode/arm.png)
 [引用元](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/management/overview)
 
-このときのオプションに**デプロイモード**という以下の２つのオプションがあります。
+このとき**デプロイモード**というパラメーターが用意されており、以下の２つの選択肢があります。
 - 増分モード（Incremental mode）
 - 完全モード（Complete mode）
 
