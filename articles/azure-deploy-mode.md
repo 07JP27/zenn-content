@@ -23,6 +23,7 @@ Azureでリソースをデプロイする際はAzure PortalやAzure CLIなど、
 ## 増分モード（Incremental mode）
 増分モードは、一般的にイメージしやすい挙動です。リソースグループには存在するが、テンプレートに定義されていないリソースは**変更せず、そのまま残します**。 名前の通り追加のみを行うモードです。
 テンプレートに定義されたリソースは、リソースグループに追加され、変更されているものは**プロパティが再適用**されます。
+**増分モードは、デプロイモードの規定値**であり、特にモードを意識せずにデプロイを行なっている場合は増分モードになります。
 ![](/images/azure-deploy-mode/incremental.png)
 
 :::message
@@ -32,9 +33,10 @@ Azureでリソースをデプロイする際はAzure PortalやAzure CLIなど、
 :::
 
 ## 完全モード（Complete mode）
-完全モードは、リソースグループには存在するがテンプレートに定義されていないリソースを**削除します**。
-Azure Portalでは完全モードでのデプロイはサポートされていません。
-また、デプロイのスコープをサブスクリプションに設定する「[サブスクリプションレベルのデプロイ](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/templates/deploy-to-subscription?tabs=azure-cli)」での完全モードはサポートされていません。
+完全モードは、リソースグループには存在するがテンプレートに定義されていないリソースを**削除します**。完全モードはデプロイ時に明示的に指定する必要があります。
+なお、完全モードでの以下のデプロイはサポートされていません。
+- Azure Portalを使用したデプロイ
+- デプロイのスコープをサブスクリプションに設定する「[サブスクリプションレベルのデプロイ](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/templates/deploy-to-subscription?tabs=azure-cli)」
 ![](/images/azure-deploy-mode/complete.png)
 
 # 完全モードは何のためにあるのか？
