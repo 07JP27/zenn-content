@@ -161,5 +161,9 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 [REST APIのReference](https://learn.microsoft.com/ja-jp/rest/api/resources/deployments/create-or-update-at-scope?tabs=HTTP#response)
 :::
 
+# 公式ドキュメント
+https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/templates/deployment-modes
+
+
 [^1]: ある操作を1回行っても複数回行っても結果が同じであることをいう概念。
 https://ja.wikipedia.org/wiki/%E5%86%AA%E7%AD%89
