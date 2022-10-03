@@ -33,7 +33,7 @@ Azureでリソースをデプロイする際はAzure PortalやAzure CLIなど、
 :::
 
 ## 完全モード（Complete mode）
-完全モードは、リソースグループには存在するがテンプレートに定義されていないリソースを**削除します**。完全モードはデプロイ時に明示的に指定する必要があります。
+完全モードは、リソースグループには存在するがテンプレートに定義されていないリソースを**削除します**。完全モードを使用する場合はデプロイ時に明示的に指定する必要があります。
 なお、完全モードでの以下のデプロイはサポートされていません。
 - Azure Portalを使用したデプロイ
 - デプロイのスコープをサブスクリプションに設定する「[サブスクリプションレベルのデプロイ](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/templates/deploy-to-subscription?tabs=azure-cli)」
