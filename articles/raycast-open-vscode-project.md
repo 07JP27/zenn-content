@@ -5,6 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["mac","raycast", "vscode"]
 published: true
 ---
+
 # Raycastとは
 Raycastはmacで使用できるランチャーツールです。
 ランチャーというと標準だとSpotlight、競合だとAlfredがありますが、RaycastはSpotlightよりも高機能かつAlfredだと有料版でしか使えない機能も無料だったり、と控えめに言っても最高なツールです。
