@@ -14,7 +14,7 @@ https://qiita.com/advent-calendar/2022/azure
 # はじめに
 こんにちは、ガジェットとクラウドが好きな者です。
 今回は数年前から頭の中で構想していたスマートホームデバイスを使った「おうちデジタルツイン」をAdvent Calendarに合わせて実装してみました。
-私は職業柄Azureをよく使用します。AzureでデジタルツインソリューションといえばAzure Digital Twinsというそのままのサービスがありますが、今回はそれだけではなくデータの吸い上げからデジタルツインを閲覧するUI層までエンドツーエンドでAzureを使って実装します。
+私は職業柄Azureをよく使用します。AzureでデジタルツインソリューションといえばAzure Digital Twinsというそのままの名前のサービスがありますが、今回はそれだけではなくデータの吸い上げからデジタルツインを閲覧するUI層までエンドツーエンドでAzureを使って実装していきます。
 ## 作ったもの
 
 ## この記事は何であって何ではないか
@@ -26,14 +26,13 @@ https://qiita.com/advent-calendar/2022/azure
 
 # アーキテクチャ
 全体的なデータや操作の流れはこのような形です。（細かくてすみません、拡大してごらんください・・・）
-画像には主にセンサーデータのトランザクショナルなデータの流れと３Dモデルのインポートなどスタティックなデータの流れが記載されています。
+画像には主にセンサーデータのトランザクショナルなデータの流れと３Dモデルデータなどのスタティックなデータの流れが記載されています。
 ![](/images/home-digitaltwin-on-azure/architecture.png)
 # 各要素のポイント
 ## エッジデバイス/ゲートウェイ
-家庭用IoTデバイスの雄、SwitchBot
-
-SwitchBotにはWeb APIが用意されていて2022年10月にVer1.1が公開されています。
-このAPIは今回利用するようなデバイスの情報取得するケースだけでなく、プラグをOn/Offするなどデバイスの操作も可能です。
+スマートホームデバイスの雄ことSwitchBot。スマートフォンからボタンを押したり温室度を計ってくれたり、加湿をしてくれたりなど様々なスマートホーム化が可能です。
+そして、SwitchBotにはWeb APIが用意されていて2022年10月にVer1.1が公開されています。今回はこのAPIを利用してデバイスの情報を取得しています。
+なお、このAPIは今回利用するようなデバイスの情報取得するケースだけでなく、プラグをOn/Offするなどデバイスの操作(コマンド)も可能です。
 APIの利用方法について以下のリポジトリが公式ドキュメントになっています。
 https://github.com/OpenWonderLabs/SwitchBotAPI
 
@@ -49,12 +48,18 @@ Azure Digital Twinsの構築の流れは
 ### データイングレス
 
 ## 3Dモデリング
-Blenderで3Dモデルをモデリングします。数年ぶりにBlenderを触ったので勉強し直しながらモデリングしましたが、[こちらのYoutube動画シリーズ](https://www.youtube.com/playlist?list=PLbZhON61ML0O75hh8ieSZv95IOYpqSHY_)がわかりやすく学習コンテンツとしてお勧めでした。モデリングが終わったらファイルをエクスポートしますが、後述の3D Scene studioで使用できるモデル形式はGLTFまたは.GLB形式のため、今回はGLB形式でエクスポートします。BlenderはデフォルトでGLB形式でエクスポートできるようになっています。
+Blenderでクライアントアプリで表示する3Dモデルをモデリングします。数年ぶりにBlenderを触ったので勉強し直しながらモデリングしましたが、[こちらのYoutube動画シリーズ](https://www.youtube.com/playlist?list=PLbZhON61ML0O75hh8ieSZv95IOYpqSHY_)がわかりやすく学習コンテンツとしてお勧めでした。
+モデリングが終わったらファイルをエクスポートしますが、後述の3D Scene studioで使用できるモデル形式はGLTFまたは.GLB形式のため、今回はGLB形式でエクスポートします。BlenderはデフォルトでGLB形式でエクスポートできるようになっています。
+![](/images/home-digitaltwin-on-azure/blender-modeling.png)
 
 ## クライアントアプリケーション
 ### 3D Scene studio（まだプレビュー）
-埋め込み
-### アプリの開発
+今回の肝になるツールと言っても過言ではない3D Scene studioですが、最近リリースされたツールでまだプレビュー段階です。
+Blenderで作成した3DモデルをアップロードしてAzure Digital Twinのプロパティと紐付けをしていきます。方法については[このチュートリアル](https://learn.microsoft.com/ja-jp/azure/digital-twins/quickstart-3d-scenes-studio)を試せば大体わかります。
+
+3D Sceneが完成したらそれをWebアプリに埋め込みます。3D Scene studioはReactのコンポーネントが提供されているのでそれを使用してWebアプリを作成します。
+### Webアプリの開発
+
 ### 認証設定
 Easy Auth
 
