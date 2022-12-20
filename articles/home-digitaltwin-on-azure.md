@@ -4,6 +4,7 @@ emoji: "🏡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "iot", "digitaltwin", "switchbot"]
 published: false
+published_at: 2050-12-25 06:00 
 ---
 
 この記事は Azure Advent Calendar 2022 の 25日目の記事です。
@@ -15,6 +16,7 @@ https://qiita.com/advent-calendar/2022/azure
 こんにちは、ガジェットとクラウドが好きな者です。
 今回は数年前から頭の中で構想していたスマートホームデバイスを使った「おうちデジタルツイン」をAdvent Calendarに合わせて実装してみました。
 私は職業柄Azureをよく使用します。AzureでデジタルツインソリューションといえばAzure Digital Twinsというそのままの名前のサービスがありますが、今回はそれだけではなくデータの吸い上げからデジタルツインを閲覧するUI層までエンドツーエンドでAzureを使って実装していきます。
+
 ## 作ったもの
 
 ## この記事は何であって何ではないか
@@ -57,12 +59,14 @@ Blenderでクライアントアプリで表示する3Dモデルをモデリン�
 今回の肝になるツールと言っても過言ではない3D Scene studioですが、最近リリースされたツールでまだプレビュー段階です。
 Blenderで作成した3DモデルをアップロードしてAzure Digital Twinのプロパティと紐付けをしていきます。方法については[このチュートリアル](https://learn.microsoft.com/ja-jp/azure/digital-twins/quickstart-3d-scenes-studio)を試せば大体わかります。
 
+3D Scene studioは3Dシーンの構築だけでなくビューアーモードも用意されているので、今回はこれを簡易的なクライアントとして使用します。詳しくは後述しますが、この可視化した3DシーンをReactアプリとして独自のアプリに埋め込むことができます。
 
 # 今回は実装しなかったが、今後使えそうな機能
 ## 3D Scene studioシーンの独自アプリへの埋め込み
 3D Scene studioはReactのコンポーネントが提供されているのでそれを使用してWebアプリを作成することが可能です。
-しかし、今回はプレビューということもあり制約などが多く、要件としては3D Scene studioのViewモードで足りるため独自アプリへの埋め込みは実装しませんでした。
-ライブラリは以下のリポジトリで公開されており、実際の埋め込み方法はWikiに記載されています。（が、Azure ADのアプリ登録が必要だったり、お世辞にも簡単&わかりやすいとは言えません・・・GAに期待！）
+しかし、今回はプレビューということもあり制約などが多く、要件としては3D Scene studioのViewモードで足りるため独自アプリへの埋め込みは実装しませんでした。Webアプリでコントロールパネルを独自に作成してその操作のフィードバックを3Dシーンで確認するまで最終的にはいきたいです・・・！
+
+なお、ライブラリは以下のリポジトリで公開されており、実際の埋め込み方法はWikiに記載されています。（が、Azure ADのアプリ登録が必要だったり、お世辞にも簡単&わかりやすいとは言えません・・・GAに期待！）
 https://github.com/microsoft/iot-cardboard-js/wiki/Embedding-3D-Scenes
 
 ## イベントルートの利用
@@ -113,6 +117,8 @@ https://techcommunity.microsoft.com/t5/internet-of-things-blog/model-lifecycle-m
 
 ## アプリ常駐化
 Amazon Echo Show 15のようなデバイスをリビングルームに設置してそこにアプリを常駐させておくことで、一番滞在時間の長い部屋で家全体の状態を常に把握しながら集中操作をできることが最終的な理想形です。
+![](/images/home-digitaltwin-on-azure/echo-show.png)
+画像はイメージです。[引用元](https://www.amazon.co.jp/Echo-Show-15-%E3%82%A8%E3%82%B3%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%BC15-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4-with-Alexa/dp/B08MQNJC9Z)
 
 # コストは？
 
