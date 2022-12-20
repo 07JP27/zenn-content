@@ -48,6 +48,18 @@ Azure Digital Twinsの構築の流れは
 ツインはオブジェクト指向プログラミングで言うインスタンスのようなもので、抽象化されたモデルから実在のデバイスのツインとして具現化したものです。
 ツインをリレーションシップでつなげることでツイングラフを構築することができます。
 ### データイングレス
+SwitchBot APIとAzure Digital Twinsの通信はAzure Functionsを使って行います。Azure FunctionsはAzureのサーバーレス環境で、イベントドリブンな実行が可能です。１０分に一回処理を実行することができるので今回のようなケースにはちょうどいいです。実行した回数だけ従量課金というのもコストメリットがあっていいですね。
+Azure FunctionsからAzure Digital Twinへの通信はマネージドIDを使用して認証します。Azureサービス間であればマネージドIDを使用することで認証情報などを管理しなくて良くなるので開発者はコーディングに集中でき、メンテナンスフリーというのも嬉しいポイントです。。
+
+フルのコードはこちらに載せておきますが、ADTへのデータの投入は以下のような形になります。
+```dotnet:InjestToADT
+var cred = new DefaultAzureCredential();
+var client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred);
+var updateTwinData = new Azure.JsonPatchDocument();
+updateTwinData.AppendReplace("/LackWater", true);
+updateTwinData.AppendReplace("/PowerOn", true);
+await client.UpdateDigitalTwinAsync("Humidifier1", updateTwinData);
+```
 
 ## 3Dモデリング
 Blenderでクライアントアプリで表示する3Dモデルをモデリングします。数年ぶりにBlenderを触ったので勉強し直しながらモデリングしましたが、[こちらのYoutube動画シリーズ](https://www.youtube.com/playlist?list=PLbZhON61ML0O75hh8ieSZv95IOYpqSHY_)がわかりやすく学習コンテンツとしてお勧めでした。
@@ -56,8 +68,8 @@ Blenderでクライアントアプリで表示する3Dモデルをモデリン�
 
 ## クライアントアプリケーション
 ### 3D Scene studio（まだプレビュー）
-今回の肝になるツールと言っても過言ではない3D Scene studioですが、最近リリースされたツールでまだプレビュー段階です。
-Blenderで作成した3DモデルをアップロードしてAzure Digital Twinのプロパティと紐付けをしていきます。方法については[このチュートリアル](https://learn.microsoft.com/ja-jp/azure/digital-twins/quickstart-3d-scenes-studio)を試せば大体わかります。
+今回の肝と言っても過言ではない3D Scene studioですが、最近リリースされたツールでまだプレビュー段階です。
+Blenderで作成した3DモデルをアップロードしてAzure Digital Twinのツイン/プロパティと3Dモデルの要素とを紐付けをしていきます。方法については[このチュートリアル](https://learn.microsoft.com/ja-jp/azure/digital-twins/quickstart-3d-scenes-studio)を試せば大体わかります。
 
 3D Scene studioは3Dシーンの構築だけでなくビューアーモードも用意されているので、今回はこれを簡易的なクライアントとして使用します。詳しくは後述しますが、この可視化した3DシーンをReactアプリとして独自のアプリに埋め込むことができます。
 
@@ -96,27 +108,29 @@ https://learn.microsoft.com/ja-jp/azure/digital-twins/how-to-use-data-history
 ## SwitchBot Webhook の利用
 SwitchBotにはAPI V1.1からWebhookが追加されました。これを使えばリアクティブにデバイスの状態変化を検知できます。
 しかし、今回は対応していないデバイスが多かったこと、セキュリティ的に不安があったことからWebhookではなくポーリング方式としました。Webhookが整備されてくればそちらを使いたいと思います。
-なぜWebhookの採用に至らなかったのはか以下のスクラップで記載しています。
+なぜWebhookの採用に至らなかったのか、詳細は以下のスクラップに記載しています。
 https://zenn.dev/07jp27/scraps/4f2ff5aceff79d
 
 ## モデルファイルのCI/CD
-モデルファイルは現実世界の事物を抽象化したものであり、現実世界の「それ」が変わったり更新されるとモデルも更新されます。DTDLのモデルのスキーマを見るとわかりますが、モデルファイル自身のバージョニングもできるようになっています。Azure DevOpsやGitHubのpipelineを使用してバージョンが更新されたらcontinuous deployment(継続的なデプロイ)を行うようにしてCI/CDサイクルを実現することでより堅牢なモデルファイル管理ができると感じています。モデルファイルのCI/CDについては以下のブログで触れられています。
+モデルファイルは現実世界の事物を抽象化したものであり、現実世界の「それ」が変わったり更新されるとモデルも更新する必要があります。モデル定義言語のDTDLのスキーマを見るとわかりますが、モデルファイル自身のバージョニングもできるようになっています。Azure DevOpsやGitHubのpipelineを使用してコード管理を行い、更新されたらcontinuous deployment(継続的なデプロイ)を行うようにしてCI/CDサイクルを実現することでより堅牢なモデルファイル管理ができると感じています。モデルファイルのCI/CDについては以下のブログで触れられています。
 https://techcommunity.microsoft.com/t5/internet-of-things-blog/model-lifecycle-management-for-azure-digital-twins/ba-p/2305290
 
 # 今後の展望（拡張）
 今回はPoCの意味もあり小さいスコープで実装をしてみましたが、十分実用的に使えそうという感想を持ちました。
 今後実際に活用していくにあたって、以下のような拡張によってレベルアップを図りたいと思います。
+
 ## 家１軒まるごとデジタルツイン化 & デバイス操作
-今回は1部屋だけのデジタルツインを作成しましたが、今回実装したものを元に、お家まるごと１軒分のデジタルツインを作成することも可能です。
+今回は1部屋3デバイスだけのデジタルツインを作成しましたが、今回実装したものを拡張しておうちまるごと１軒分のデジタルツインを作成することももちろん可能です。
 また、SwitchBotのAPIを使用してデバイスの操作も可能ですので、デジタルツインで家の状態を把握しながらデバイスの集中管理を行うこともできるでしょう。
-将来的にはセントラルコントロールボードを作って、家１軒分のデバイスを管理するようなソリューションを作りたいと思っています。
+将来的には集中管理ダッシュボードのようなものを作って、家１軒分のデバイスを管理するようなソリューションを作りたいと思っています。
+
 
 ## 他のメーカーのIoTデバイス
-今回は私が所有している中で最も種類が多いSwitchBotを対象にしましたが、電球などはPhilips hueを使用していたりと、様々なデバイスが存在しています。
-それらのメーカーのIoTデバイスもすべて含めたおうちデジタルツインを作成することで、家の状態の正確な把握と細部までの操作性を実現したいです。
+今回は私が所有している中で最も種類が多いSwitchBotを対象にしましたが、私は電球などはPhilips hueを使用していたり、様々なデバイスが存在しています。それらのメーカーのIoTデバイスもすべて含めたおうちデジタルツインを作成することで、家の状態の正確な把握と細部までの操作性を実現したいです。
 
 ## アプリ常駐化
-Amazon Echo Show 15のようなデバイスをリビングルームに設置してそこにアプリを常駐させておくことで、一番滞在時間の長い部屋で家全体の状態を常に把握しながら集中操作をできることが最終的な理想形です。
+Amazon Echo Show 15のようなデバイスをリビングルームに設置してそこにアプリを常駐させておくことで集中管理ができます。
+一番滞在時間の長い部屋で家全体の状態を把握しながら集中操作をできることができれば、今から行こうとしている部屋の暖房をつけておくなど便利な使い方ができるでしょう。~~あと単純に見た目がかっこいい。~~
 ![](/images/home-digitaltwin-on-azure/echo-show.png)
 画像はイメージです。[引用元](https://www.amazon.co.jp/Echo-Show-15-%E3%82%A8%E3%82%B3%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%BC15-%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4-with-Alexa/dp/B08MQNJC9Z)
 
