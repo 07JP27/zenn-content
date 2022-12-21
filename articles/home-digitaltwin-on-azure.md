@@ -7,7 +7,7 @@ published: false
 published_at: 2050-12-25 06:00 
 ---
 
-この記事は Azure Advent Calendar 2022 の 25日目の記事です。
+この記事はAzure Advent Calendar 2022 25日目の記事です。
 https://qiita.com/advent-calendar/2022/azure
 
 
@@ -20,14 +20,18 @@ https://qiita.com/advent-calendar/2022/azure
 ## 作ったもの
 
 ## この記事は何であって何ではないか
+<!-- textlint-disable ja-technical-writing/no-mix-dearu-desumasu -->
+<!-- textlint-disable ja-technical-writing/ja-no-mixed-period -->
 である
 - Azureの各種サービスを使用して、個人レベルでもエンドツーエンドのデジタルツインソリューションが構築できます！という紹介
 
 ではない
 - 上記を構築するための手順やガイド（もしかしたら今後別途書くかも）
+<!-- textlint-enable ja-technical-writing/no-mix-dearu-desumasu -->
+<!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 
 # アーキテクチャ
-全体的なデータや操作の流れはこのような形です。（細かくてすみません、拡大してごらんください・・・）
+全体的なデータや操作の流れはこのような形です。（細かくてすみません、拡大してごらんください...）
 画像には主にセンサーデータのトランザクショナルなデータの流れと３Dモデルデータなどのスタティックなデータの流れが記載されています。
 ![](/images/home-digitaltwin-on-azure/architecture.png)
 # 各要素のポイント
@@ -46,10 +50,10 @@ Azure Digital Twinsの構築の流れは
 モデルはオブジェクト指向プログラミングで言うクラスのようなもので、プロパティなど定義したデバイスなどのデジタルツイン化の対象を抽象したテンプレートのようなものです。
 ### ツイン/ツイングラフ作成
 ツインはオブジェクト指向プログラミングで言うインスタンスのようなもので、抽象化されたモデルから実在のデバイスのツインとして具現化したものです。
-ツインをリレーションシップでつなげることでツイングラフを構築することができます。
+ツインをリレーションシップでつなげることでツイングラフを構築できます。
 ### データイングレス
-SwitchBot APIとAzure Digital Twinsの通信はAzure Functionsを使って行います。Azure FunctionsはAzureのサーバーレス環境で、イベントドリブンな実行が可能です。１０分に一回処理を実行することができるので今回のようなケースにはちょうどいいです。実行した回数だけ従量課金というのもコストメリットがあっていいですね。
-Azure FunctionsからAzure Digital Twinへの通信はマネージドIDを使用して認証します。Azureサービス間であればマネージドIDを使用することで認証情報などを管理しなくて良くなるので開発者はコーディングに集中でき、メンテナンスフリーというのも嬉しいポイントです。。
+SwitchBot APIとAzure Digital Twinsの通信はAzure Functionsを使って行います。Azure FunctionsはAzureのサーバーレス環境で、イベントドリブンな実行が可能です。10分に1回処理を実行などのタイマー実行もできるので今回のようなケースにはちょうどいいです。実行した回数だけ従量課金というのもコストメリットがあっていいですね。
+Azure FunctionsからAzure Digital Twinへの通信はマネージドIDを使用して認証します。Azureサービス間であればマネージドIDを使用することで認証情報などを管理しなくて良くなるので開発者はコーディングに集中でき、メンテナンスフリーというのも嬉しいポイントです。
 
 フルのコードはこちらに載せておきますが、ADTへのデータの投入は以下のような形になります。
 ```dotnet:InjestToADT
@@ -75,14 +79,14 @@ Blenderで作成した3DモデルをアップロードしてAzure Digital Twin�
 
 # 今回は実装しなかったが、今後使えそうな機能
 ## 3D Scene studioシーンの独自アプリへの埋め込み
-3D Scene studioはReactのコンポーネントが提供されているのでそれを使用してWebアプリを作成することが可能です。
-しかし、今回はプレビューということもあり制約などが多く、要件としては3D Scene studioのViewモードで足りるため独自アプリへの埋め込みは実装しませんでした。Webアプリでコントロールパネルを独自に作成してその操作のフィードバックを3Dシーンで確認するまで最終的にはいきたいです・・・！
+3D Scene studioはReactのコンポーネントが提供されているのでそれを使用してWebアプリを作成可能です。
+しかし、今回はプレビューということもあり制約などが多く、要件としては3D Scene studioのViewモードで足りるため独自アプリへの埋め込みは実装しませんでした。Webアプリでコントロールパネルを独自に作成してその操作のフィードバックを3Dシーンで確認するまで最終的にはいきたいです...！
 
-なお、ライブラリは以下のリポジトリで公開されており、実際の埋め込み方法はWikiに記載されています。（が、Azure ADのアプリ登録が必要だったり、お世辞にも簡単&わかりやすいとは言えません・・・GAに期待！）
+なお、ライブラリは以下のリポジトリで公開されており、実際の埋め込み方法はWikiに記載されています。（が、Azure ADのアプリ登録が必要だったり、お世辞にも簡単&わかりやすいとは言えません...GAに期待！）
 https://github.com/microsoft/iot-cardboard-js/wiki/Embedding-3D-Scenes
 
 ## イベントルートの利用
-イベントルートを使用するとツインの更新を別のツインに対して通知することができます。
+イベントルートを使用するとツインの更新を別のツインに対して通知できます。
 例えば温湿度計ツインのプロパティが更新された際に、その温湿度計が存在している部屋ツインに対して温湿度を複製し、部屋全体の温湿度として扱うことができるようになります。
 これにより現実世界をより正確に反映したモデルが実現できます。
 ![](/images/home-digitaltwin-on-azure/event-route.png)
@@ -99,7 +103,7 @@ Azure Digital Twins(のツイングラフ)は最新のプロパティを保持�
 [引用元](https://learn.microsoft.com/ja-jp/azure/digital-twins/concepts-data-history)
 https://learn.microsoft.com/ja-jp/azure/digital-twins/concepts-data-history
 
-この方法を使用すると時系列データがAzure Data Explorerに保存されるので、そこからKustoクエリを使用して時系列データを取得することができます。下の画像はAzure Portal上でクエリをかけている様子ですが、[Azure Data Explorer REST API](https://learn.microsoft.com/ja-jp/azure/data-explorer/kusto/api/rest/)を使用して自分のアプリでデータを使用することも可能です。
+この方法を使用すると時系列データがAzure Data Explorerに保存されるので、そこからKustoクエリを使用して時系列データを取得できます。下の画像はAzure Portal上でクエリをかけている様子ですが、[Azure Data Explorer REST API](https://learn.microsoft.com/ja-jp/azure/data-explorer/kusto/api/rest/)を使用して自分のアプリでデータ使用も可能です。
 ![](/images/home-digitaltwin-on-azure/data-history-run-query-2.png)
 [引用元](https://learn.microsoft.com/ja-jp/azure/digital-twins/how-to-use-data-history)
 
@@ -112,7 +116,10 @@ SwitchBotにはAPI V1.1からWebhookが追加されました。これを使え�
 https://zenn.dev/07jp27/scraps/4f2ff5aceff79d
 
 ## モデルファイルのCI/CD
-モデルファイルは現実世界の事物を抽象化したものであり、現実世界の「それ」が変わったり更新されるとモデルも更新する必要があります。モデル定義言語のDTDLのスキーマを見るとわかりますが、モデルファイル自身のバージョニングもできるようになっています。Azure DevOpsやGitHubのpipelineを使用してコード管理を行い、更新されたらcontinuous deployment(継続的なデプロイ)を行うようにしてCI/CDサイクルを実現することでより堅牢なモデルファイル管理ができると感じています。モデルファイルのCI/CDについては以下のブログで触れられています。
+モデルファイルは現実世界の事物を抽象化したものであり、現実世界の「それ」が変わったり更新されるとモデルも更新する必要があります。モデル定義言語のDTDLのスキーマを見るとわかりますが、モデルファイル自身のバージョニングもできるようになっています。
+Azure DevOpsやGitHubのpipelineを使用してコード管理をし、更新されたらcontinuous deployment(継続的なデプロイ)をするようにしてCI/CDサイクルを実現することでより堅牢なモデルファイル管理ができると感じています。
+
+モデルファイルのCI/CDについては以下のブログで触れられています。
 https://techcommunity.microsoft.com/t5/internet-of-things-blog/model-lifecycle-management-for-azure-digital-twins/ba-p/2305290
 
 # 今後の展望（拡張）
