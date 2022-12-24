@@ -4,7 +4,6 @@ emoji: "🏡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "iot", "digitaltwin", "switchbot", "azuredigitaltwins"]
 published: true
-published_at: 2050-12-25 06:00 
 ---
 
 この記事はMicrosoft Azure Tech Advent Calendar 2022 25日目の記事です。
