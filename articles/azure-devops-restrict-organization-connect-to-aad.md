@@ -1,5 +1,5 @@
 ---
-title: "Azure DevOps ServiceのOrganizationが会社のAADに自由に接続されるのを防ぐ方法"
+title: "Azure DevOps ServiceのOrganizationが組織のAADに自由に接続されないように制限する方法"
 emoji: "🔒"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'azuredevops']
