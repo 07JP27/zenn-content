@@ -15,7 +15,7 @@ Azure DevOps Service(以下Azure DevOps)は２種類の認証方法がありま�
 - Microsoft アカウント
     個人のMSアカウントを使用してログインする方法です。
 - Azure Active Directory(以下AAD)
-    会社のAADに接続して組織内のユーザーと連携する方法。
+    組織のAADに接続して組織内のユーザーと連携する方法。
 
 本記事は後者のAAD認証の方の話題になります。
 AAD認証を行う場合、Azure DevOpsのOrganizationを作成する際に、AADへ「接続」という処理を明示的/暗黙的に行います。
@@ -26,9 +26,9 @@ AAD認証を行う場合、Azure DevOpsのOrganizationを作成する際に、AA
 ちなみにAzure DevOpsは歴史的に見ればVisual Studio Team Foundation Serviceという製品名がリブランディングされたもので、名前の通りAzureではなくVisual Studioブランドの製品でした。なのでAzureのサービスのようで厳密には違うという微妙な立ち位置の製品になっており、ここら辺も紛らわしいポイントのように感じます。
 
 # 何が問題か
-既定ではAzure DevOpsにAADの組織アカウントでログインしてOrganizationの作成を行うと会社のAADにOrganizationが暗黙的に接続できます。
+既定ではAzure DevOpsにAADの組織アカウントでログインしてOrganizationの作成を行うと組織のAADにOrganizationが暗黙的に接続できます。
 これを許可しておくと自由に社員がOrganizationを作ることができるというメリットの一方、野良Organizationが無数に立ってガバナンス的に良くないという考え方もあると思います。
-その場合は、限られたユーザー（管理者）のみがAzure DevOps Organizationを会社のAADに接続できるようにする、という設定を行います。
+その場合は、限られたユーザー（管理者）のみがAzure DevOps Organizationを組織のAADに接続できるようにする、という設定を行います。
 
 # 接続を制限する方法
 ここでまた最初のドキュメント再掲です。
