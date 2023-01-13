@@ -6,14 +6,14 @@ topics: ['azure', 'iac', 'bicep']
 published: true
 ---
 
-PoCやテストでポチポチとGUIを使って色々試行錯誤して完成させたリソース構成を、IaC化して管理したい！というときはどうしていますか？
+PoCやテストフェーズでAzrure Poratal上で色々試行錯誤して完成させたリソース構成を、IaC化して管理したい！というときはどうしていますか？
 
 もちろんAzure Portalと睨めっこして、手書きでリソースを定義していくこともできます。しかし、すでに既存のリソースがあるのであればそれを最大限活用しましょう！
 あまり知られていないかもしれませんが、Azureのドキュメントには「Bicep へ移行する」というガイダンスがあります。
 https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/migrate
 
 このガイダンスは大きく分けて２つのシナリオで活用できる内容になっています。
-1. Azure Portal上で作成したリソースをIaC化する
+1. Azure Portal上で作成したリソースをBicep化する
 1. すでに存在するARMテンプレートをBicep化して綺麗にする
 
 本質的に上記の２つは **「ARMテンプレートをBicep化して可読性や管理のしやすさを向上させる」** という点で同じです。
