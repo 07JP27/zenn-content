@@ -9,7 +9,7 @@ published: true
 PoCやテストフェーズでAzrure Poratalを使って試行錯誤の末に完成させたリソース構成を「IaC化して管理したい！」というときはどうしていますか？
 
 もちろんAzure Portalと睨めっこして、手書きでリソースを定義していくこともできます。しかし、すでに既存のリソースがあるのであればそれを最大限活用しましょう！
-あまり知られていないかもしれませんが、Azureのドキュメントには「Bicep へ移行する」というガイダンスがあります。
+あまり知られていないかもしれませんが、Azureのドキュメントには「Bicepへ移行する」というガイダンスがあります。
 https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/migrate
 
 このガイダンスは大きく分けて２つのシナリオで活用できる内容になっています。

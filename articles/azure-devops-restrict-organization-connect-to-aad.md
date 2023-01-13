@@ -12,30 +12,30 @@ https://learn.microsoft.com/ja-jp/azure/devops/organizations/accounts/azure-ad-t
 
 # 【前提】Azure DevOps ServiceのOrganizationの仕組み
 Azure DevOps Service(以下Azure DevOps)は２種類の認証方法があります。
-- Microsoft アカウント
+- Microsoftアカウント
     個人のMSアカウントを使用してログインする方法です。
 - Azure Active Directory(以下AAD)
     組織のAADに接続して組織内のユーザーと連携する方法。
 
 本記事は後者のAAD認証の方の話題になります。
-AAD認証を行う場合、Azure DevOpsのOrganizationを作成する際に、AADへ「接続」という処理を明示的/暗黙的に行います。
+AAD認証する場合、Azure DevOpsのOrganizationを作成する際に、AADへ「接続」という処理を明示的/暗黙的に行います。
 - AADアカウントでログインした状態でOrganizationを作成すると暗黙的に接続されます。
-- Organization作成後に設定画面から明示的に接続・切断をすることも可能です。
+- Organization作成後に設定画面から明示的に接続・切断も可能です。
 ![](/images/azure-devops-restrict-organization-connect-to-aad/overview.png)
 
 ちなみにAzure DevOpsは歴史的に見ればVisual Studio Team Foundation Serviceという製品名がリブランディングされたもので、名前の通りAzureではなくVisual Studioブランドの製品でした。なのでAzureのサービスのようで厳密には違うという微妙な立ち位置の製品になっており、ここら辺も紛らわしいポイントのように感じます。
 
 # 何が問題か
-既定ではAzure DevOpsにAADの組織アカウントでログインしてOrganizationの作成を行うと組織のAADにOrganizationが暗黙的に接続できます。
+既定ではAzure DevOpsにAADの組織アカウントでログインしてOrganizationを作成すると組織のAADにOrganizationが暗黙的に接続できます。
 これを許可しておくと自由に社員がOrganizationを作ることができるというメリットの一方、野良Organizationが無数に立ってガバナンス的に良くないという考え方もあると思います。
-その場合は、限られたユーザー（管理者）のみがAzure DevOps Organizationを組織のAADに接続できるようにする、という設定を行います。
+その場合は、限られたユーザー（管理者）のみがAzure DevOps Organizationを組織のAADに接続できるようにする、という設定をします。
 
 # 接続を制限する方法
 ここでまた最初のドキュメント再掲です。
 https://learn.microsoft.com/ja-jp/azure/devops/organizations/accounts/azure-ad-tenant-policy-restrict-org-creation
 
 基本的にはドキュメント通りに進めればOKです。
-1. 作業者のアカウントをAzure PortalのAADで[Azure DevOps 管理者]のロールに割り当てる。
+1. 作業者のアカウントをAzure PortalのAADで[Azure DevOps管理者]のロールに割り当てる。
 1. Azure Dev OpsのOrganization settingsからAADのメニューで[Restricting organization creation]をオンにする。
 1. 例外的にOrganizationを接続できる許可リストを作成する。
 1. 制限されたユーザーに対するエラーメッセージを編集する。
