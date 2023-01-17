@@ -4,6 +4,7 @@ emoji: "👇"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['bicep', 'azure', 'iac']
 published: true
+publication_name: "microsoft"
 ---
 
 「Bicep使ってもパラメーターファイルはARMと同じく書きづらいJSONだしな～」そう思ってた時代が私にもありました。

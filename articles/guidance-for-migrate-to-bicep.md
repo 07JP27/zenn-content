@@ -4,6 +4,7 @@ emoji: "🦾"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'iac', 'bicep']
 published: true
+publication_name: "microsoft"
 ---
 
 PoCやテストフェーズでAzrure Poratalを使って試行錯誤の末に完成させたリソース構成を「IaC化して管理したい！」というときはどうしていますか？

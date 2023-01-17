@@ -4,6 +4,7 @@ emoji: "🔒"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'azuredevops']
 published: true
+publication_name: "microsoft"
 ---
 
 全ては以下のドキュメントにまとまっているのですが、検索しても一発で出てこないことが多いので未来の自分のためにも記しておきます。

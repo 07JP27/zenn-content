@@ -4,6 +4,7 @@ emoji: "🌍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["cosmosdb", "azurefunctions"]
 published: true
+publication_name: "microsoft"
 ---
 
 Azure Cosmos DBとAzure Functionsを連携させるにはバインディングなどがありますが、そこそこ規模があるような実際のプロジェクトで使えるようにRepositoryパターンでDIする方式を試してみます。

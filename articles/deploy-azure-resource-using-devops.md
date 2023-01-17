@@ -4,6 +4,7 @@ emoji: "⚙️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'azuredevops']
 published: true
+publication_name: "microsoft"
 ---
 
 Azure（Piplene）によるAzure（Reposからのデプロイ）のためのAzure（の記事）です。
