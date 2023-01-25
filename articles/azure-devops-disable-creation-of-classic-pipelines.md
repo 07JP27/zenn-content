@@ -18,11 +18,11 @@ https://devblogs.microsoft.com/devops/disable-creation-of-classic-pipelines/
 # クラシックパイプライン vs YAMLパイプライン
 Azure DevOpsのパイプラインは、クラシックパイプラインとYAMLパイプラインの2種類があります。現在の主流は名前にも現れている通り、YAMLパイプラインです。
 YAMLパイプラインはクラシックパイプラインと比較して以下のようなメリットがあります。
-- コードレビューが容易
+- **コードレビューが容易**
     YAMLパイプラインは文字通りテキストベースのYAMLで記述され、リポジトリによってバージョン管理やコードレビューができます。
-- リソースアクセス管理を提供
+- **リソースアクセス管理を提供**
     パイプラインが依存する、環境、サービス接続、エージェントプール、変数グループ、セキュリティで保護されたファイルなどのリソースを使用できるかどうかを制御できます。
-- [ランタイムパラメーター](https://learn.microsoft.com/ja-jp/azure/devops/pipelines/process/runtime-parameters?view=azure-devops&tabs=script)をサポート
+- **[ランタイムパラメーター](https://learn.microsoft.com/ja-jp/azure/devops/pipelines/process/runtime-parameters?view=azure-devops&tabs=script)をサポート**
     ランタイム パラメーターによって、パイプラインに渡すことができる値をより詳細に制御できます。
 
 # クラシックパイプラインの作成を禁止する
@@ -33,9 +33,9 @@ YAMLパイプラインはクラシックパイプラインと比較して以下�
 - Project
 
 設定の継承が有効であり、以下のような動作をします。
-- Organizationレベルでオンの場合
+- **Organizationレベルでオンの場合**
     Organizationに属する全てのProjectでクラシックパイプラインの作成が禁止されます。
-- Organizationレベルでオフの場合
+- **Organizationレベルでオフの場合**
     個々のProjectの設定内で設定できます。
 
 ## 方法
