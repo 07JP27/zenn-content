@@ -48,6 +48,9 @@ Organization SettingsまたはProject Settings画面の `Pipelines` → `Setting
 # 既存のクラシックパイプラインはどうなる？
 新規作成の禁止がオンになっている場合でも引き続き編集・実行が可能です。ただし新規作成することはできません。
 
+この機会にクラシックパイプラインをYAMLパイプラインに移行する場合は、YAMLエクスポート機能を使用して移行することが可能です。
+https://learn.microsoft.com/ja-jp/azure/devops/pipelines/migrate/from-classic-pipelines?view=azure-devops
+
 # 2023年3月に既定で禁止設定になります
 Microsftが既存の組織やプロジェクトに対して強制/自動的にこの機能をオンにする予定はありませんが、**2023年3月以降に作成される組織**については、この機能を**デフォルトでオン**にする予定です。
 つまり、それ以降に作成される組織は、デフォルトでYAMLのみになります。何らかの理由があってクラシックパイプラインを使用する場合はこの設定項目を`オフ`にします。
