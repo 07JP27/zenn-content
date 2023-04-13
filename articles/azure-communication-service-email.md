@@ -3,7 +3,7 @@ title: "Azure Communication Service Emailを使ってメール配信サービス
 emoji: "📨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "sendgrid", "azurecommunication"]
-published: false
+published: true
 publication_name: "microsoft"
 ---
 
