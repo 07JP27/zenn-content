@@ -20,12 +20,14 @@ https://techcommunity.microsoft.com/t5/azure-communication-services/simpler-fast
 
 
 # Azure Communication Serviceとメール通信サービスのデプロイ
-Azure Communication Service Emailは、１つのサービスですが、実際には以下の２つのリソースが必要になります。
+Azure Communication Service Emailは、１つのサービスですが、実際には以下の3つのリソースが必要になります。
 
 - Azure Communication Service(日本語では「通信サービス」)
-- メール通信サービス(ドメイン)
+- メール通信サービス
+- ドメイン
 
 ![](/images/azure-communication-service-email/rg.png)
+![](/images/azure-communication-service-email/rgd.png)
 
 簡単に言うと、Azure Communication Serviceに対してメール通信サービス(ドメイン)が紐づくイメージです。
 
