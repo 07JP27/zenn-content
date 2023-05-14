@@ -29,6 +29,8 @@ gif化した都合でカクカクしていますが、実際の画面はもっ�
 
 ではない
 - 上記を構築するための手順やガイド（もしかしたら今後別途書くかも）
+→ 技術書典への出版物として書きました。第５章です。
+https://techbookfest.org/product/wgZJASDjMznuWLndpV3dc0
 <!-- textlint-enable ja-technical-writing/no-mix-dearu-desumasu -->
 <!-- textlint-enable ja-technical-writing/ja-no-mixed-period -->
 
