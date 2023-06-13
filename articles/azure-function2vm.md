@@ -65,7 +65,7 @@ namespace Injest2Fileshare
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            // 本番運用ではKeyVaultや環境変数を使用して隠ぺいしてください。& SASキーの使用を推奨します。
+            // 本番運用ではKeyVaultや環境変数を使用して隠ぺいしてください。可能である場合はマネージドIDかSASキーの使用を推奨します。
             string connectionString = "{接続文字列}";
             string shareName = "myfileshare(ご自身のファイル共有名)";
 
