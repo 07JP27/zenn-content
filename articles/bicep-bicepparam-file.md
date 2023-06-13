@@ -75,7 +75,7 @@ param.bicepparamというファイルを作成します。（拡張子があっ�
 
 が分かると思います。特に後者はusingによって使用するテンプレート(Bicep)ファイルを指定することにより、パラメーターファイルとテンプレートファイルを紐づけし、パラメータ名などを補完します。
 
-ちなみに同じ内容のJSON版と.bicepparam版のパラメーターファイルを比較するとこんな感じです。文量が大幅に減り、可読性も向上しているのが分かると思います。
+ちなみに同じ内容のJSON形式と.bicepparam形式のパラメーターファイルを比較するとこんな感じです。文量が大幅に減り、可読性も向上しているのが分かると思います。
 ![](/images/bicep-bicepparam-file/compare.png)
 
 
@@ -89,7 +89,7 @@ az cliからのデプロイは今までとほぼ変わりません。parameters�
 # 関連する便利機能
 ここからは.bicepparamファイルのサポートによって追加されたいくつかの関連便利機能を紹介します。
 ## .bicepparamファイルの自動生成
-.bicepparamファイルをコマンドで自動生成することができる機能です。JSON版のパラメーターファイルも生成することができましたが、それの.bicepparam版です。
+.bicepparamファイルをコマンドで自動生成することができる機能です。JSON形式のパラメーターファイルも生成することができましたが、それの.bicepparam版です。
 
 `az bicep generate-params --file main.bicep --output-format bicepparam`
 コマンドで生成することができます。 **が、記事執筆時点では「unrecognized arguments: --output-format bicepparam」というエラーが発生します。** バグの可能性もあるので引き続き確認して更新していきます。
@@ -104,13 +104,13 @@ readEnvironmentVariableという関数が追加され、.bicepparamファイル�
 
 たとえばVMのログインパスワードなど、パラメーターとは切り離して扱いたい値やCI/CD時の動的値の注入に利用できそうです。
 
-## VS CodeのBicepファイルでデプロイアクションで.bicepparamファイルを指定可能に
-Bicep拡張機能をインストールしている際にBicepファイルを右クリックすると「Deploy Bicep File」が表示され、選択すると対話型でデプロイのセットアップができます。この際に表示されるパラメーターファイルの選択肢に.bicepparamファイルが表示されるようになりました。
+## VS Codeの「Bicepファイルをデプロイ」アクションで.bicepparamファイルが選択可能に
+Bicep拡張機能をインストールしている際にVS CodeのエクスプローラーでBicepファイルを右クリックすると「Deploy Bicep File」が表示され、選択すると対話型でデプロイのセットアップができます。この際に表示されるパラメーターファイルの選択肢に.bicepparamファイルが表示されるようになりました。
 ![](/images/bicep-bicepparam-file/5.png)
 
 ## VS Code拡張機能で「Buildparams」コマンドの追加
 Bicep拡張機能をインストールして.bicepparamファイルを右クリックすると「Build Parameters File」が表示されます。
-これをクリックするとJSON版のパラメーターファイルを.bicepparamファイルから生成することができます。（ ~~なんのために使うんだ・・・？~~ ）
+これをクリックすると.bicepparamファイルからJSON形式のパラメーターファイルを生成することができます。（ ~~なんのために使うんだ・・・？~~ ）
 ![](/images/bicep-bicepparam-file/4.png)
 
 ## .bicepparamファイルのデコンパイラー
@@ -130,3 +130,6 @@ JSON形式のパラメーターファイルを.bicepparamファイルに変換�
 
 # まとめ
 正式リリース初日ということもあり、うまく動かない部分もありましたが、今後Bicepを使った開発では.bicepparamファイルを使うことが主流になると思います。今後の機能追加にも期待したいところです。
+
+うまく動かない部分について同僚がGitHubにIssueを投稿してくれました。（私は+1しただけ）
+https://github.com/Azure/bicep/issues/10978

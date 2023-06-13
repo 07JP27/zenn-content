@@ -7,6 +7,16 @@ published: true
 publication_name: "microsoft"
 ---
 
+:::message
+2023年6月12日にBicepの新しいパラメーター形式である.bicepparamが正式リリースされました。今後はそちらがスタンダードになっていくと考えられます。
+引き続きJSON形式のパラメーターファイルを使用する必要がある場合は、この記事をご参照ください。
+:::
+
+.bicepparamの記事はコチラ！
+https://zenn.dev/microsoft/articles/bicep-bicepparam-file
+
+-------------------
+
 「Bicep使ってもパラメーターファイルはARMと同じく書きづらいJSONだしな～」そう思ってた時代が私にもありました。
 # それ、自動生成できますよ。
 
