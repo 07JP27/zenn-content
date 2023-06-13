@@ -35,8 +35,8 @@ Bicepの登場により、JSON形式で記述する必要があったARMテン�
 
 # やってみる
 ## 準備
-前述の通りBicepのバージョンが0.18.4以上である必要があります。 古いバージョンの場合は```az bicep update```でアップデートしてください。全く新規インストールの方は[こちら](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/install)を参考にしてください。
-Bicepファイルを記述するために、IDEとして、VS Code、さらに[Bicep拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep)をインストールします。これはBicep開発のデファクトスタンダートとなっています。
+前述の通りBicepのバージョンが0.18.4以上である必要があります。 古いバージョンの場合は```az bicep update```でアップデートしてください。真っさらな状態から新規インストールする方は[こちら](https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/install)を参考にしてください。
+Bicepファイルを記述するために、IDEとして、VS Code、さらに[Bicep拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep)をインストールします。これはBicep開発のデファクトスタンダートとなっています。Bicep拡張機能もv0.18.4から.bicepparamファイルのサポートがされています。
 
 ## 適当にBicepファイルを作る
 適当にこんな感じのストレージを１個デプロイするためのBicepファイルを作ります。
@@ -67,7 +67,7 @@ param.bicepparamというファイルを作成します。（拡張子があっ�
 .bicepparamファイルの先頭に、このパラメーターファイルがどのBicepファイルに対応しているかをusingで記述します。
 ![](/images/bicep-bicepparam-file/1.png)
 
-ではパラメーターを記述していきます。
+ではパラメーターを記述していきます。具体的にはparamキーワードを使ってパラメーターを定義します。
 ![](/images/bicep-bicepparam-file/2.gif)
 特徴として前述した
 - 簡潔な記述方式
