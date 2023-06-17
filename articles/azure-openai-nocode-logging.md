@@ -8,9 +8,9 @@ publication_name: "microsoft"
 ---
 
 # はじめに
-企業(エンタープライズ)でOpen AIを使用する場合、コンプライアンスやセキュリティの観点から、Open AI{へ|から}のプロンプトを監視したいという要望が出てくる場合があります。
+企業(エンタープライズ)でOpen AIを使用する場合、コンプライアンスやセキュリティの観点からOpen AI{へ|から}のプロンプトを監視したいという要望が出てくる場合があります。
 Open AIが提供するのはWeb APIであるため、一般的にはフロントエンドやアプリが必要になり、そのアプリ内でロギングの実装をすることが多いかと思います。
-しかし複数のアプリでOpen AIを使用する場合に、それぞれのアプリでロギングの実装をするのは大変ですし、Power Platformなどの{ロー|ノー}コードでOpen AIを使用する場合は実装が難しいなど、ログをアプリ外で取得したいケースがあります。
+しかし、複数のアプリでOpen AIを使用する場合にそれぞれのアプリでロギングの実装をする方法は冗長かつ一貫性を保つことが難しいですし、Power Platformなどの{ロー|ノー}コードでOpen AIを使用する場合はそもそもロギングの実装が難しいなど、ログをアプリ外で取得したいケースがあります。
 そこで今回はアプリとOpen AIの間でプロンプトのロギングを行う仕組みをやってみます。
 今回はAzure Open AIを使用していますが、本家Open AIでも可能です。
 
@@ -21,12 +21,13 @@ Azure Open AI自体にもログを収集する機能がありますが、プロ�
 [引用元](https://learn.microsoft.com/ja-jp/azure/architecture/example-scenario/ai/log-monitor-azure-openai#alternatives)
 
 # 構成
-ポイントとなるのはAzure API Managementです。このAPI ManagementでAPI Managementを通る通信のログを取ることが可能です。これを利用してOpen AIのプロンプトを監視使用というわけです。
+ポイントとなるのは[Azure API Management](https://learn.microsoft.com/ja-jp/azure/api-management/api-management-key-concepts)です。API Managementは名前の通りAPIを管理するためにサービスで、複数のバックエンドを１つのエンドポイントのまとめたり、APIに独自のスロットリングをかけたりなどAPIエコシステムを実現できます。
+API Managementでは監視の機能としてAPI Managementを介して通信されるトラフィックのログを取ることが可能です。今回はこれを利用してOpen AIのプロンプトを監視しようというわけです。
 
 ![](/images/azure-openai-nocode-logging/architecture.png)
 
 
-# 設定
+# やってみる
 すでにAPI ManagementとAzure Open AI、Log Analyticsワークスペースがデプロイ済みであることを前提とします。
 
 ## APIの作成
@@ -67,6 +68,12 @@ ApiManagementGatewayLogs
 
 Log Analyticsは東日本リージョン・Basic SKUの場合、1GBあたり¥101.859/日（月額￥3,055.77）という価格設定がされています。
 よく「とりあえずログ取っておけ！」でコストが爆発する例を見かけますので、ご注意ください。
+
+この問題に対する一般的な対応策として、長期に保管するログは比較的コストが安いストレージアカウントに退避させておき、Log Analyticsでは直近のデータのみ保持しておくというような方法があります。
+https://learn.microsoft.com/ja-jp/azure/azure-monitor/logs/logs-data-export?tabs=portal#export-destinations
+
+また、そもそもLog Analyticsのようにインタラクティブにクエリをかける必要がない場合は[`診断設定`]の[`宛先`]をストレージアカウントに設定し、最初からストレージに出力してしまうのも手です。
+https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destinations
 
 # まとめ
 ここまで読んでいただければ、単純にリクエスト/レスポンスのBodyをログに出力しているだけというのがお分かりいただけたかと思います。
