@@ -72,7 +72,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 このアプリはどんなプロンプト投げてるのか気になったので見てみたのですが、アプリの中にプロンプトはありませんでした。
 ではどうしているのかというと、APIとして隠蔽されています(!)
 
-Azure Open AIのRESTリファレンスをみると`dataSources`なるプロパティがさらっと追加されています。
+Azure Open AIのRESTリファレンスをみると、`dataSources`なるプロパティをもつCompletions extensionsというAPIがさらっと追加されています。
 ここに対して独自データのエンドポイント情報をセットして、ユーザーの入力とと共にリクエストすると、あとはAzure Open AIが勝手にやってくれる、という仕組みです。（執筆時点では日本語ドキュメントには未反映）
 https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions
 ![](/images/azure-openai-add-your-data/10.png)
