@@ -29,6 +29,9 @@ Azure Open AIのプレイグランドから「チャット」にアクセスし�
 構成ウィザードが表示されるのであとはそれに従って作成したCognitive Searchのリソースを選択していくだけです！
 ![](/images/azure-openai-add-your-data/2.png)
 
+Azure Blobにパワポやwordファイルをアップロードして、そのBlobを選択することで文字読み取り、チャンク分割全て全自動でAzure Cognitive SearchのIndexを作ってくれる機能もあるみたいです（私は未検証）。
+https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/use-your-data#data-formats-and-file-types
+
 
 しばらくすると構成が完了し、もうこの時点でCogntive Searchのデータも使ったチャットが可能になります！(サンプルで物件情報を読み込ませています)
 ![](/images/azure-openai-add-your-data/3.jpeg)
