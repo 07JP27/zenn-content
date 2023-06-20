@@ -74,11 +74,6 @@ https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#comp
 実際にWebアプリのソースコードからもそのプロパティを使用しているのがわかります。
 ![](/images/azure-openai-add-your-data/12.png)
 
-## セマンティック検索も対応しそう
-同じくMicrosoft BuildでアナウンスされたAzure Cognitive Searchでもベクター検索(Embedding：埋め込み)ができるようになるセマンティック検索機能ですが、今回のWebアプリでも考慮されているようで、環境変数で設定することができるみたいです。
-![](/images/azure-openai-add-your-data/11.jpeg)
-
-
 ## デプロイされるアプリはGitHubで公開されている
 Web Appsの「デプロイセンター」をみると自動デプロイされたアプリのソースコードはGitHubから引っ張ってきていることがわかります。リポジトリにアクセスしてみると、Publicで公開されたMIT licenseのプロジェクトなので、これをForkして自分のアプリを作ることもできます（Pythonですが）。
 ![](/images/azure-openai-add-your-data/13.png)
