@@ -12,8 +12,8 @@ https://techcommunity.microsoft.com/t5/ai-cognitive-services-blog/introducing-az
 
 
 今まではこのようなアーキテクチャを独自で構築する必要があったため、なかなかハードルが高いものでした。
-![](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/docs/appcomponents.png)
-
+![](/images/azure-openai-add-your-data/appcomponents.png)
+appcomponents
 こちらのアーキテクチャはサンプルとして公開されているのでご興味があれば見てみてください。
 https://github.com/Azure-Samples/azure-search-openai-demo
 
