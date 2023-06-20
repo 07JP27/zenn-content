@@ -85,7 +85,7 @@ Web Appsの「構成」をみると、システムプロンプトは環境変数
 ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。
 ![](/images/azure-openai-add-your-data/14.png)
 
-## デプロイされるアプリはGitHubで公開されている
+## デプロイされるアプリはソースコードがGitHubで公開されている
 Web Appsの「デプロイセンター」をみると自動デプロイされたアプリのソースコードはGitHubから引っ張ってきていることがわかります。リポジトリにアクセスしてみると、Publicで公開されたMIT licenseのプロジェクトなので、これをForkして自分のアプリを作ることもできます（Pythonですが）。
 ![](/images/azure-openai-add-your-data/13.png)
 
