@@ -75,7 +75,7 @@ https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#comp
 ![](/images/azure-openai-add-your-data/12.png)
 
 ## セマンティック検索も対応しそう
-同じくMicrosoft BuildでアナウンスされたAzure Cognitive Searchでもベクター検索(Embedding：埋め込み)ができるようになるセマンティック検索機能ですが、今回のWebアプリでも考慮されているようです。環境変数で設定することができるみたいです。
+同じくMicrosoft BuildでアナウンスされたAzure Cognitive Searchでもベクター検索(Embedding：埋め込み)ができるようになるセマンティック検索機能ですが、今回のWebアプリでも考慮されているようで、環境変数で設定することができるみたいです。
 ![](/images/azure-openai-add-your-data/11.jpeg)
 
 
