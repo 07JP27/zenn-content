@@ -64,6 +64,8 @@ WebアプリをホストするWeb Appsを新規で作るのか、既存のリソ
 ということで改めてコードを見てみると、自動デプロイされたWebアプリの`/conversation`にリクエストすることで**独自ナレッジ反映済みのChatGPT APIとしても利用できる**ようです。（既定だとAAD認証が付いているのでAPIを呼ぶ際も認証が必要です。）
 ![](/images/azure-openai-add-your-data/9.png)
 
+こちらのポイントについては別途記事にしています。
+https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 ## プロンプトが・・・ない！？（この記事のメイントピック）
 独自ナレッジを組み込んで回答する場合、「以下の情報からのみ回答を考えて〜」みたいな質問応答プロンプトをつけるのが一般的です。
