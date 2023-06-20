@@ -54,7 +54,7 @@ WebアプリをホストするWeb Appsを新規で作るのか、既存のリソ
 自動デプロイされたWeb AppsはAzureポータルで確認できます。言語はPythonのようです。
 ![](/images/azure-openai-add-your-data/7.png)
 
-Kuduで自動デプロイされたWebアプリのソースコードを見てみるとフレームワークにFlaskが使われているのがわかります。
+自動デプロイされたWebアプリのソースコードをKuduで見てみるとフレームワークにFlaskが使われているのがわかります。
 ![](/images/azure-openai-add-your-data/8.jpeg)
 
 ## Web APIも提供
@@ -77,6 +77,11 @@ https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#comp
 
 実際にWebアプリのソースコードからもそのプロパティを使用しているのがわかります。
 ![](/images/azure-openai-add-your-data/12.png)
+
+## システムプロンプトは環境変数で設定できる
+Web Appsの「構成」をみると、システムプロンプトは環境変数で設定できるようになっています。
+ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。
+![](/images/azure-openai-add-your-data/14.png)
 
 ## デプロイされるアプリはGitHubで公開されている
 Web Appsの「デプロイセンター」をみると自動デプロイされたアプリのソースコードはGitHubから引っ張ってきていることがわかります。リポジトリにアクセスしてみると、Publicで公開されたMIT licenseのプロジェクトなので、これをForkして自分のアプリを作ることもできます（Pythonですが）。
