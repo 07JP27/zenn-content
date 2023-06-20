@@ -57,7 +57,7 @@ Kuduで自動デプロイされたWebアプリのソースコードを見てみ�
 冒頭に掲載したプレビューアナウンスには以下のように書かれていました。
 > You can use the API and endpoint to integrate this feature in the service, not just in an app.(APIとエンドポイントを利用することで、アプリだけでなく、サービス内でこの機能を統合することができます。)
 
-ということで改めてコードを見てみると、自動デプロイされたWebアプリの`/conversation`にリクエストすることでAPIとしても利用できるようです。（規定だとAAD認証が付いているのでAPIを呼ぶ際も認証が必要です。）
+ということで改めてコードを見てみると、自動デプロイされたWebアプリの`/conversation`にリクエストすることでAPIとしても利用できるようです。（既定だとAAD認証が付いているのでAPIを呼ぶ際も認証が必要です。）
 ![](/images/azure-openai-add-your-data/9.png)
 
 
