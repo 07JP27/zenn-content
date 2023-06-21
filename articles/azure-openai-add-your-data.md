@@ -85,7 +85,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 ## システムプロンプトは環境変数で設定できる
 Web Appsの「構成」をみると、システムプロンプトは環境変数で設定できるようになっています。
-ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。
+ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。その他にもMax tokenなど変数としてAzure Open AIに渡せるパラメーターは大体が環境変数になっています。
 ![](/images/azure-openai-add-your-data/14.png)
 
 ## デプロイされるアプリはソースコードがGitHubで公開されている
