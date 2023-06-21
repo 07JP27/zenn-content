@@ -64,7 +64,7 @@ WebアプリをホストするWeb Appsを新規で作るのか、既存のリソ
 ということで改めてコードを見てみると、自動デプロイされたWebアプリの`/conversation`にリクエストすることで**独自ナレッジ反映済みのChatGPT APIとしても利用できる**ようです。（既定だとAAD認証が付いているのでAPIを呼ぶ際も認証が必要です。）
 ![](/images/azure-openai-add-your-data/9.png)
 
-こちらのポイントについては別途記事にしています。
+こちらのポイントについては以下の記事で詳解しています。
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 ## プロンプトが・・・ない！？（この記事のメイントピック）
@@ -79,6 +79,9 @@ https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#comp
 
 実際にWebアプリのソースコードからもそのプロパティを使用しているのがわかります。
 ![](/images/azure-openai-add-your-data/12.png)
+
+Completions extensions APIについては以下の記事で詳解しています。
+https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 ## システムプロンプトは環境変数で設定できる
 Web Appsの「構成」をみると、システムプロンプトは環境変数で設定できるようになっています。
