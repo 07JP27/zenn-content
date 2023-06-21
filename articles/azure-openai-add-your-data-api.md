@@ -70,7 +70,10 @@ Web Appsの[認証]から構成済みのAAD認証を外して認証を削除し�
 
 
 もし認証をつけたままリクエストしたい場合はここらへんを参考にJWTを取得してリクエストすればいける（はず）。
-https://learn.microsoft.com/ja-jp/azure/active-directory/develop/access-token-claims-reference
+https://dev.classmethod.jp/articles/azure-ad-id-token-oidc/
+
+https://learn.microsoft.com/ja-jp/azure/active-directory/develop/access-tokens
+
 
 そして、こんな感じでリクエストします。
 ```
