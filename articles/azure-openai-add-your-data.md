@@ -84,9 +84,17 @@ Completions extensions APIについては以下の記事で詳解しています
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 ## システムプロンプトは環境変数で設定できる
-Web Appsの「構成」をみると、システムプロンプトは環境変数で設定できるようになっています。
-ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。その他にもMax tokenなど変数としてAzure Open AIに渡せるパラメーターは大体が環境変数になっています。
+Web Appsの「構成」をみると、システムプロンプトは`AZURE_OPENAI_SYSTEM_MESSAGE`環境変数で設定できるようになっています。
+ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。
+ただし、この環境変数はシステムプロンプトのほかに`dataSources`プロパティの`roleInformation`にもセットされるようになっています。[APIドキュメント](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#example-response-3:~:text=There%E2%80%99s%20a%20100%20token%20limit%2C%20which%20counts%20towards%20the%20overall%20token%20limit.)を見ると`roleInformation`は最大100トークンという制約があるため、あまり多くの文字はセット出来なさそうです。
+その他にもMax tokenなど変数としてAzure Open AIに渡せるパラメーターは大体が環境変数になっています。
 ![](/images/azure-openai-add-your-data/14.png)
+
+↓システムプロンプトでの参照
+![](/images/azure-openai-add-your-data/16.png)
+↓roleInformationでの参照
+![](/images/azure-openai-add-your-data/15.png)
+
 
 ## デプロイされるアプリはソースコードがGitHubで公開されている
 Web Appsの「デプロイセンター」をみると自動デプロイされたアプリのソースコードはGitHubから引っ張ってきていることがわかります。リポジトリにアクセスしてみると、Publicで公開されたMIT licenseのプロジェクトなので、これをForkして自分のアプリを作ることもできます（Pythonですが）。
