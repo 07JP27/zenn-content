@@ -17,7 +17,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 
 ## Completions extensions APIを直接叩くパターン
 Azure Open AIのAPIとして[Completions extensions](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)というインターフェースが追加されました。
-これを使用することでリクエストするたびにデータソースを指定することができます。
+これを使用することでクライアントからリクエストするたびにデータソースを指定することができます。
 ![](/images/azure-openai-add-your-data-api/2.png)
 
 
@@ -92,4 +92,8 @@ curl --request POST \
 
 
 # まとめ
+`Completions extensions APIを直接叩くパターン`はリクエストごとにデータソースを切り替えることができるので、会話の内容によってデータソースを切り替えたり柔軟に利用できます。反面、リクエストボディが煩雑になることによるローコード/ノーコードでの利用や、データーソースを固定した形での社内APIのような形での提供方式には向かないかもしれません。
+
+`「Add your data」から自動デプロイしたWeb Appsに対して、APIリクエストをするパターン`はクラアントからのリクエストがシンプルになります。一方でWebAppsをデプロイする必要があるため、その分のコストがかかったり、システム全体における障害発生ポイントが1つ増えるといったリスクがあります。
+
 それぞれの方式で一長一短あると思うので用途にあった方をお使いください。
