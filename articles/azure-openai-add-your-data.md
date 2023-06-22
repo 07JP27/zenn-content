@@ -7,6 +7,8 @@ published: true
 publication_name: "microsoft"
 ---
 
+「「やってみた」記事はもう十分」という方は[もう少し詳しくみてみる](#もう少し詳しくみてみる)セクションからご覧ください！
+
 先月のMicrosoft Buildで発表されて注目を集めていた、Azure Open AIでコーディングなしで社内のナレッジを組み込んだ回答をするChatGPTが作成できる機能「Add your data」がパブリックプレビューになりました🎉🎉🎉🎉
 https://techcommunity.microsoft.com/t5/ai-cognitive-services-blog/introducing-azure-openai-service-on-your-data-in-public-preview/ba-p/3847000
 
