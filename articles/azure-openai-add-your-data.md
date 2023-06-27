@@ -86,7 +86,7 @@ Completions extensions APIについては以下の記事で詳解しています
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 ## 日本語精度のポイント
-このシステムの精度を左右するポイントは大きく以下の2点です。
+Add your dataの精度を左右するポイントは大きく以下の2(+1)点です。
 - Cognitive Searchに格納さた独自ナレッジの質
 - 検索クエリの質
 - (プロンプトの質)
@@ -95,7 +95,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 https://qiita.com/tmiyata25/items/e8866dfed6dd4b9a02ad
 
 2つ目についてもう少し詳しく見てみます。
-この処理の仕組みでは、まずユーザーの入力をクエリ化する、という作業を行います。
+Add your dataの仕組みでは、まず「ユーザーの入力をクエリ化する」という作業を行います。
 例えば「豪華な部屋に住みたい」とユーザーが入力した場合「豪華　部屋　物件」などと言ったようなCognitive Searchへ投げるためのクエリを生成する必要があります。イメージ的には以下の図の通りです（内部の処理が公開されていないのであくまで想像/イメージです）。
 ![](/images/azure-openai-add-your-data/addyourdataarch.png)
 
