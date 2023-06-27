@@ -85,6 +85,32 @@ https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#comp
 Completions extensions APIについては以下の記事で詳解しています。
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
+## 日本語精度のポイント
+このシステムの精度を左右するポイントは大きく以下の2点です。
+- Cognitive Searchに格納さた独自ナレッジの質
+- 検索クエリの質
+- (プロンプトの質)
+
+1つ目については@tmiyata25さんの以下の記事が参考になります。
+https://qiita.com/tmiyata25/items/e8866dfed6dd4b9a02ad
+
+2つ目についてもう少し詳しく見てみます。
+この処理の仕組みでは、まずユーザーの入力をクエリ化する、という作業を行います。
+例えば「豪華な部屋に住みたい」とユーザーが入力した場合「豪華　部屋　物件」などと言ったようなCognitive Searchへ投げるためのクエリを生成する必要があります。イメージ的には以下の図の通りです（内部の処理が公開されていないのであくまで想像/イメージです）。
+![](/images/azure-openai-add-your-data/addyourdataarch.png)
+
+このクエリはCognitive Searchの診断設定でログを有効にできるので、どのようなクエリが投げられているかを確認できます。
+チャットに`めっちゃ豪華な部屋に住みたいです！`と入力した場合
+![](/images/azure-openai-add-your-data/17.png)
+チャットに`タワマンのペントハウスに住みたい`と入力した場合
+![](/images/azure-openai-add-your-data/18.png)
+
+上記を見るとわかる通り、必ずしもそのままではないものの、おおよそそのままの文章がクエリとして投げられていることがわかります。
+Cognitive Searchに対しては全文検索を行うため文章でのクエリは有効な回答が見つからない可能性が多いです。
+そして、このクエリ部分は前述したCompletions extensions APIの中に隠ぺいされているため、開発者は手も足も出ない状況です。
+今はプレビューなので英語に最適化されているものと想像しますが、今後GAのタイミングで日本語などのクエリ生成の精度も向上することを期待したいと思います。
+
+
 ## システムプロンプトは環境変数で設定できる
 Web Appsの「構成」をみると、システムプロンプトは`AZURE_OPENAI_SYSTEM_MESSAGE`環境変数で設定できるようになっています。
 ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。
