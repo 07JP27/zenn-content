@@ -4,6 +4,7 @@ emoji: "🔑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "powershell", "azurefunctions"]
 published: true
+publication_name: "microsoft"
 ---
 
 ※本記事で使用するAzure Cognitive Services内の翻訳リソースの正式な名称は「Translator」ですが、他の翻訳サービスと混同しないように「Cognitive Translator」と表記します。
