@@ -130,3 +130,11 @@ Web Appsの「デプロイセンター」をみると自動デプロイされた
 
 リポジトリはこちらです。
 https://github.com/microsoft/sample-app-aoai-chatGPT
+
+## 閉域化の対応
+少し上級者向けですが、Cognitive SearchやAzure Open AIにはPrivate Linkという仕組みを使ってネットワーク的に閉域化、つまり特定のネットワーク（社内ネットワークなど）からのみアクセスを許可することができます。
+特にAdd your dataのような社内ナレッジを含むシステムを構築する場合、閉域化を望むケースも多いと思います。
+しかし、Completions extensions APIの場合、APIに対してデータソースとなるCognitive Searchを指定して、Azureのどこかに置かれたCompletions extensions APIの中からCognitive Searchにアクセスできる必要があります。そのため、少なくともこの記事の執筆時点ではAdd your data機能は閉域化に対応していないようです。
+
+記事の冒頭で紹介したサンプルの場合Completions extensions APIの内部で行っている処理を自前で実装する形になるので、その場合は閉域化が可能です。
+https://github.com/Azure-Samples/azure-search-openai-demo
