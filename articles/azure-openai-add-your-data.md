@@ -87,7 +87,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 ## 日本語精度のポイント
 Add your dataの精度を左右するポイントは大きく以下の2(+1)点です。
-- Cognitive Searchに格納さた独自ナレッジの質
+- Cognitive Searchに格納され{る|た}独自ナレッジの質
 - 検索クエリの質
 - (プロンプトの質)
 
