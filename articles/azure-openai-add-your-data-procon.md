@@ -77,6 +77,9 @@ Azureには[Private Endpoint](https://learn.microsoft.com/ja-jp/azure/private-li
 
 そして**いずれのプロンプトも「Add your data」のマネージド機能として隠蔽されています。**
 唯一カスタムできるプロンプトはCompletions extensions APIのプロパティとして存在する[roleInformation](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#example-response-3)のシステムプロンプトだけですが、こちらは100トークンの入力制限があり、あまりハイコンテキストを与えることができません。
+とはいえ、そんなシステムプロンプトにもベストプラクティスはあって、[公式ドキュメントの推奨設定](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/use-your-data#system-message)や[多言語のサポート](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/use-your-data#interacting-with-the-model)によると以下のようなシステムプロンプトが推奨されているようです。
+
+> あなたは、情報の検索を支援する AI アシスタントです。 日本語のドキュメントを取得し、それを日本語で注意深く読み、日本語で回答する必要があります。
 
 自前実装の場合は言わずもがなプロンプト含め自前で実装するので、考えることはSemantic KernelやLangChainを使って楽をするかどうかくらいになってきます。
 
