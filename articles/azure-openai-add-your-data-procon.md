@@ -117,7 +117,7 @@ https://qiita.com/tmiyata25/items/e8866dfed6dd4b9a02ad
 ちょっとハッキーかつサポート外の方法だとは思いますが、Cogntiive SearchのAPIと同じインターフェースのAPIを独自で用意して、それをラッパーとして中で別の所望のAPIを呼び出すようにして、Completions extensions APIの`dataSources`にそのAPIを指定すれば独自APIを「Add your data」に組み込めるんじゃないかと思っています。これは今度また試してみようと思います。
 
 ## ベクトル検索
-「Add your data」の発表と同時にCognitive Searchでベクトル保存・検索ができる機能が発表されました。詳しくは以下の記事をご覧ください。
+「Add your data」の発表と同時期にCognitive Searchでベクトル保存・検索ができる機能が発表されました。詳しくは以下の記事をご覧ください。
 https://qiita.com/nohanaga/items/f710cac82072b63bc73f
 
 しかし、執筆時点で「Add your data」の[Completions extensions API](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)にベクトル検索を有効化するようなプロパティがありません。よってベクトル検索は現時点でサポートしていないものと考えられます。
