@@ -76,7 +76,8 @@ Azureには[Private Endpoint](https://learn.microsoft.com/ja-jp/azure/private-li
 - Cognitive Searchからの回答を元にユーザーに返す回答を生成するとき
 
 そして**いずれのプロンプトも「Add your data」のマネージド機能として隠蔽されています。**
-ユーザー入力以外にカスタムできるプロンプトは通常のChatGPTでも使われる "role": "system"のシステムプロンプトとCompletions extensions APIのプロパティとして存在する[roleInformation](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#example-response-3)のシステムプロンプトだけですが、こちらはそれぞれ[200トークン](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/use-your-data#system-message)と[100トークン](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions:~:text=There%E2%80%99s%20a%20100%20token%20limit)の上限があり、あまりハイコンテキストを与えることができません。
+
+「Add your data」でユーザー入力以外にカスタムできるプロンプトは通常のChatGPTでも使われる "role": "system"のシステムプロンプトとCompletions extensions APIのプロパティとして存在する[roleInformation](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#example-response-3)だけですが、こちらはそれぞれ[200トークン](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/use-your-data#system-message)と[100トークン](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions:~:text=There%E2%80%99s%20a%20100%20token%20limit)の上限があり、あまりハイコンテキストを与えることができません。
 ちなみにAzure OpenAI Studioの「Deploy to...」ボタンによって自動デプロイされるアプリはそれぞれに同じ値（環境変数：AZURE_OPENAI_SYSTEM_MESSAGE）を代入しています。
 - ["role": "system"部分のコード](https://github.com/microsoft/sample-app-aoai-chatGPT/blob/ab5fab37cafa10b3b5bebde3537ba3f04f543752/app.py#L195)
 - [roleInformation部分のコード](https://github.com/microsoft/sample-app-aoai-chatGPT/blob/ab5fab37cafa10b3b5bebde3537ba3f04f543752/app.py#L83)
