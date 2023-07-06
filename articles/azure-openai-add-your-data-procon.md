@@ -29,6 +29,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 |[セマンティック検索](#セマンティック検索)|×|〇|
 |[日本語の精度向上](#日本語の精度向上)|△|〇|
 |[Cognitive Search以外のデータソース](#cognitive-search以外のデータソース)|×|〇|
+|[ベクトル検索](#ベクトル検索)|×|〇|
 
 
 では各項目について見ていく前に、まずは「Add your data」の仕組みについておさらいしましょう。
@@ -65,6 +66,9 @@ Azureには[Private Endpoint](https://learn.microsoft.com/ja-jp/azure/private-li
 上記の図はネットワーク的な図として簡略化されていますが、実際には下図のようにクエリ生成や回答生成のためにAzure Open AIとの間で複数回やりとりが発生します。
 ![](/images/azure-openai-add-your-data-procon/addyourdataarch.png)
 
+公式ドキュメントにも[プライベートネットワーク接続はサポートされていない旨](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/use-your-data#virtual-network-support--private-link-support)の記述が追加されました。
+
+
 
 ## プロンプト改善
 「Add your data」の仕組みでは、プロンプトが大きく2箇所で使われます。
@@ -85,7 +89,7 @@ https://learn.microsoft.com/ja-jp/azure/search/semantic-search-overview
 [引用元](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/use-your-data#semantic-search)
 
 Cognitive Searchに対して日本語のセマンティック検索を行うこと自体はできるので、自前実装の場合はセマンティック検索が可能という形になります。
-ただし、セマンティック検索昨日は記事執筆時点でプレビュー機能となっていますのでご注意ください。
+ただし、セマンティック検索機能は記事執筆時点でプレビュー機能となっていますのでご注意ください。
 https://qiita.com/nohanaga/items/4b9506c62b9e5796f405
 
 
@@ -111,6 +115,15 @@ https://qiita.com/tmiyata25/items/e8866dfed6dd4b9a02ad
 
 【余談】 
 ちょっとハッキーかつサポート外の方法だとは思いますが、Cogntiive SearchのAPIと同じインターフェースのAPIを独自で用意して、それをラッパーとして中で別の所望のAPIを呼び出すようにして、Completions extensions APIの`dataSources`にそのAPIを指定すれば独自APIを「Add your data」に組み込めるんじゃないかと思っています。これは今度また試してみようと思います。
+
+## ベクトル検索
+「Add your data」の発表と同時にCognitive Searchでベクトル保存・検索ができる機能が発表されました。詳しくは以下の記事をご覧ください。
+https://qiita.com/nohanaga/items/f710cac82072b63bc73f
+
+しかし、執筆時点で「Add your data」の[Completions extensions API](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)にベクトル検索を有効化するようなプロパティがありません。よってベクトル検索は現時点でサポートしていないものと考えられます。
+
+自前実装の場合はEmbedding APIを使ってお好きなようにベクトル化やコサイン類似度計算を実装できます。ベクトル検索(Embedding)のサンプルも公開されていますので、気になる方はチェックしてみてください。
+https://github.com/Azure-Samples/azure-open-ai-embeddings-qna
 
 # まとめ
 「Add your data」はノーコードでの独自ナレッジ検索の実現が可能ですが、その分機能は限定的です。自前実装の場合は、プロンプト改善やセマンティック検索などの機能を追加することが可能ですが、その分実装コストがかかります。要件に合わせて使い分けることでスピーディーかつ堅牢なシステム構築が可能になります。
