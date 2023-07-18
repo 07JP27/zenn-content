@@ -139,5 +139,5 @@ https://github.com/Azure-Samples/azure-open-ai-embeddings-qna
 
 # 公式教材（無料）
 Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure Open AIのAdd your dataに関する無料教材が公開されています。
-Azureアカウントを持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
+ご自身のAzure環境を持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
 https://learn.microsoft.com/en-us/training/modules/use-own-data-azure-openai/
