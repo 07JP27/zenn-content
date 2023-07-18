@@ -97,3 +97,8 @@ curl --request POST \
 `「Add your data」から自動デプロイしたWeb Appsに対して、APIリクエストをするパターン`はクラアントからのリクエストがシンプルになります。一方でWebAppsをデプロイする必要があるため、その分のコストがかかったり、システム全体における障害発生ポイントが1つ増えるといったリスクがあります。
 
 それぞれの方式で一長一短あると思うので用途にあった方をお使いください。
+
+# 公式教材（無料）
+Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure Open AIのAdd your dataに関する無料教材が公開されています。
+Azureアカウントを持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
+https://learn.microsoft.com/en-us/training/modules/use-own-data-azure-openai/

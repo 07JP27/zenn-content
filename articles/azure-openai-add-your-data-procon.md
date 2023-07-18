@@ -136,3 +136,8 @@ https://github.com/Azure-Samples/azure-open-ai-embeddings-qna
 
 # まとめ
 「Add your data」はノーコードでの独自ナレッジ検索の実現が可能ですが、その分機能は限定的です。自前実装の場合は、プロンプト改善やセマンティック検索などの機能を追加することが可能ですが、その分実装コストがかかります。要件に合わせて使い分けることでスピーディーかつ堅牢なシステム構築が可能になります。
+
+# 公式教材（無料）
+Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure Open AIのAdd your dataに関する無料教材が公開されています。
+Azureアカウントを持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
+https://learn.microsoft.com/en-us/training/modules/use-own-data-azure-openai/

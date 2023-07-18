@@ -138,3 +138,9 @@ https://github.com/microsoft/sample-app-aoai-chatGPT
 
 記事の冒頭で紹介したサンプルの場合Completions extensions APIの内部で行っている処理を自前で実装する形になるので、その場合は閉域化が可能です。
 https://github.com/Azure-Samples/azure-search-openai-demo
+
+
+# 公式教材（無料）
+Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure Open AIのAdd your dataに関する無料教材が公開されています。
+Azureアカウントを持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
+https://learn.microsoft.com/en-us/training/modules/use-own-data-azure-openai/
