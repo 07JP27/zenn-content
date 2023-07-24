@@ -118,6 +118,13 @@ Jupyter Notebook上で試してみます。本家Open AIのライブラリを使
 
 [実際に使用したサンプルコードはこちらをご覧ください。](https://github.com/07JP27/open-ai-test/blob/main/function-calling/dotnet.ipynb)
 
+# その他のTips
+## Functionって最大何個まで登録できるの？
+GPT-3.5の場合は64個らしいです。（Bing Chatに聞いたら教えてくれました。）
+実際に66個のFunctionを登録してリクエストを投げるとそのようなエラーが返ってきました。
+![](/images/azure-openai-add-function-calling/tips1.png)
+
+
 # まとめ
 - Function CallingはChatGPTとアプリケーションを確実に連携するための仕組み。
 - ChatGPTからのレスポンスで`finish_reason`が`function_call`になった場合はアプリケーション側の機能を呼び出すように指示されている。
