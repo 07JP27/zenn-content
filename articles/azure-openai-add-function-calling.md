@@ -38,7 +38,7 @@ ChatGPTをはじめとするGPTシリーズのリリースから数ヶ月が経�
 
 ## Function Callingのエンドポイント
 Fcuntion Callingを使うには通常のChatGPT用のエンドポイント(Chat completions)を使用します。ただし、本記事の執筆時点でFunction Callingを使用するにはapi-versionを最新の`2023-07-01-preview`に設定する必要があります。
-Function Callingの使用有無に関わらず、Azure Open AIの場合は本家Open AIとは異なり開発者各自が[Azure Open AIのリソースをデプロイし、その中にベースモデルからのデプロイメントを配置する準備](https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)が必要になります。そのためエンドポイントは以下のように各環境ごとの変数を含む形なります。
+Function Calling使用の有無に関わらず、Azure Open AIの場合は本家Open AIとは異なり開発者各自が[Azure Open AIのリソースをデプロイし、その中にベースモデルからのデプロイメントを配置する準備](https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)が必要になります。そのためエンドポイントは以下のように各環境ごとの変数を含む形なります。
 ```
 POST https://{Azure Open AIのリソース名}.openai.azure.com/openai/deployments/{デプロイメント名}/chat/completions?api-version=2023-07-01-preview
 ```
