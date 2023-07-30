@@ -23,7 +23,7 @@ ChatGPTをはじめとするGPTシリーズのリリースから数ヶ月が経�
 上記のような問題やプロンプトエンジニアリングの手間を解消し、**GPTとアプリケーションを確実に連携できるような仕組みが必要**になってきました。それを実現するための仕組みが Function Calling です。
 
 
-# Functions Callingの動きと仕組み
+# Function Callingの動きと仕組み
 まずはFunction Callingを使用した場合の全体の動きを見てみましょう。
 前章ではフキダシの中がプロンプトと出力になっていましたが、この図ではあくまで「動きの概要」になっていることに注意してご覧ください。
 ![](/images/azure-openai-add-function-calling/overview.png)
