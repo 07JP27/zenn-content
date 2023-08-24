@@ -24,7 +24,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 ||Add your data|自前実装|
 |:--|:--|:--|
 |[ノーコードでの実現](#ノーコードでの実現)|〇|△|
-|[閉域化](#閉域化)|×|〇|
+|[閉域化](#閉域化)|〇|〇|
 |[プロンプト改善](#プロンプト改善)|△|〇|
 |[セマンティック検索](#セマンティック検索)|×|〇|
 |[日本語の精度向上](#日本語の精度向上)|△|〇|
@@ -55,11 +55,24 @@ Azureには[Private Endpoint](https://learn.microsoft.com/ja-jp/azure/private-li
 
 この記事の主題ではないので簡単に説明しますが、PaaS**への**アクセスを閉域化するのがPrivate Endpoint、PaaS**からの**アクセスを閉域化するのがVNet統合です。
 
+:::details 非対応だった以前までの内容
 では、登場人物全てが閉域化に対応しているのに、なぜ「Add your data」は閉域化できないのでしょうか。それは**Azure Open AIからCognitive Searchへの通信が執筆時点ではパブリックのみになっているから**です。「Add your data」の仕組み図を閉域ネットワーク的に書き換えると以下の図のようになります。
 ![](/images/azure-openai-add-your-data-procon/privatenwrestrict.png)
 ネットワーク閉域化をしている場合、インターネットからのアクセスを遮断するのでAzure Open AIからのインターネット経由のアクセスができなくなります。そのため、執筆時点では「Add your data」は閉域化できないということになります。Azure Open AIがVNet統合などに対応してAzure Open AI**からの**アクセスがVNet経由でできるようになれば、閉域化が可能になるかもしれませんが、執筆時点ではそのロードマップは公開されていません。
 
 なお、図で「基本的には」と記載しているのはPrivate Endpointを構成している場合でもアクセス制限の設定によってパブリックアクセスを許可できる(VNet内からはPrivate Endpoint経由、VNet外からはインターネット経由)からです。しかし、それではエンドポイントを公開することになり、閉域化しているとはいえないので、あくまで閉域化できないということになります。
+:::
+
+
+プライベートネットワークで保護されたAzure OpenAIリソースをお持ちで、そのデータ上でAzure OpenAIによるCognitiveへのアクセスを許可したい場合は、[申請フォーム](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRw_T3EIZ1KNCuv_1duLJBgpUNFlLNEo2MVhRMzNMTjJHTTlQTEk0QTYzOSQlQCN0PWcu)から申請することで構成が可能です。申請書は5営業日以内に審査され、その結果がメールで送信されます。
+
+仕組みとしては申請が承認されると、申請したリソースに対してMicrosoftからプライベートリンクを貼るためのリクエストが飛んできます。これを承諾することで「Add your data」のトラフィックがCognitive Searchのプライベートエンドポイントへアクセスすることができるようになり、結果的にCognitive Searchへのパブリックアクセスを遮断できます。
+https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data#virtual-network-support--private-network-support
+
+仕組みのイメージとしては以下のような感じです。（Microsoft側のVNetやPrivate Endpointがブラックボックスなのであくまでイメージです）
+![](/images/azure-openai-add-your-data-procon/privateendpoint.png)
+
+
 
 自前実装の場合、Cognitive Searchへのアクセスも開発者が制御できるWeb Appsなどのリソースが行うことになるのでVNet統合を利用して閉域化が可能です。
 ![](/images/azure-openai-add-your-data-procon/privatenwworkaround.png)
