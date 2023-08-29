@@ -144,7 +144,7 @@ az deployment group create --resource-group cosmostest --template-file main.bice
 
 # Tips
 デプロイしたほぼ全てのリソースは「概要」ページから「JSONビュー」にアクセスできます。
-JSONビューではAPIバージョンごとのリソース構造が表示できるので、Bicepの構造と完全に同じとはいかないまでもAPIバージョンごとのプロパティの構造が垣間見ることができます。
+JSONビューでは、そのリソースのAPIバージョンごとのデータ構造が表示できます。Bicepの構造と完全に同じとはいかないまでもAPIバージョンごとのプロパティのデータ構造が垣間見えるので、Bicepの書き方で詰まったときはここを見てみると解決の糸口があるかもしれません。
 ![](/images/azure-cosmosdb-fwrule-bicep/tips.png)
 ![](/images/azure-cosmosdb-fwrule-bicep/json-view.png)
 
