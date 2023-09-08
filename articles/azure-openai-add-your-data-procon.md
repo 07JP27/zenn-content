@@ -29,7 +29,7 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 |[セマンティック検索](#セマンティック検索)|△|〇|
 |[日本語の精度向上](#日本語の精度向上)|△|〇|
 |[Cognitive Search以外のデータソース](#cognitive-search以外のデータソース)|×|〇|
-|[ベクトル検索](#ベクトル検索)|×|〇|
+|[ベクトル検索](#ベクトル検索)|〇|〇|
 
 
 では各項目について見ていく前に、まずは「Add your data」の仕組みについておさらいしましょう。
@@ -142,7 +142,13 @@ https://qiita.com/tmiyata25/items/e8866dfed6dd4b9a02ad
 「Add your data」の発表と同時期にCognitive Searchでベクトル保存・検索ができる機能が発表されました。詳しくは以下の記事をご覧ください。
 https://qiita.com/nohanaga/items/f710cac82072b63bc73f
 
-しかし、執筆時点で「Add your data」の[Completions extensions API](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)にベクトル検索を有効化するようなプロパティがありません。よってベクトル検索は現時点でサポートしていないものと考えられます。
+~~しかし、執筆時点で「Add your data」の[Completions extensions API](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)にベクトル検索を有効化するようなプロパティがありません。よってベクトル検索は現時点でサポートしていないものと考えられます。~~
+
+2023年8月のアップデートで「Add your data」でのベクトル検索のサポートが発表されました。[Completions extensions API](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)の`dataSources`→`parameters`プロパティに`embeddingEndpoint`プロパティや`embeddingKey`プロパティが追加されています。
+
+実際の使い方などは以下のブログで解説されています。
+https://zenn.dev/microsoft/articles/06063068b75a91
+
 
 自前実装の場合はEmbedding APIを使ってお好きなようにベクトル化やコサイン類似度計算を実装できます。ベクトル検索(Embedding)のサンプルも公開されていますので、気になる方はチェックしてみてください。
 https://github.com/Azure-Samples/azure-open-ai-embeddings-qna
