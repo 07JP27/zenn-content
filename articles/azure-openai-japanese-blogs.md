@@ -191,9 +191,6 @@ https://zenn.dev/microsoft/articles/semantic-kernel-10
 #### Semantic Kernel の WithMemoryStorage と WithMemory の違い
 https://zenn.dev/microsoft/articles/semantic-kernel-11
 
-<!--#### Semantic Kernel v0.13.442.1-preview がリリースされました
-https://zenn.dev/microsoft/articles/semantic-kernel-12 -->
-
 #### Semantic Kernel で Bing Chat みたいに自然言語から検索をして結果を自然言語で返したい
 https://zenn.dev/microsoft/articles/semantic-kernel-13
 
