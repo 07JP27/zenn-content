@@ -11,7 +11,7 @@ publication_name: "microsoft"
 ※長く使える知見のまとめにしたかったので一過性のニュース的な記事や内容が重複している機能紹介記事などは意図的に掲載していません。
 
 
-**この記事は[GitHub]()で管理されています。このまとめへの追加修正はプルリクエストまたはIssueでお気軽にお寄せください！**
+**この記事は[GitHub](https://github.com/07JP27/zenn-content/blob/2dc0249a7e74ba8ced2ac4355b063dbfb8b05c0f/articles/azure-openai-japanese-blogs.md)で管理されています。まとめへの追加修正はプルリクエストまたはIssuesでお気軽にお寄せください！**
 
 # 概要
 ## まずはここから
