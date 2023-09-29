@@ -132,12 +132,20 @@ Web Appsの「デプロイセンター」をみると自動デプロイされた
 https://github.com/microsoft/sample-app-aoai-chatGPT
 
 ## 閉域化の対応
+:::details 非対応だった以前までの内容
 少し上級者向けですが、Cognitive SearchやAzure Open AIではPrivate Linkという仕組みを使ってネットワーク的に閉域化、つまり特定のネットワーク（社内ネットワークなど）からのみアクセスを許可することができます。
 特にAdd your dataのような社内ナレッジを含むシステムを構築する場合、閉域化を望むケースも多いと思います。
 しかし、Completions extensions APIの場合、APIに対してデータソースとなるCognitive Searchを指定して、Azureのどこかに置かれたCompletions extensions APIの中からCognitive Searchにアクセスできる必要があります。そのため、少なくともこの記事の執筆時点ではAdd your data機能は閉域化に対応していないようです。
 
 記事の冒頭で紹介したサンプルの場合Completions extensions APIの内部で行っている処理を自前で実装する形になるので、その場合は閉域化が可能です。
 https://github.com/Azure-Samples/azure-search-openai-demo
+:::
+
+
+プライベートネットワークで保護されたAzure OpenAIリソースをお持ちで、そのデータ上でAzure OpenAIによるCognitiveへのアクセスを許可したい場合は、[申請フォーム](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbRw_T3EIZ1KNCuv_1duLJBgpUNFlLNEo2MVhRMzNMTjJHTTlQTEk0QTYzOSQlQCN0PWcu)から申請することで構成が可能です。申請書は5営業日以内に審査され、その結果がメールで送信されます。
+
+仕組みとしては申請が承認されると、申請したリソースに対してMicrosoftからプライベートリンクを貼るためのリクエストが飛んできます。これを承諾することで「Add your data」のトラフィックがCognitive Searchのプライベートエンドポイントへアクセスすることができるようになり、結果的にCognitive Searchへのパブリックアクセスを遮断できます。
+https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data#virtual-network-support--private-network-support
 
 
 # 公式教材（無料）
