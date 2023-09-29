@@ -62,12 +62,12 @@ https://qiita.com/tmiyata25/items/875f563ba7a91f3da823
 ## Fine-tuning
 Coming soon...
 
-# 管理
+# リソース管理
 ## 全般
 #### Azure Open AIのコーポレートガバナンスについて考える
 https://zenn.dev/microsoft/articles/fe09382d4e35ba
 
-# デプロイ
+## デプロイ
 #### Azure OpenAI ServiceリソースをTerraformで作成する
 https://qiita.com/AsukaSeki/items/551f49888e36d6dbdf0b
 
@@ -99,7 +99,7 @@ https://zenn.dev/microsoft/articles/dcf32f3516f013
 #### C# で Azure OpenAI Service のトークン数を数えよう
 https://zenn.dev/microsoft/articles/azure-openai-count-token
 
-# 監視
+## 監視
 #### Azure Open AIのプロンプトをノーコードで監視したい！
 https://zenn.dev/microsoft/articles/azure-openai-nocode-logging
 
