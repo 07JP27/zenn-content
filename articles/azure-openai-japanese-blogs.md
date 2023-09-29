@@ -1,5 +1,5 @@
 ---
-title: "Azure OpenAIの日本語記事まとめ"
+title: "Azure OpenAI Serviceの日本語記事まとめ"
 emoji: "🌏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'openai']
