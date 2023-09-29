@@ -18,6 +18,9 @@ publication_name: "microsoft"
 #### Azure OpenAI Service を使い始める
 https://zenn.dev/microsoft/articles/1a15305021cd01
 
+#### Azure OpenAI Service の最初の一歩： Azure版 ChatGPT を Azure OpenAI Studio のチャット用プレイグラウンドで試す
+https://qiita.com/youtoy/items/ff8248b2a6778038bd3c
+
 #### Azure OpenAI Serviceのラーニングパスまとめメモ
 https://qiita.com/k-kimino/items/7a55ac364201b8da228e
 
@@ -40,11 +43,6 @@ https://zenn.dev/microsoft/articles/c2cfdda734b61c
 
 #### Azure OpenAI Service の Completions で入力で渡したテキストを結果に含める方法
 https://zenn.dev/microsoft/articles/azure-openai-do-not-echo
-
-## Azure OpenAI Studio
-#### Azure OpenAI Service の最初の一歩： Azure版 ChatGPT を Azure OpenAI Studio のチャット用プレイグラウンドで試す
-https://qiita.com/youtoy/items/ff8248b2a6778038bd3c
-
 
 ## Embeddings
 #### Azure OpenAI Embedding モデルを利用し最も関連性の高いドキュメントを見つける方法
