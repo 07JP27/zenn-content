@@ -49,11 +49,7 @@ https://qiita.com/lazy-kz/items/32e8e7c86bdce67beb48
 https://zenn.dev/microsoft/articles/openai-performance
 
 ## API
-#### Azure OpenAI Service で GPT-4 API を使う
-https://zenn.dev/microsoft/articles/c2cfdda734b61c
-
-#### Azure OpenAI Service の Completions で入力で渡したテキストを結果に含める方法
-https://zenn.dev/microsoft/articles/azure-openai-do-not-echo
+Coming soon...
 
 ## Embeddings
 #### Azure OpenAI Embedding モデルを利用し最も関連性の高いドキュメントを見つける方法
@@ -95,10 +91,16 @@ https://zenn.dev/microsoft/articles/9d33c143df589e
 https://zenn.dev/microsoft/articles/be24a299f46a4d
 
 ## モデル/バージョン
+#### Azure OpenAI Service で GPT-4 API を使う
+GPTの次世代モデルであるGPT-4について利用法が記載されています。APIを使うとなっていますが、GPT-4の利用申請方法やPythonのSDKを使った呼び出しなども記載されています。
+https://zenn.dev/microsoft/articles/c2cfdda734b61c
+
 #### Azure OpenAI Service のレガシーモデルと今後のモデル選択戦略
+Azure OpenAI Serviceってリリースから半年くらいしか経ってないのにもうレガシー扱いのモデルが出てきてるんですよね・・・。というわけで今後モデルはどう選んでいったらいいのかという内容の記事です。
 https://zenn.dev/microsoft/articles/b050574ad7dfe2
 
 #### Azure OpenAI Service の gpt-35-turbo と gpt-4 の 2023 年 6 月 バージョン (0613)
+0613というバージョンのgpt-35-turboとgpt-4モデルが新しくリリースされました。前バージョンである0301との比較を各項目で行っています。
 https://zenn.dev/microsoft/articles/ed503d31efb434
 
 ## トークン
@@ -119,23 +121,30 @@ https://logico-jp.io/2023/09/27/is-it-possible-to-check-if-azure-openai-service-
 # アーキテクチャ
 ## ネットワーク
 #### Azure OpenAI Serviceにプライベートエンドポイントから接続する
+これがあるから本家OpenAIではなくAzure OpenAI Serviceを選択する企業も多い、ネットワーク閉域化ができるAzureの「プライベートエンドポイント」。Azure OpenAI Serviceにも対応しています。
 https://zenn.dev/microsoft/articles/198989f60eba61
 
 #### Azure OpenAI Serviceを拠点から閉域で使う方法
+こちらの記事は上記のプライベートエンドポイントの記事に加えてVPN経由でオンプレミスからも疎通ができるようにする方法も記載されています。DNSをどう構成するか、VNET設計をどうするかというところまで詳しく解説されています。
 https://qiita.com/hiro10149084/items/cf18c63dbddb1d7820c7
 
 ## API Management
+#### Azure OpenAI ServiceからのHTTPステータスに応じて、Azure API Managementで再試行したりフォールバックしたりしたい
+タイトルの通りです。API Managementを使って１つのAzure OpenAI Serviceがエラーを返しても別のAzure OpenAI Serviceにフォールバックする仕組みを作る方法が記載されています。
+https://logico-jp.io/2023/08/02/use-azure-api-management-policies-to-retry-and-fallback-azure-openai-service-based-on-http-status/
+
 #### OpenAI PythonライブラリをAzure API Managementと共に使うメモ
+Azure API ManagementをAzure OpenAI Serviceとクライアントの間にデプロイするアーキテクチャはよくあるパターンですが、クライアントのSDKによってはAPI Managementのエンドポイントが/openaiで終わる必要や、認証ヘッダーを変換する必要があります。その場合のAPI Managementの構成方法が記載されています。
 https://zenn.dev/microsoft/articles/19de2adf4f36d3
 
 #### Azure OpenAI Serviceをバックエンドサービスとして構成したAzure API ManagementのAPIに対し、Streamを有効にしたリクエストを投げたらHTTP 500を返してしまうことがある
+Azure OpenAI ServiceのStreamをONにしてリアルタイムでチャットが流れるようにしておくとServer Side Event(SSE)が使用されるが、その場合にAPI Managementで一定の設定をしているとHTTP 500が返ってしまう事象（バグではなくドキュメントにも記載がある仕様です）についての記事です。
 https://logico-jp.io/2023/09/12/when-invoking-apis-hosted-by-azure-api-management-configured-aoai-as-a-backend-service-with-requests-in-which-stream-is-set-to-true-azure-api-management-might-return-http-500/
 
-#### Azure OpenAI ServiceからのHTTPステータスに応じて、Azure API Managementで再試行したりフォールバックしたりしたい
-https://logico-jp.io/2023/08/02/use-azure-api-management-policies-to-retry-and-fallback-azure-openai-service-based-on-http-status/
 
 ## 負荷分散
 #### Azure OpenAI Serviceへの負荷分散
+Azure OpenAI Serviceってクオーター制限が結構厳しいんですよね、ってことで複数のOpenAIリソースの間で負荷分散をしましょう。という記事です。Azure Load BalancerなどAzureのサービスと連携して負荷分散を行う方法が記載されています。
 https://logico-jp.io/2023/06/08/request-load-balancing-for-azure-openai-service/
 
 ## Retrieval Augmented Generation(RAG)アーキテクチャ
@@ -162,6 +171,10 @@ https://zenn.dev/microsoft/articles/howtouser-azure-ai-openai
 
 #### Azure OpenAI Service の C# SDK (ChatGPT でも使えます)
 https://zenn.dev/microsoft/articles/azure-openai-service-csharpsdk
+
+#### Azure OpenAI Service の Completions で入力で渡したテキストを結果に含める方法
+OpenAIClientのCompletionsでリクエストを行うと通常はGPTからの出力のみしかレスポンスに含まれませんが、入力したプロンプトもレスポンスに含ませる方法が記載されています。
+https://zenn.dev/microsoft/articles/azure-openai-do-not-echo
 
 ## Semantic Kernel
 #### Semantic Kernel が Copilot stack との連携を明確化しプラグインエコシステムと統合
