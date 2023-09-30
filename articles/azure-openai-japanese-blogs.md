@@ -16,25 +16,37 @@ publication_name: "microsoft"
 # 概要
 ## まずはここから
 #### Azure OpenAI Service を使い始める
+Azure OpenAI Serviceの概要から実際のリソースデプロイ、プレイグラウンドとAPIでの呼び出しまでを解説した記事です。Azure OpenAI Serviceをどのように準備してどのように使うのか、概略を掴むのに最適な記事です。
 https://zenn.dev/microsoft/articles/1a15305021cd01
 
 #### Azure OpenAI Service の最初の一歩： Azure版 ChatGPT を Azure OpenAI Studio のチャット用プレイグラウンドで試す
+Azure OpenAI Serviceの概要から実際のリソースデプロイ、プレイグラウンドでの利用を解説した記事です。特にプレイグラウンドツールのAzure OpenAI Studioについて詳しく解説しています。
 https://qiita.com/youtoy/items/ff8248b2a6778038bd3c
 
+#### ChatGPT - Azure OpenAI 大全
+Azure OpenAI ServiceについてX上で数多くの情報発信をされているHirosato Gamoさん渾身のChatGPTとAzure OpenAIサービス全体について纏められた132ページの資料です。
+https://speakerdeck.com/hirosatogamo/chatgpt-azure-openai-da-quan
+
 #### Azure OpenAI Serviceのラーニングパスまとめメモ
+Microsoftの無料EラーニングプラットフォームMicrosoft Learnで提供されているAzure OpenAI Serviceについての学習コンテンツをまとめた記事です。公式教材で体系的に学びたい人におすすめです。
 https://qiita.com/k-kimino/items/7a55ac364201b8da228e
 
 ## 本家OpenAI と Azure OpenAIの違い
 #### [比較表] Azure OpenAIと本家OpenAI APIの比較表
+とりあえずこれを知っておけばOKという違いを見やすい表形式でAzure OpenAIと本家OpenAIのAPIの違いをまとめた記事です。
 https://zenn.dev/microsoft/articles/e0419765f7079a
 
 #### 本家 OpenAI と Azure OpenAI Service の ChatGPT API の比較
+利用規約から価格やAPIインターフェースまで幅広く本家OpenAIとAzure OpenAI Serviceの比較が記載されています。
 https://zenn.dev/microsoft/articles/59448047cd5ed9
 
 #### CTOの視点から見たAzure OpenAI ServiceとOpenAIのChatGPT APIの深堀り比較
+現役CTOの視点から、性能、セキュリティ、料金、サポートなどの要素について詳しく分析し、自社でのアーキテクチャ選定と使い分けを紹介しています。
+自社への導入を考えている方は必見です。
 https://qiita.com/lazy-kz/items/32e8e7c86bdce67beb48
 
 #### Azure OpenAI Service と OpenAI 本家で同じモデルに同じプロンプトを投げて時間はかってみた
+タイトルの通りです。本家OpenAIと異なりAzure OpenAI Serviceにはリソースの「リージョン」の考え方があるので、利用者から近いリージョンにデプロイすることで本家OpenAI以上に返答速度が速くなる可能性があります。
 https://zenn.dev/microsoft/articles/openai-performance
 
 ## API
