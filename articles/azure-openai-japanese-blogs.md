@@ -95,7 +95,7 @@ https://zenn.dev/microsoft/articles/9d33c143df589e
 #### Azure OpenAI Service の クォータ管理
 https://zenn.dev/microsoft/articles/be24a299f46a4d
 
-## バージョン
+## モデル/バージョン
 #### Azure OpenAI Service のレガシーモデルと今後のモデル選択戦略
 https://zenn.dev/microsoft/articles/b050574ad7dfe2
 
