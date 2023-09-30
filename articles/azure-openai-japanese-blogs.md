@@ -33,16 +33,15 @@ https://qiita.com/k-kimino/items/7a55ac364201b8da228e
 
 ## 本家OpenAI と Azure OpenAIの違い
 #### [比較表] Azure OpenAIと本家OpenAI APIの比較表
-とりあえずこれを知っておけばOKという違いを見やすい表形式でAzure OpenAIと本家OpenAIのAPIの違いをまとめた記事です。
+とりあえずこれを知っておけばOKという違いを見やすい表形式でまとめた記事です。
 https://zenn.dev/microsoft/articles/e0419765f7079a
 
 #### 本家 OpenAI と Azure OpenAI Service の ChatGPT API の比較
-利用規約から価格やAPIインターフェースまで幅広く本家OpenAIとAzure OpenAI Serviceの比較が記載されています。
+利用規約から価格やAPIインターフェースまで幅広く詳細に比較が記載されています。
 https://zenn.dev/microsoft/articles/59448047cd5ed9
 
 #### CTOの視点から見たAzure OpenAI ServiceとOpenAIのChatGPT APIの深堀り比較
-現役CTOの視点から、性能、セキュリティ、料金、サポートなどの要素について詳しく分析し、自社でのアーキテクチャ選定と使い分けを紹介しています。
-自社への導入を考えている方は必見です。
+現役CTOの視点から、性能、セキュリティ、料金、サポートなどの要素について詳しく分析し、自社でのアーキテクチャ選定と使い分けを紹介しています。自社への導入を考えている方は必見です。
 https://qiita.com/lazy-kz/items/32e8e7c86bdce67beb48
 
 #### Azure OpenAI Service と OpenAI 本家で同じモデルに同じプロンプトを投げて時間はかってみた
