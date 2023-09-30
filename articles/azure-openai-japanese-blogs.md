@@ -45,7 +45,7 @@ https://zenn.dev/microsoft/articles/59448047cd5ed9
 https://qiita.com/lazy-kz/items/32e8e7c86bdce67beb48
 
 #### Azure OpenAI Service と OpenAI 本家で同じモデルに同じプロンプトを投げて時間はかってみた
-タイトルの通りです。本家OpenAIと異なりAzure OpenAI Serviceにはリソースの「リージョン」の考え方があるので、利用者から近いリージョンにデプロイすることで本家OpenAI以上に返答速度が速くなる可能性があります。
+タイトルの通りです。　この記事内では言及されていませんが、本家OpenAIと異なりAzure OpenAI Serviceにはリソースの「リージョン」の考え方があるので、利用者から近いリージョンにデプロイすることで本家OpenAI以上に返答速度が速くなる可能性があります。
 https://zenn.dev/microsoft/articles/openai-performance
 
 ## API
