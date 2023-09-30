@@ -88,6 +88,7 @@ https://zenn.dev/microsoft/articles/9d33c143df589e
 
 ## クォーター
 #### Azure OpenAI Service の クォータ管理
+2023年6月まではモデルのデプロイごとにクオーターが固定だったのですが、アップデートによって全体の枠の中でユーザーが各デプロイに上限を割り振れるようになりました。その機能についての説明です。
 https://zenn.dev/microsoft/articles/be24a299f46a4d
 
 ## モデル/バージョン
