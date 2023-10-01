@@ -73,17 +73,21 @@ Coming soon...
 # リソース管理
 ## 全般
 #### Azure Open AIのコーポレートガバナンスについて考える
+Azure OpenAI Serviceで扱われるデータの種類・処理・保持について整理した記事です。Azure OpenAI Serviceに対してリクエストしたデータがどのような流れを経て処理されるのがを理解するのに役立ちます。
 https://zenn.dev/microsoft/articles/fe09382d4e35ba
 
 ## デプロイ
 #### Azure OpenAI ServiceリソースをTerraformで作成する
+コードとしてのインフラストラクチャ（IaC:Infrastucture as Code）のための人気ツールであるTerraformを使ってAzure OpenAI Serviceのリソースをデプロイする方法が記載されています。
 https://qiita.com/AsukaSeki/items/551f49888e36d6dbdf0b
 
 ## 認証
 #### Azure OpenAI ServiceのRBACについてまとめた
+ここもAzure特有の機能ですが、Azure共通の認証基盤であるAzure ADを使ったRole Based Access Control(RBAC)についての記事です。Azure OpenAI Serviceのリソースに対してAzure ADを使用して権限を管理する方法が記載されています。
 https://qiita.com/Yosuke_Sakaue/items/2273bb3e64e0905ac462
 
 #### Azure OpenAI Service でマネージド ID を使う
+ユーザーだけでなくリソース間でもAzure AD認証を使用することができます。この記事ではApp Serviceに設定したマネージドIDをコードから参照してAzure OpenAI Serviceを使用する方法が記載されています。
 https://zenn.dev/microsoft/articles/openai-managedid
 
 #### Azure OpenAI ServiceのAPIキーを無効化する
