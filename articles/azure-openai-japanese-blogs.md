@@ -329,6 +329,7 @@ https://qiita.com/Takashi_Masumori/items/5405150b89335008669a
 # ハンズオン資料/サンプル
 ## ハンズオン資料
 #### まだOpenAI使ったことないの？この記事で全員ハンズオンさせてやんよ！
+Azure DevOpsを使用してAzure Static Web AppsにアプリをデプロイしてAzure OpenAI Serviceを使うハンズオンです。Azure DevOpsもAzure Static Web Appsも無料枠があるので、Azure OpenAI Service分の課金だけで試すこともできそうです。
 https://qiita.com/fe_js_engineer/items/4c11827906d38051ae51
 
 #### デジタル庁　ChatGPTを業務に組み込むためのハンズオン
@@ -336,25 +337,32 @@ https://qiita.com/fe_js_engineer/items/4c11827906d38051ae51
 https://www.digital.go.jp/assets/contents/node/information/field_ref_resources/5896883b-cc5a-4c5a-b610-eb32b0f4c175/82ccd074/20230725_resources_ai_outline.pdf
 
 #### Azure OpenAI Service を利用した ChatGPT お試し環境の構築
+とりあえず閉域化したChatGPTを作りたい！という方はこちら。
 https://ks6088ts.github.io/blog/fork-azure-openai-playground
 
 #### Azure OpenAI Service を利用した ChatGPT お試し環境にログ出力機能を追加する
+上記の閉域化ChatGPTにAPI Managementをデプロイしてログ出力機能を追加するハンズオンです。
 https://ks6088ts.github.io/blog/aoai-apim-easyauth
 
 #### Azure OpenAI Service を用いた Function Calling のハンズオン
+pythonを使用してAzure OpenAI ServiceのFunction Callingの基礎を体験できるハンズオンです。
 https://ks6088ts.github.io/blog/aoai-function-calling
 
 ## サンプル
 #### Azure OpenAIのサンプルまとめ
+主にGitHubで公開されているデプロイ・実行可能なサンプルソリューションがまとめられています。
 https://zenn.dev/microsoft/articles/5c937466f09d98
 
 #### Azure OpenAI Samples Japan
+公式情報にはなりますが、[Azure OpenAI Serviceリファレンスアーキテクチャ](https://www.microsoft.com/ja-jp/events/azurebase/blog/aoai-referencearchitecture-release/)の実装サンプルリポジトリです。
 https://github.com/Azure-Samples/jp-azureopenai-samples
 
 #### 社内向けChatGPTを費用を押さえつつ爆速で構築する方法をMicrosoftが提供してくれていた件
+Microsoftの公式リポジトリで公開されているChatGPTサンプルアプリをデプロイして使う方法が記載されています。
 https://qiita.com/keitomatsuri/items/aeacb527fbc5de34cacc
 
 #### Azure-Samples/azure-search-openai-demo でログを有効にする
+公式サンプルのAzure-Samples/azure-search-openai-demoリポジトリにログ出力機能を追加する方法が記載されています。
 https://qiita.com/georgeOsdDev@github/items/c8a67c9bd897c6b5b003
 
 #### Azure OpenAI を使った知識埋め込み型QAボットのサンプルをいじってみた
