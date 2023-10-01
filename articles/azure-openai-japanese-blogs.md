@@ -331,6 +331,10 @@ https://qiita.com/Takashi_Masumori/items/5405150b89335008669a
 #### まだOpenAI使ったことないの？この記事で全員ハンズオンさせてやんよ！
 https://qiita.com/fe_js_engineer/items/4c11827906d38051ae51
 
+#### デジタル庁　ChatGPTを業務に組み込むためのハンズオン
+すでに環境が準備された状態での主にプロンプトエンジニアリングをテーマとしたエンドユーザー目線のハンズオンです。補足としてRAGアーキテクチャについても少しだけ触れられています。
+https://www.digital.go.jp/assets/contents/node/information/field_ref_resources/5896883b-cc5a-4c5a-b610-eb32b0f4c175/82ccd074/20230725_resources_ai_outline.pdf
+
 #### Azure OpenAI Service を利用した ChatGPT お試し環境の構築
 https://ks6088ts.github.io/blog/fork-azure-openai-playground
 
