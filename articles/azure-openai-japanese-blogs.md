@@ -402,6 +402,13 @@ https://qiita.com/nohanaga/items/c3e92c9adeca7c84a8d5
 #### Azure Cognitive Search を ChatGPT Plugin 経由で呼び出し、AI オーケストレーターと統合する
 https://qiita.com/nohanaga/items/afcff2bf4ab95089267d
 
+## Open Interpreter
+#### Azure OpenAI Service + Open Interpreterやってみたレポート
+簡単にいうと本家OpenAIのCode Interpreterと同じようなことをオープンソースツールのOpen Interpreterを使ってローカルPC+Azure OpenAI Serviceでもできるようにしようというものです。
+https://zenn.dev/happy_elements/articles/745e339b5f9d99
+
+#### ついに来たローカルAIデータ分析！ Open InterpreterとAzure OpenAI Serviceで機密データも安全にハンドリング
+https://qiita.com/hiromitsu_iwasaki/items/ef0f302d87e240d9f880
 
 ## その他
 #### ChatGPT のプラグイン "Code Interpreter" でセキュリティインシデントを分析する
