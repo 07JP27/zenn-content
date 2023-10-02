@@ -54,6 +54,13 @@ https://zenn.dev/microsoft/articles/openai-performance
 この記事で紹介されているAPI呼び出しはAzureポータルのAzure CLIから実行する方法のため、ローカルの開発環境がなくても試せます。
 https://cptechweb.teldevice.co.jp/hc/ja/articles/20253365966233-Azure-OpenAI-%E3%81%AB-REST-API-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95
 
+## プロンプトエンジニアリング
+#### [メモ] 責任あるAIのためのプロンプトエンジニアリング
+https://zenn.dev/microsoft/articles/3a946a22bc6f76
+
+#### Azure Open AI Service で SQL を生成するプロンプト例
+https://zenn.dev/masakikato/articles/azure-openai-prompt-sql
+
 ## Embeddings
 #### Azure OpenAI Embedding モデルを利用し最も関連性の高いドキュメントを見つける方法
 https://qiita.com/yoshioterada/items/3e575828368bf3767532
@@ -292,9 +299,6 @@ https://qiita.com/sakue_103/items/8f3818779c6eb1bb178a
 #### Azure OpenAI Service の設定可能なコンテンツフィルター
 https://zenn.dev/microsoft/articles/ad8fc1c403ced1
 
-# プロンプトエンジニアリング
-#### [メモ] 責任あるAIのためのプロンプトエンジニアリング
-https://zenn.dev/microsoft/articles/3a946a22bc6f76
 
 # Power Platform連携
 ## 全般
