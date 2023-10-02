@@ -50,7 +50,7 @@ https://zenn.dev/microsoft/articles/openai-performance
 
 ## API
 #### Azure OpenAI に REST API を使用して質問するサンプルコードの作成方法
-アプリを作るときはSDK SDK等でラップすることが多いと思いますが、REST APIでの呼び出しはサービスとのインターフェイスを理解する上で大切です。
+アプリを作るときはライブラリやSDKを使うことが多いと思いますが、REST APIでの呼び出しはサービスとのインターフェイスを理解する上で大切です。
 この記事で紹介されているAPI呼び出しはAzureポータルのAzure CLIから実行する方法のため、ローカルの開発環境がなくても試せます。
 https://cptechweb.teldevice.co.jp/hc/ja/articles/20253365966233-Azure-OpenAI-%E3%81%AB-REST-API-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95
 
