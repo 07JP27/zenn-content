@@ -403,8 +403,8 @@ https://qiita.com/nohanaga/items/c3e92c9adeca7c84a8d5
 https://qiita.com/nohanaga/items/afcff2bf4ab95089267d
 
 ## Open Interpreter
+Open Interpreterをは簡単にいうと本家OpenAIのCode Interpreterと同じようなことをオープンソースツールのOpen Interpreterを使ってローカルPC+各種LLMモデルでもできるようにしようというものです。LLMモデルはAzure OpenAI　Serviceのモデルにも対応しています。
 #### Azure OpenAI Service + Open Interpreterやってみたレポート
-簡単にいうと本家OpenAIのCode Interpreterと同じようなことをオープンソースツールのOpen Interpreterを使ってローカルPC+Azure OpenAI Serviceでもできるようにしようというものです。
 https://zenn.dev/happy_elements/articles/745e339b5f9d99
 
 #### ついに来たローカルAIデータ分析！ Open InterpreterとAzure OpenAI Serviceで機密データも安全にハンドリング
