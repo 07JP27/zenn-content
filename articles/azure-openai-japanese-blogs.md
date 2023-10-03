@@ -154,7 +154,7 @@ https://qiita.com/hiro10149084/items/cf18c63dbddb1d7820c7
 https://logico-jp.io/2023/08/02/use-azure-api-management-policies-to-retry-and-fallback-azure-openai-service-based-on-http-status/
 
 ### Azure API Management でAzure OpenAI のChatGPTを取り扱う
-API Management内であらかじめOpenAIの認証情報セットしておいて通信するような構成を作る方法が記載されています。
+API Management内であらかじめOpenAIの認証情報をセットしておいて通信するような構成を作る方法が記載されています。
 https://level69.net/archives/33697
 
 #### OpenAI PythonライブラリをAzure API Managementと共に使うメモ
