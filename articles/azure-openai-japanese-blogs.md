@@ -252,6 +252,9 @@ https://zenn.dev/microsoft/articles/semantic-kernel-16
 #### Semantic Kernel を使ってアプリ内に AI を組み込んでみた
 https://zenn.dev/microsoft/articles/semantic-kernel-17
 
+#### Semantic Kernel の Function calling サポートを試してみよう
+https://zenn.dev/microsoft/articles/semantic-kernel-18
+
 ## LangChain
 #### LangChain の Vectorstore として Azure Cache for Redis を使ってベクトルの格納と検索を行う
 https://zenn.dev/microsoft/articles/6d4a04a6f45d4d
