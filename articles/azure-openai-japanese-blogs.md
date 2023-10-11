@@ -110,6 +110,10 @@ https://zenn.dev/microsoft/articles/9d33c143df589e
 2023年6月まではモデルのデプロイごとにクオーターが固定だったのですが、アップデートによって全体の枠の中でユーザーが各デプロイに上限を割り振れるようになりました。その機能についての説明です。
 https://zenn.dev/microsoft/articles/be24a299f46a4d
 
+#### Azure OpenAI Service の Chat Completion API を JMeter で負荷テストしてみた
+実際問題どれくらい使ったらクオーター制限に引っ掛かるの？という実験記事です。Azrure OpenAI Serviceはスロットリングウィンドウが１分でリセットされるため、１リクエストあたりのリクエストトークンを増やしてタスクを複雑にし、生成に時間をかけるようにすることでその間にスロットリングウィンドウがリセットされる場合があるというのが興味深いです。
+https://zenn.dev/microsoft/articles/20231011_aoai_jmeter
+
 ## モデル/バージョン
 #### Azure OpenAI Service で GPT-4 API を使う
 GPTの次世代モデルであるGPT-4について利用法が記載されています。APIを使うとなっていますが、GPT-4の利用申請方法やPythonのSDKを使った呼び出しなども記載されています。
