@@ -79,5 +79,32 @@ https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/diagnostic-sett
 ここまで読んでいただければ、単純にリクエスト/レスポンスのBodyをログに出力しているだけというのがお分かりいただけたかと思います。
 Open AI以外でもAPI Managementのログを使用するとバックエンドとアプリ間の通信の内容を監視することができるので、ぜひ活用してみてください。
 
+# [番外編]ユーザー識別子も記録したい！
+Azure ADのJWTトークンなどをつけてリクエストすればリクエストヘッダーのJWTをデコードすることでユーザー識別子の確認が可能です。
+でもどうせならデコードした状態でログを記録してしまいましょう。
+
+API Managementのポリシーは以下のような設定になります。
+```xml
+<policies>
+    <inbound>
+        <base />
+        <validate-azure-ad-token tenant-id="{JWTを取得するためのアプリ登録が存在するテナントのID}" header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="認証に失敗しました" output-token-variable-name="jwt-variables">
+            <client-application-ids>
+                <application-id>{JWTを取得するためのアプリ登録のアプリケーションID}</application-id>
+            </client-application-ids>
+            <required-claims>
+                <claim name="unique_name" />
+            </required-claims>
+        </validate-azure-ad-token>
+        <trace source="jwt" severity="information">
+            <message>@(((Jwt)context.Variables["jwt-variables"]).Claims.GetValueOrDefault("unique_name"))</message>
+        </trace>
+    </inbound>
+    ...
+</policies>
+```
+このポリシーをセットして実際にリクエストをしてみると、以下のようにトレースとしてユーザー識別子が出力されます。
+![](/images/azure-openai-nocode-logging/jwt.png)
+
 # 参考
 https://learn.microsoft.com/ja-jp/azure/architecture/example-scenario/ai/log-monitor-azure-openai
