@@ -375,6 +375,9 @@ https://ks6088ts.github.io/blog/aoai-apim-easyauth
 pythonを使用してAzure OpenAI ServiceのFunction Callingの基礎を体験できるハンズオンです。
 https://ks6088ts.github.io/blog/aoai-function-calling
 
+#### Azure OpenAI ✖️ LINE MessagingAPI を使って自分だけのAIチャットボットを作ろう！
+https://zenn.dev/yusu29/articles/azure_openai_chatbot_handson
+
 ## サンプル
 #### Azure OpenAIのサンプルまとめ
 主にGitHubで公開されているデプロイ・実行可能なサンプルソリューションがまとめられています。
