@@ -1,5 +1,5 @@
 ---
-title: "Azure Open AIでFunction Callingを使う！"
+title: "Azure OpenAIでFunction Callingを使う！"
 emoji: "📞"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "openai"]
@@ -7,10 +7,10 @@ published: true
 publication_name: "microsoft"
 ---
 
-本家Open AIに続き、Azure Open AI ServiceでもFunction Callingが利用可能になりました。本記事ではFunction Callingの概要や仕組み、利用方法などをお伝えします。
+本家OpenAIに続き、Azure OpenAI ServiceでもFunction Callingが利用可能になりました。本記事ではFunction Callingの概要や仕組み、利用方法などをお伝えします。
 
 # なぜFunction Callingが必要なのか
-ChatGPTをはじめとするGPTシリーズのリリースから数ヶ月が経過し、市場が徐々にGPTに慣れてきました。それに伴い、単純な「GPTとのやりとり」だけではなく様々なアプリケーションとの連携の需要が増加してきています。本家Open AIでも[プラグイン](https://openai.com/blog/chatgpt-plugins)と呼ばれる外部のサービスやアプリケーションとChatGPTを連携するような機能もリリースされています。
+ChatGPTをはじめとするGPTシリーズのリリースから数ヶ月が経過し、市場が徐々にGPTに慣れてきました。それに伴い、単純な「GPTとのやりとり」だけではなく様々なアプリケーションとの連携の需要が増加してきています。本家OpenAIでも[プラグイン](https://openai.com/blog/chatgpt-plugins)と呼ばれる外部のサービスやアプリケーションとChatGPTを連携するような機能もリリースされています。
 
 しかし、**GPTの出力は自然言語であるためアプリケーションとの連携相性が悪いという弱点**があります。例えば以下のような問題が発生しうる可能性がありました。
 - アプリで構造データとして扱いたいから「JSONで出力してね」と言っても余計な日本語をつけてきたり
@@ -38,9 +38,9 @@ ChatGPTをはじめとするGPTシリーズのリリースから数ヶ月が経�
 
 ## Function Callingのエンドポイント
 Fcuntion Callingを使うには通常のChatGPT用のエンドポイント(Chat completions)を使用します。ただし、本記事の執筆時点でFunction Callingを使用するにはapi-versionを最新の`2023-07-01-preview`に設定する必要があります。
-Function Calling使用の有無に関わらず、Azure Open AIの場合は本家Open AIとは異なり開発者各自が[Azure Open AIのリソースをデプロイし、その中にベースモデルからのデプロイメントを配置する準備](https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)が必要になります。そのためエンドポイントは以下のように各環境ごとの変数を含む形なります。
+Function Calling使用の有無に関わらず、Azure OpenAIの場合は本家OpenAIとは異なり開発者各自が[Azure OpenAIのリソースをデプロイし、その中にベースモデルからのデプロイメントを配置する準備](https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/create-resource?pivots=web-portal)が必要になります。そのためエンドポイントは以下のように各環境ごとの変数を含む形なります。
 ```
-POST https://{Azure Open AIのリソース名}.openai.azure.com/openai/deployments/{デプロイメント名}/chat/completions?api-version=2023-07-01-preview
+POST https://{Azure OpenAIのリソース名}.openai.azure.com/openai/deployments/{デプロイメント名}/chat/completions?api-version=2023-07-01-preview
 ```
 
 ## Function Callingのリクエスト
@@ -106,7 +106,7 @@ https://github.com/07JP27/open-ai-test/tree/main/function-calling
 
 
 ## Pythonライブラリで試す
-Jupyter Notebook上で試してみます。本家Open AIのライブラリを使っています。（呼び出せる機能の一覧はコードないで別途定義しています。）
+Jupyter Notebook上で試してみます。本家OpenAIのライブラリを使っています。（呼び出せる機能の一覧はコードないで別途定義しています。）
 ![](/images/azure-openai-add-function-calling/py.png)
 
 [実際に使用したサンプルコードはこちらをご覧ください。](https://github.com/07JP27/open-ai-test/blob/main/function-calling/py.ipynb)

@@ -1,5 +1,5 @@
 ---
-title: "Azure Open AIの「Add your data」をAPIとして使う！"
+title: "Azure OpenAIの「Add your data」をAPIとして使う！"
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'openai', 'api']
@@ -7,7 +7,7 @@ published: true
 publication_name: "microsoft"
 ---
 
-前回の記事で「Azure Open AIの「Add your data」を使用した際に、APIとしても使うことができる」と書きました。この部分についてもう少し詳しくみていきたいと思います。（前回の記事の内容を前提に記載していますのでまだの方は一度お目通しください。）
+前回の記事で「Azure OpenAIの「Add your data」を使用した際に、APIとしても使うことができる」と書きました。この部分についてもう少し詳しくみていきたいと思います。（前回の記事の内容を前提に記載していますのでまだの方は一度お目通しください。）
 ↓前回の記事
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 
@@ -16,13 +16,13 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 大きな違いは前回の記事で説明したdataSourcesについて、「**dataSourcesプロパティをどこで指定するか**」という点です。
 
 ## Completions extensions APIを直接叩くパターン
-Azure Open AIのAPIとして[Completions extensions](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)というインターフェースが追加されました。
+Azure OpenAIのAPIとして[Completions extensions](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)というインターフェースが追加されました。
 これを使用することでクライアントからリクエストするたびにデータソースを指定することができます。
 ![](/images/azure-openai-add-your-data-api/2.png)
 
 
 ## 「Add your data」から自動デプロイしたWeb Appsに対して、APIリクエストをするパターン
-[前回の記事で確認した](https://zenn.dev/microsoft/articles/azure-openai-add-your-data#web-api%E3%82%82%E6%8F%90%E4%BE%9B)通り、Azure Open AIプレイグラウンドから自動デプロイしたWeb Appsには/conversationエンドポイントが生えているので、これを叩きます。
+[前回の記事で確認した](https://zenn.dev/microsoft/articles/azure-openai-add-your-data#web-api%E3%82%82%E6%8F%90%E4%BE%9B)通り、Azure OpenAIプレイグラウンドから自動デプロイしたWeb Appsには/conversationエンドポイントが生えているので、これを叩きます。
 すでにどのCognitive Searchのデータソースを使うかはWeb Appsの中で指定済みなので、通常のChatGPTのような形でリクエストを投げると、独自ナレッジも含んだ回答が返ってきます。つまり**Web Appsでラップされている状態**ということですね。
 ![](/images/azure-openai-add-your-data-api/1.png)
 
@@ -99,6 +99,6 @@ curl --request POST \
 それぞれの方式で一長一短あると思うので用途にあった方をお使いください。
 
 # 公式教材（無料）
-Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure Open AIのAdd your dataに関する無料教材が公開されています。
+Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure OpenAIのAdd your dataに関する無料教材が公開されています。
 ご自身のAzure環境を持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
 https://learn.microsoft.com/en-us/training/modules/use-own-data-azure-openai/

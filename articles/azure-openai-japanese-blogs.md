@@ -135,7 +135,7 @@ https://zenn.dev/microsoft/articles/dcf32f3516f013
 https://zenn.dev/microsoft/articles/azure-openai-count-token
 
 ## 監視
-#### Azure Open AIのプロンプトをノーコードで監視したい！
+#### Azure OpenAIのプロンプトをノーコードで監視したい！
 https://zenn.dev/microsoft/articles/azure-openai-nocode-logging
 
 #### Azure OpenAI Serviceの死活監視は可能なのか
@@ -272,7 +272,7 @@ https://qiita.com/tmiyata25/items/7a04096342241d8a2b4c
 
 # 特定機能
 ## Add your data（On your data）
-独自ナレッジをノーコードでChatGPTに連携！Azure Open AI「Add your data」
+#### 独自ナレッジをノーコードでChatGPTに連携！Azure OpenAI「Add your data」
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 
 #### Azure OpenAI on your data でノーコードで ChatGPT 対応エンタープライズサーチを構築する
@@ -281,10 +281,10 @@ https://qiita.com/nohanaga/items/a3e236fdbb3ef5878012
 #### Azure OpenAI Service On Your Data の仕組みと使う上で気を付けるべきポイント
 https://zenn.dev/microsoft/articles/ad14d45121abe7
 
-#### Azure Open AIの「Add your data」で出来ること出来ないこと
+#### Azure OpenAIの「Add your data」で出来ること出来ないこと
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data-procon
 
-#### Azure Open AIの「Add your data」をAPIとして使う！
+#### Azure OpenAIの「Add your data」をAPIとして使う！
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 
 #### Azure OpenAI on your dataのAPIでハマった点
@@ -294,7 +294,7 @@ https://qiita.com/yahayuta/items/fc51b6a5abb214b68c5a
 https://zenn.dev/microsoft/articles/06063068b75a91
 
 ## Function calling
-#### Azure Open AIでFunction Callingを使う！
+#### Azure OpenAIでFunction Callingを使う！
 https://zenn.dev/microsoft/articles/azure-openai-add-function-calling
 
 #### Azure OpenAI の Function calling を Golang で試す

@@ -1,5 +1,5 @@
 ---
-title: "独自ナレッジをノーコードでChatGPTに連携！Azure Open AI「Add your data」"
+title: "独自ナレッジをノーコードでChatGPTに連携！Azure OpenAI「Add your data」"
 emoji: "🎉"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'openai', 'chatbot',]
@@ -9,7 +9,7 @@ publication_name: "microsoft"
 
 「「やってみた」記事はもう十分」という方は[もう少し詳しくみてみる](#もう少し詳しくみてみる)セクションからご覧ください！
 
-先月のMicrosoft Buildで発表されて注目を集めていた、Azure Open AIでコーディングなしで社内のナレッジを組み込んだ回答をするChatGPTが作成できる機能「Add your data」がパブリックプレビューになりました🎉🎉🎉🎉
+先月のMicrosoft Buildで発表されて注目を集めていた、Azure OpenAIでコーディングなしで社内のナレッジを組み込んだ回答をするChatGPTが作成できる機能「Add your data」がパブリックプレビューになりました🎉🎉🎉🎉
 https://techcommunity.microsoft.com/t5/ai-cognitive-services-blog/introducing-azure-openai-service-on-your-data-in-public-preview/ba-p/3847000
 
 
@@ -24,7 +24,7 @@ https://github.com/Azure-Samples/azure-search-openai-demo
 ではセットアップしてみましょう。
 今回はすでにCognitive Searchのリソースがある前提で進めます。
 
-Azure Open AIのプレイグランドから「チャット」にアクセスして「Add your data」タブから「Add a data source」を選択します。
+Azure OpenAIのプレイグランドから「チャット」にアクセスして「Add your data」タブから「Add a data source」を選択します。
 ![](/images/azure-openai-add-your-data/1.png)
 
 
@@ -74,8 +74,8 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data-api
 このアプリはどんなプロンプト投げてるのか気になったので見てみたのですが、アプリの中にプロンプトはありませんでした。
 ではどうしているのかというと、APIとして隠蔽されています(!)
 
-Azure Open AIのRESTリファレンスをみると、`dataSources`なるプロパティをもつCompletions extensionsというAPIがさらっと追加されています。
-ここに対して独自データのエンドポイント情報をセットして、ユーザーの入力とと共にリクエストすると、あとはAzure Open AIが勝手にやってくれる、という仕組みです。（執筆時点では日本語ドキュメントには未反映）
+Azure OpenAIのRESTリファレンスをみると、`dataSources`なるプロパティをもつCompletions extensionsというAPIがさらっと追加されています。
+ここに対して独自データのエンドポイント情報をセットして、ユーザーの入力とと共にリクエストすると、あとはAzure OpenAIが勝手にやってくれる、という仕組みです。（執筆時点では日本語ドキュメントには未反映）
 https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions
 ![](/images/azure-openai-add-your-data/10.png)
 
@@ -115,7 +115,7 @@ Cognitive Searchに対しては全文検索を行うため、文章でのクエ�
 Web Appsの「構成」をみると、システムプロンプトは`AZURE_OPENAI_SYSTEM_MESSAGE`環境変数で設定できるようになっています。
 ここを変えることによってキャラクター定義をはじめとしたメタプロンプトが可能です。
 ただし、この環境変数はシステムプロンプトのほかに`dataSources`プロパティの`roleInformation`にもセットされるようになっています。[APIドキュメント](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#example-response-3:~:text=There%E2%80%99s%20a%20100%20token%20limit%2C%20which%20counts%20towards%20the%20overall%20token%20limit.)を見ると`roleInformation`は最大100トークンという制約があるため、あまり多くの文字はセット出来なさそうです。
-その他にもMax tokenなど変数としてAzure Open AIに渡せるパラメーターは大体が環境変数になっています。
+その他にもMax tokenなど変数としてAzure OpenAIに渡せるパラメーターは大体が環境変数になっています。
 ![](/images/azure-openai-add-your-data/14.png)
 
 ↓システムプロンプトでの参照
@@ -133,7 +133,7 @@ https://github.com/microsoft/sample-app-aoai-chatGPT
 
 ## 閉域化の対応
 :::details 非対応だった以前までの内容
-少し上級者向けですが、Cognitive SearchやAzure Open AIではPrivate Linkという仕組みを使ってネットワーク的に閉域化、つまり特定のネットワーク（社内ネットワークなど）からのみアクセスを許可することができます。
+少し上級者向けですが、Cognitive SearchやAzure OpenAIではPrivate Linkという仕組みを使ってネットワーク的に閉域化、つまり特定のネットワーク（社内ネットワークなど）からのみアクセスを許可することができます。
 特にAdd your dataのような社内ナレッジを含むシステムを構築する場合、閉域化を望むケースも多いと思います。
 しかし、Completions extensions APIの場合、APIに対してデータソースとなるCognitive Searchを指定して、Azureのどこかに置かれたCompletions extensions APIの中からCognitive Searchにアクセスできる必要があります。そのため、少なくともこの記事の執筆時点ではAdd your data機能は閉域化に対応していないようです。
 
@@ -149,6 +149,6 @@ https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-dat
 
 
 # 公式教材（無料）
-Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure Open AIのAdd your dataに関する無料教材が公開されています。
+Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure OpenAIのAdd your dataに関する無料教材が公開されています。
 ご自身のAzure環境を持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
 https://learn.microsoft.com/en-us/training/modules/use-own-data-azure-openai/

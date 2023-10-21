@@ -1,5 +1,5 @@
 ---
-title: "Azure Open AIの「Add your data」で出来ること出来ないこと"
+title: "Azure OpenAIの「Add your data」で出来ること出来ないこと"
 emoji: "🌊"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "openai"]
@@ -8,7 +8,7 @@ publication_name: "microsoft"
 ---
 
 # はじめに
-最近リリースされたAzure Open AIの「Add your data」は大きな注目を集めています。
+最近リリースされたAzure OpenAIの「Add your data」は大きな注目を集めています。
 **「Add your data」はAzureが提供する何かすごい機能というわけではなく、Cognitive Searchを使用した検索とそこから回答を得るためのプロンプトエンジニアリングなどの実装をAzureがマネージドサービスとして提供しているものです。**
 そのため「Add your data」のような機能を自前で実装することも可能で、実際に社内ナレッジ検索を自前実装するサンプルが公開されています。
 https://github.com/Azure-Samples/azure-search-openai-demo
@@ -33,11 +33,11 @@ https://zenn.dev/microsoft/articles/azure-openai-add-your-data
 
 
 では各項目について見ていく前に、まずは「Add your data」の仕組みについておさらいしましょう。
-「Add your data」のためにAzure Open AIに[Completions extensions API](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)というAPIが追加されています。ここに対して回答源となるデータソース（執筆時点ではCognitive Searchのみ）とユーザーの入力を渡すことでクエリの生成から回答作成ができます。
+「Add your data」のためにAzure OpenAIに[Completions extensions API](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#completions-extensions)というAPIが追加されています。ここに対して回答源となるデータソース（執筆時点ではCognitive Searchのみ）とユーザーの入力を渡すことでクエリの生成から回答作成ができます。
 ![](/images/azure-openai-add-your-data-procon/addyourdata.png)
 
 ## ノーコードでの実現
-「Add your data」はAzure Open AI StudioからノーコードでフロントのWebアプリ発行までが可能です。これについては今までも多くの方が記事を執筆しているので改めてここでは説明しませんが、以下の公式クイックスタートをなぞるとコードを一行も書くことなく構築の体験ができます。
+「Add your data」はAzure OpenAI StudioからノーコードでフロントのWebアプリ発行までが可能です。これについては今までも多くの方が記事を執筆しているので改めてここでは説明しませんが、以下の公式クイックスタートをなぞるとコードを一行も書くことなく構築の体験ができます。
 
 https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio
 
@@ -46,19 +46,19 @@ https://github.com/Azure-Samples/azure-search-openai-demo
 
 
 ## 閉域化
-Azureには[Private Endpoint](https://learn.microsoft.com/ja-jp/azure/private-link/private-endpoint-overview)や[VNet統合](https://learn.microsoft.com/ja-jp/azure/app-service/overview-vnet-integration)など、PaaSサービスを仮想ネットワーク内に閉じ込め、インターネットからのアクセスを制限(=閉域化)する機能があります。今回の登場人物のWebアプリをホストしているWeb Appsや、Cognitive Search、Azure Open AIもこれら機能に対応しています。
+Azureには[Private Endpoint](https://learn.microsoft.com/ja-jp/azure/private-link/private-endpoint-overview)や[VNet統合](https://learn.microsoft.com/ja-jp/azure/app-service/overview-vnet-integration)など、PaaSサービスを仮想ネットワーク内に閉じ込め、インターネットからのアクセスを制限(=閉域化)する機能があります。今回の登場人物のWebアプリをホストしているWeb Appsや、Cognitive Search、Azure OpenAIもこれら機能に対応しています。
 ||Private Endpoint|VNet統合|
 |:--|:--|:--|
 |Web Apps|〇|〇|
 |Cognitive Search|〇|-|
-|Azure Open AI|〇|-|
+|Azure OpenAI|〇|-|
 
 この記事の主題ではないので簡単に説明しますが、PaaS**への**アクセスを閉域化するのがPrivate Endpoint、PaaS**からの**アクセスを閉域化するのがVNet統合です。
 
 :::details 非対応だった以前までの内容
-では、登場人物全てが閉域化に対応しているのに、なぜ「Add your data」は閉域化できないのでしょうか。それは**Azure Open AIからCognitive Searchへの通信が執筆時点ではパブリックのみになっているから**です。「Add your data」の仕組み図を閉域ネットワーク的に書き換えると以下の図のようになります。
+では、登場人物全てが閉域化に対応しているのに、なぜ「Add your data」は閉域化できないのでしょうか。それは**Azure OpenAIからCognitive Searchへの通信が執筆時点ではパブリックのみになっているから**です。「Add your data」の仕組み図を閉域ネットワーク的に書き換えると以下の図のようになります。
 ![](/images/azure-openai-add-your-data-procon/privatenwrestrict.png)
-ネットワーク閉域化をしている場合、インターネットからのアクセスを遮断するのでAzure Open AIからのインターネット経由のアクセスができなくなります。そのため、執筆時点では「Add your data」は閉域化できないということになります。Azure Open AIがVNet統合などに対応してAzure Open AI**からの**アクセスがVNet経由でできるようになれば、閉域化が可能になるかもしれませんが、執筆時点ではそのロードマップは公開されていません。
+ネットワーク閉域化をしている場合、インターネットからのアクセスを遮断するのでAzure OpenAIからのインターネット経由のアクセスができなくなります。そのため、執筆時点では「Add your data」は閉域化できないということになります。Azure OpenAIがVNet統合などに対応してAzure OpenAI**からの**アクセスがVNet経由でできるようになれば、閉域化が可能になるかもしれませんが、執筆時点ではそのロードマップは公開されていません。
 
 なお、図で「基本的には」と記載しているのはPrivate Endpointを構成している場合でもアクセス制限の設定によってパブリックアクセスを許可できる(VNet内からはPrivate Endpoint経由、VNet外からはインターネット経由)からです。しかし、それではエンドポイントを公開することになり、閉域化しているとはいえないので、あくまで閉域化できないということになります。
 :::
@@ -76,7 +76,7 @@ https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-dat
 
 自前実装の場合、Cognitive Searchへのアクセスも開発者が制御できるWeb Appsなどのリソースが行うことになるのでVNet統合を利用して閉域化が可能です。
 ![](/images/azure-openai-add-your-data-procon/privatenwworkaround.png)
-上記の図はネットワーク的な図として簡略化されていますが、実際には下図のようにクエリ生成や回答生成のためにAzure Open AIとの間で複数回やりとりが発生します。
+上記の図はネットワーク的な図として簡略化されていますが、実際には下図のようにクエリ生成や回答生成のためにAzure OpenAIとの間で複数回やりとりが発生します。
 ![](/images/azure-openai-add-your-data-procon/addyourdataarch.png)
 
 公式ドキュメントにも[プライベートネットワーク接続はサポートされていない旨](https://learn.microsoft.com/ja-jp/azure/cognitive-services/openai/concepts/use-your-data#virtual-network-support--private-link-support)の記述が追加されました。
@@ -157,6 +157,6 @@ https://github.com/Azure-Samples/azure-open-ai-embeddings-qna
 「Add your data」はノーコードでの独自ナレッジ検索の実現が可能ですが、その分機能は限定的です。自前実装の場合は、プロンプト改善やセマンティック検索などの機能を追加することが可能ですが、その分実装コストがかかります。要件に合わせて使い分けることでスピーディーかつ堅牢なシステム構築が可能になります。
 
 # 公式教材（無料）
-Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure Open AIのAdd your dataに関する無料教材が公開されています。
+Microsoftが提供しているEラーニングサイト「MS Learn」にて、Azure OpenAIのAdd your dataに関する無料教材が公開されています。
 ご自身のAzure環境を持っていなくてもサンドボックス環境でハンズオンを行うことができますので、ぜひご活用ください。
 https://learn.microsoft.com/en-us/training/modules/use-own-data-azure-openai/

@@ -1,5 +1,5 @@
 ---
-title: "Azure Open AIのプロンプトをノーコードで監視したい！"
+title: "Azure OpenAIのプロンプトをノーコードで監視したい！"
 emoji: "👀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "openai","aoai", "logging"]
@@ -8,30 +8,30 @@ publication_name: "microsoft"
 ---
 
 # はじめに
-企業(エンタープライズ)でOpen AIを使用する場合、コンプライアンスやセキュリティの観点からOpen AI{へ|から}のプロンプトを監視したいという要望が出てくる場合があります。
-Open AIが提供するのはWeb APIであるため、一般的にはフロントエンドやアプリが必要になり、そのアプリ内でロギングの実装をすることが多いかと思います。
-しかし、複数のアプリでOpen AIを使用する場合にそれぞれのアプリでロギングの実装をする方法は冗長かつ一貫性を保つことが難しいですし、Power Platformなどの{ロー|ノー}コードでOpen AIを使用する場合はそもそもロギングの実装が難しい、すでに運用されているアプリを改変することなく監視機能を付け加えたいなど、アプリ外でログを取得したいケースがあります。
-そこで今回はアプリなどのコーディングを必要とせず、アプリとOpen AIの間でプロンプトのロギングを行う仕組みをやってみます。
-今回はAzure Open AIを使用していますが、本家Open AIでも可能です。
+企業(エンタープライズ)でOpenAIを使用する場合、コンプライアンスやセキュリティの観点からOpenAI{へ|から}のプロンプトを監視したいという要望が出てくる場合があります。
+OpenAIが提供するのはWeb APIであるため、一般的にはフロントエンドやアプリが必要になり、そのアプリ内でロギングの実装をすることが多いかと思います。
+しかし、複数のアプリでOpenAIを使用する場合にそれぞれのアプリでロギングの実装をする方法は冗長かつ一貫性を保つことが難しいですし、Power Platformなどの{ロー|ノー}コードでOpenAIを使用する場合はそもそもロギングの実装が難しい、すでに運用されているアプリを改変することなく監視機能を付け加えたいなど、アプリ外でログを取得したいケースがあります。
+そこで今回はアプリなどのコーディングを必要とせず、アプリとOpenAIの間でプロンプトのロギングを行う仕組みをやってみます。
+今回はAzure OpenAIを使用していますが、本家OpenAIでも可能です。
 
 
 # 余談
-Azure Open AI自体にもログを収集する機能がありますが、プロンプトの内容を記録することはできません。
+Azure OpenAI自体にもログを収集する機能がありますが、プロンプトの内容を記録することはできません。
 ![](/images/azure-openai-nocode-logging/compare.png)
 [引用元](https://learn.microsoft.com/ja-jp/azure/architecture/example-scenario/ai/log-monitor-azure-openai#alternatives)
 
 # 構成
 ポイントとなるのは[Azure API Management](https://learn.microsoft.com/ja-jp/azure/api-management/api-management-key-concepts)です。API Managementは名前の通りAPIを管理するためにサービスで、複数のバックエンドを１つのエンドポイントのまとめたり、APIに独自のスロットリングをかけたりなどAPIエコシステムを実現できます。
-API Managementでは監視の機能としてAPI Managementを介して通信されるトラフィックのログを取ることが可能です。今回はこれを利用してOpen AIのプロンプトを監視しようというわけです。
+API Managementでは監視の機能としてAPI Managementを介して通信されるトラフィックのログを取ることが可能です。今回はこれを利用してOpenAIのプロンプトを監視しようというわけです。
 
 ![](/images/azure-openai-nocode-logging/architecture.png)
 
 
 # やってみる
-すでにAPI ManagementとAzure Open AI、Log Analyticsワークスペースがデプロイ済みであることを前提とします。
+すでにAPI ManagementとAzure OpenAI、Log Analyticsワークスペースがデプロイ済みであることを前提とします。
 
 ## APIの作成
-Azure Open AIのAPIをAPI Manamenetに登録します。ここは今回の本質的な部分ではないので詳しくは書きませんが以下の先人の知恵を参考にすると特に問題なく登録できるのではないかと思います。
+Azure OpenAIのAPIをAPI Manamenetに登録します。ここは今回の本質的な部分ではないので詳しくは書きませんが以下の先人の知恵を参考にすると特に問題なく登録できるのではないかと思います。
 https://level69.net/archives/33697
 
 ![](/images/azure-openai-nocode-logging/1.png)
@@ -77,7 +77,7 @@ https://learn.microsoft.com/ja-jp/azure/azure-monitor/essentials/diagnostic-sett
 
 # まとめ
 ここまで読んでいただければ、単純にリクエスト/レスポンスのBodyをログに出力しているだけというのがお分かりいただけたかと思います。
-Open AI以外でもAPI Managementのログを使用するとバックエンドとアプリ間の通信の内容を監視することができるので、ぜひ活用してみてください。
+OpenAI以外でもAPI Managementのログを使用するとバックエンドとアプリ間の通信の内容を監視することができるので、ぜひ活用してみてください。
 
 # [番外編]ユーザー識別子も記録したい！
 Azure ADのJWTトークンなどをつけてリクエストすればリクエストヘッダーのJWTをデコードすることでユーザー識別子の確認が可能です。
