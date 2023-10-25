@@ -75,7 +75,8 @@ https://zenn.dev/microsoft/articles/22d03aa3b2462c
 https://qiita.com/tmiyata25/items/875f563ba7a91f3da823
 
 ## Fine-tuning
-Coming soon...
+#### Azure OpenAI ServiceのChatGPTモデルでのFine-Tuningを試してみた
+https://blog.jbs.co.jp/entry/2023/10/24/110804
 
 # リソース管理
 ## 全般
