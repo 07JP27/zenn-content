@@ -404,6 +404,9 @@ https://qiita.com/sakue_103/items/734db0fe72fbb2985ecb
 #### 【Azure OpenAI開発】Static Web Apps × Azure Functionsを使って、WebアプリケーションにAzure OpenAIを組み込む
 https://qiita.com/sakue_103/items/2b4eeb7fa6384f68e132
 
+#### Redmine で課題が起票された際に Azure OpenAI Service を利用して自動返信する
+https://zenn.dev/skmkzyk/articles/openai-redmine-plugin
+
 
 # 番外編
 ## Copilot
