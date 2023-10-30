@@ -58,6 +58,9 @@ https://cptechweb.teldevice.co.jp/hc/ja/articles/20253365966233-Azure-OpenAI-%E3
 #### [メモ] 責任あるAIのためのプロンプトエンジニアリング
 https://zenn.dev/microsoft/articles/3a946a22bc6f76
 
+### 各種Prompt Engineeringの日本語実例集（Zero-CoT、mock、ReAct、ToT、Metacog、Step Back、IEPなど）
+https://qiita.com/YutaroOgawa2/items/aca32f8fd7d551596cf8
+
 #### Azure Open AI Service で SQL を生成するプロンプト例
 https://zenn.dev/masakikato/articles/azure-openai-prompt-sql
 
@@ -342,6 +345,12 @@ https://qiita.com/Takashi_Masumori/items/173cb84a860b491f885b
 ## Power Automate
 #### Power Platform から Azure OpenAI Service 経由で ChatGPT を利用してみる
 https://qiita.com/Takashi_Masumori/items/96b9e0f1590762fd6fad
+
+### Power Automate から Azure OpenAI にリクエストをする際に文字列を分割する
+Azure OpenAI Serviceの各モデルには最大トークン数が決められており、入力出力できる文字数に上限があります。
+それを超えた文量を扱いたい場合、再起的要約と呼ばれる手法があります。
+再起的要約は入力文を分割してそれぞれモデルで要約を行い、出力文を結合してさらに要約することで上限を超えた文量を扱うことができます。
+https://qiita.com/Takashi_Masumori/items/d05e8ae5a4056e2f81de
 
 ## Power Virtual Agents
 #### Power Virtual Agents を使用して Azure OpenAI Service の ChatGPT と連携し、会話履歴と文脈に基づいた回答を生成する方法
