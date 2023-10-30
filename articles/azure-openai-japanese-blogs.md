@@ -170,7 +170,7 @@ Azure API ManagementをAzure OpenAI Serviceとクライアントの間にデプ�
 https://zenn.dev/microsoft/articles/19de2adf4f36d3
 
 #### Azure OpenAI Serviceをバックエンドサービスとして構成したAzure API ManagementのAPIに対し、Streamを有効にしたリクエストを投げたらHTTP 500を返してしまうことがある
-Azure OpenAI ServiceのStreamをONにしてリアルタイムでチャットが流れるようにしておくとServer Side Event(SSE)が使用されるが、その場合にAPI Managementで一定の設定をしているとHTTP 500が返ってしまう事象（バグではなくドキュメントにも記載がある仕様です）についての記事です。
+Azure OpenAI ServiceのStreamをtrueにしてリアルタイムでチャットが流れるようにしておくとServer Side Event(SSE)が使用されるが、その場合にAPI Managementで一定の設定(トークン数チェックなど)をしているとHTTP 500が返ってしまう事象（バグではなくドキュメントにも記載がある仕様）についての記事です。
 https://logico-jp.io/2023/09/12/when-invoking-apis-hosted-by-azure-api-management-configured-aoai-as-a-backend-service-with-requests-in-which-stream-is-set-to-true-azure-api-management-might-return-http-500/
 
 
