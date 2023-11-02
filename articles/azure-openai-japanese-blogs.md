@@ -310,6 +310,9 @@ https://zenn.dev/microsoft/articles/dotnet-sdk-openai-functioncalling
 #### 自作したChatGPT規格のプラグインをFunction callingを使って呼び出す方法
 https://qiita.com/sakue_103/items/8f3818779c6eb1bb178a
 
+#### OpenAI に毎回返事をしてほしくないという要望を実現してみよう
+https://zenn.dev/microsoft/articles/openai-reply-only-if-i-requested
+
 ## コンテンツフィルター
 #### Azure OpenAI Service の設定可能なコンテンツフィルター
 https://zenn.dev/microsoft/articles/ad8fc1c403ced1
