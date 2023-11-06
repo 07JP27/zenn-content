@@ -436,7 +436,7 @@ https://qiita.com/nohanaga/items/c3e92c9adeca7c84a8d5
 https://qiita.com/nohanaga/items/afcff2bf4ab95089267d
 
 ## Open Interpreter
-Open Interpreterをは簡単にいうと本家OpenAIのCode Interpreterと同じようなことをオープンソースツールのOpen Interpreterを使ってローカルPC+各種LLMモデルでもできるようにしようというものです。LLMモデルはAzure OpenAI　Serviceのモデルにも対応しています。
+Open Interpreterをは簡単にいうと本家OpenAIのCode Interpreterと同じようなことをオープンソースツールのOpen Interpreterを使ってローカルPC+各種LLMモデルでもできるようにしようというものです。LLMモデルはAzure OpenAI Serviceのモデルにも対応しています。
 #### Azure OpenAI Service + Open Interpreterやってみたレポート
 https://zenn.dev/happy_elements/articles/745e339b5f9d99
 
@@ -445,6 +445,8 @@ https://qiita.com/hiromitsu_iwasaki/items/ef0f302d87e240d9f880
 
 ## その他
 #### ChatGPT のプラグイン "Code Interpreter" でセキュリティインシデントを分析する
+https://zenn.dev/microsoft/articles/49f83651e84e95
+
 #### Code InterpreterでMicrosoft Sentinelのインシデント一覧を分析するサンプルシナリオです。
 https://zenn.dev/microsoft/articles/49f83651e84e95
 
