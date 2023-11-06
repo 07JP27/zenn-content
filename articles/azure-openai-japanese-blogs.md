@@ -420,6 +420,9 @@ https://qiita.com/sakue_103/items/2b4eeb7fa6384f68e132
 #### Redmine で課題が起票された際に Azure OpenAI Service を利用して自動返信する
 https://zenn.dev/skmkzyk/articles/openai-redmine-plugin
 
+# 事例
+#### 【事例大全】Azure OpenAI を利用する Digital Native/Startup まとめ
+https://qiita.com/DDKK/items/e47a5db850551844cb82
 
 # 番外編
 ## Copilot
