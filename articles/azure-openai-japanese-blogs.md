@@ -204,6 +204,11 @@ https://zenn.dev/microsoft/articles/howtouser-azure-ai-openai
 #### Azure OpenAI Service の C# SDK (ChatGPT でも使えます)
 https://zenn.dev/microsoft/articles/azure-openai-service-csharpsdk
 
+#### openai の v1 系での Azure OpenAI へのアクセス (Python)
+本家OpenAIのPythonライブラリはバージョンが1系にアップデートされたタイミングでいくつかの破壊的変更が入りました。
+バージョン1系のライブラリを使ってAzure OpenAI Serviceにアクセスする方法が記載されています。
+https://blog.beachside.dev/entry/2023/11/13/130000
+
 #### Azure OpenAI Service の Completions で入力で渡したテキストを結果に含める方法
 OpenAIClientのCompletionsでリクエストを行うと通常はGPTからの出力のみしかレスポンスに含まれませんが、入力したプロンプトもレスポンスに含ませる方法が記載されています。
 https://zenn.dev/microsoft/articles/azure-openai-do-not-echo
