@@ -32,7 +32,7 @@ JSON Modeの使用方法は非常に単純でChatCompletions APIへのリクエ�
 今回のJSON Modeを使用するにはgpt-35-turbo-1106とgpt-4-1106-previewがデプロイできればいいので[リリース記事](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-openai-service-launches-gpt-4-turbo-and-gpt-3-5-turbo-1106/ba-p/3985962)によるとオーストラリア東部、インド南部、アメリカ東部あたりにデプロイするとどちらのモデルも使えます。執筆時点では日本リージョンはまだ未対応です。
 
 ## デプロイ
-基本的にリージョンを正しくデプロイしていればモデルをデプロイすることは可能ですが、念のためAzure OpenAI Studioのモデル一覧から利用したいモデルがデプロイできるかを確認しておきましょう。利用可能である場合はその画面から「デプロイ」ができます。
+基本的にリージョンを正しく指定していればモデルをデプロイすることは可能ですが、念のためAzure OpenAI Studioのモデル一覧から利用したいモデルがデプロイできるかを確認しておきましょう。利用可能である場合はその画面から「デプロイ」ができます。
 ![](/images/azure-openai-jsom-mode/model-available.png)
 
 # やってみる
