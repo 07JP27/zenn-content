@@ -22,6 +22,8 @@ https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-openai-se
 
 ## どうやって使うの？
 JSON Modeの使用方法は非常に単純でChatCompletions APIへのリクエスト時に`response_format={ "type": "json_object" }`プロパティを追加するだけです。
+注意点としては`response_format={ "type": "json_object" }`を指定する場合、**メッセージには必ず「json」というワードを含む必要がある**ようです。ちょっとおもしろい仕様ですね。ちなみに「json」を含めずにAPIにリクエストするとこんなエラーが発生します。
+![](/images/guidance-for-migrate-to-bicep/json-error.png)
 
 # Azure OpenAI 特有の考慮事項
 ## リージョン
@@ -120,6 +122,24 @@ print(response.choices[0].message.content)
 ```
 
 すごすぎる・・・ポイントとして「配列で」という日本語をちゃんと理解しているところ、そしてJSONの仕様に従って、指定されていない「weatherData」という配列のキーも文脈から予測して生成してくれているところでしょうか（本来は人間が指定するべきですが）。
+
+## JSONに変換をリクエストしないような文の場合は？
+わざとこんなことをするケースはあまりないと思いますが、JSONに変換をリクエストしないような文章をJSON Modeを有効にしてリクエストするとどうなるでしょうか？
+前述したとおりJSON Modeを使う場合はメッセージに「json」というワードを含める必要があるので、jsonを含みつつJSONに変換をリクエストしない形でリクエストしてみましょう。
+```python
+response = client.chat.completions.create(
+    model=deployment, # model = "deployment_name".
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "jsonってなんの略？"},
+    ],
+    response_format={ "type": "json_object" }
+)
+print(response.choices[0].message.content)
+# 【出力】
+# {"json": "JavaScript Object Notation"}
+```
+とりあえず無理やりにでもJSONを返そうとしてくれているようです。
 
 # まとめ
 Azure OpenAIサービスでのJSOM Modeが使えるようになりました。これによってアプリケーション連携が更にやりやすくなりました。

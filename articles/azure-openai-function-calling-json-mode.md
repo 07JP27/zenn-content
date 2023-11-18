@@ -8,7 +8,7 @@ published: false
 
 # Function CallingとJSON Mode
 https://zenn.dev/microsoft/articles/azure-openai-add-function-calling
-https://zenn.dev/microsoft/articles/azure-openai-jsom-mode
+https://zenn.dev/microsoft/articles/azure-openai-json-mode
 
 #　違い
 | 比較項目 | Function Calling | JSON Mode |
