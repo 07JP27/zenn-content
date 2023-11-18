@@ -7,7 +7,7 @@ published: true
 publication_name: "microsoft"
 ---
 
-# JSON Modeとは？?
+# JSON Modeとは??
 一言で言ってしまうとLLMモデルからの返答がJSON形式で返ってくることが保証されるモードです。
 JSON Modeがない場合、次のように喋りすぎてしまったりしてほしい情報がえられないことがあります。
 ![例えばこんな問題が・・・](/images/azure-openai-jsom-mode/issue1.png)
