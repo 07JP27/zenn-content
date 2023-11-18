@@ -23,7 +23,7 @@ https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/azure-openai-se
 ## どうやって使うの？
 JSON Modeの使用方法は非常に単純でChatCompletions APIへのリクエスト時に`response_format={ "type": "json_object" }`プロパティを追加するだけです。
 注意点としては`response_format={ "type": "json_object" }`を指定する場合、**メッセージには必ず「json」というワードを含む必要がある**ようです。ちょっとおもしろい仕様ですね。ちなみに「json」を含めずにAPIにリクエストするとこんなエラーが発生します。
-![](/images/guidance-for-migrate-to-bicep/json-error.png)
+![](/images/azure-openai-jsom-mode/json-error.png)
 
 # Azure OpenAI 特有の考慮事項
 ## リージョン
