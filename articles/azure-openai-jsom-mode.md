@@ -144,3 +144,5 @@ print(response.choices[0].message.content)
 # まとめ
 Azure OpenAIサービスでのJSOM Modeが使えるようになりました。これによってアプリケーション連携が更にやりやすくなりました。
 一方で、すでに利用可能になっていた機能としてFunction Callingという機能が提供されています。こちらもアプリケーション連携を見据えた機能になりますが、次の記事ではJSON ModeとFunction Callingの違いについて見ていきたいと思います。
+→書きました
+https://zenn.dev/microsoft/articles/azure-openai-function-calling-json-mode
