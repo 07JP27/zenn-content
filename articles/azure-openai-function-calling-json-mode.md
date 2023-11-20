@@ -22,8 +22,8 @@ https://zenn.dev/microsoft/articles/azure-openai-add-function-calling
 https://zenn.dev/microsoft/articles/azure-openai-jsom-mode
 
 # 違い
-JSON Modeが登場するまで、LLMモデルから確実にJSONを取得するために「機能呼び出し時の引数がJSONで返ってくる」という性質を利用してFunction Callingを利用するケースがありました。つまり実際には存在しない機能(Function)を定義して、その機能を呼び出すようなプロンプトを入力することで機能の実行をトリガーしてその引数のJSONを取得するという方法です。
-そういった流れから、Function Callingでカバーできていた機能をなぜ後発で実装したのか、Function Callingではだめなのかという疑問が生まれるかもしれません。そのような観点からそれぞれの違いを表にまとめてみました。
+JSON Modeが登場するまで、LLMモデルから確実にJSONを取得するために「機能呼び出し時の引数がJSONで返ってくる」という性質を利用してFunction Callingを利用するケースがありました。つまり実際には存在しない機能(Function)を定義して、その機能を呼び出すようなプロンプトを入力することで機能の実行をトリガーして返ってきた引数のJSONだけをデータとして取得・利用するという方法です。
+上記のような事情をご存じの方は、Function Callingでカバーできていた機能をなぜ後発で実装したのか、Function Callingではだめなのかという疑問が生まれるかもしれません。そのような観点からそれぞれの違いを表にまとめてみました。
 
 | 比較項目 | Function Calling | JSON Mode |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ JSON Modeが登場するまで、LLMモデルから確実にJSONを取得する�
 | 返ってくるタイミング | LLMがユーザーの入力に基づいて、定義されている機能を呼ぶべきだと判断したとき | `response_format={ "type": "json_object" }`をつけて呼び出している限り常に |
 | JSONスキーマの指定方法 | functionsプロパティ内で定義 | メッセージ内(プロンプトエンジニアリング)で定義 |
 
-このような違いからFunctions CallingはJSON Modeの上位互換という見方もできるかもしれませんが、JSON Mode特有の強みとして常にJSONでの戻りを強制できる、という点があります。
+このような違いからFunctions CallingはJSON Modeの上位互換という見方もできるかもしれませんが、**JSON Mode特有の強みとして常にJSONでの戻りを強制できる、という点があります。**
 
 
 ## 想定利用シナリオ
