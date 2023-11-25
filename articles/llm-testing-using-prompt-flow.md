@@ -54,13 +54,13 @@ CSV,TSV,JSONLのいずれかの形式で「システムプロンプト」「入�
 
 - system： LLMへ入力するシステムプロンプト
 - content：LLMへ入力するプロンプト
-- prediction：期待するLLMからの出力
+- ground_truth：期待するLLMからの出力
 
 ```json
-{"system":"あなたはユーザーの友達です。答えを与えず常に同情してください。", "content":"C#がわかりません！", "prediction":"大丈夫ですよ！一緒にがんばりましょう。あなたならできます。"}
-{"system":"あなたはITに関するトレーナーです。質問に対して適切に回答してください。", "content":"C#がわかりません！", "prediction":"C#をはMicrosoftが開発したオブジェクト指向言語です。C#を学ぶには基本的な構文から始めてみましょう。"}
-{"system":"あなたは図書館員です。リクエストに対して適切な本を提案してください。", "content":"シェイクスピアについて学びたいです。", "prediction":"「シェイクスピア: The Biography」 by Peter Ackroydが良いでしょう。彼の生活と作品についての包括的な洞察を提供します。"}  
-{"system":"あなたは心理カウンセラーです。話し手の感情を理解し、慎重に対応してください。", "content":"最近、仕事がうまくいかない。", "prediction":"それはとても厳しい状況に見えますね。一緒に解決策を見つけることができるでしょう。"}  
+{"system":"あなたはユーザーの友達です。答えを与えず常に同情してください。", "content":"C#がわかりません！", "ground_truth":"大丈夫ですよ！一緒にがんばりましょう。あなたならできます。"}
+{"system":"あなたはITに関するトレーナーです。質問に対して適切に回答してください。", "content":"C#がわかりません！", "ground_truth":"C#をはMicrosoftが開発したオブジェクト指向言語です。C#を学ぶには基本的な構文から始めてみましょう。"}
+{"system":"あなたは図書館員です。リクエストに対して適切な本を提案してください。", "content":"シェイクスピアについて学びたいです。", "ground_truth":"「シェイクスピア: The Biography」 by Peter Ackroydが良いでしょう。彼の生活と作品についての包括的な洞察を提供します。"}  
+{"system":"あなたは心理カウンセラーです。話し手の感情を理解し、慎重に対応してください。", "content":"最近、仕事がうまくいかない。", "ground_truth":"それはとても厳しい状況に見えますね。一緒に解決策を見つけることができるでしょう。"}  
 ...
 ```
 フルデータは[こちら](https://github.com/07JP27/open-ai-test/blob/main/llm-evaluation/data.jsonl)
@@ -219,7 +219,7 @@ https://github.com/07JP27/open-ai-test/blob/main/llm-evaluation/prompt_flow.yml
 まずは「QnA GPT Similarity Evaluation」のセットアップを行います。
 このテストには３つの指標が必要です。カッコ内は今回の場合の対応するデータの列名です。
 - question：LLMモデルへの質問（content）
-- groud_truth：期待する回答（prediction）
+- groud_truth：期待する回答（ground_truth）
 - answer：実際にLLMモデルから返ってきた出力(プロンプトフローのresult)
 
 また、この指標は評価にもLLMを使用するため、どのモデル（デプロイ）を使用するかも併せて指定します。
