@@ -265,5 +265,8 @@ https://github.com/07JP27/open-ai-test/blob/main/llm-evaluation/prompt_flow.yml
 新しいモデルがリリースされたらその都度モデルに対してすぐに評価できる評価基盤をクラウド上に作っておくと、モデルのアップデートに対して素早く対応できるようになります。
 今回は使用しませんでしたが、ベクトル計算（emmbedding）を使用して類似性を計算する組み込みの評価メトリックもあります。ぜひお試しください！
 
+なお今回のフローと同等の評価をローカルのNotebookでも実装してみた記事も投稿しました。データをこねくり回したい方はこちらもマッチするかもしれません。
+https://zenn.dev/microsoft/articles/llm-testing-in-notebook
+
 # 参考
 https://learn.microsoft.com/ja-jp/azure/machine-learning/prompt-flow/how-to-bulk-test-evaluate-flow?view=azureml-api-2
