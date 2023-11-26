@@ -30,6 +30,7 @@ https://zenn.dev/microsoft/articles/llm-testing-using-prompt-flow
 ## 評価関数
 前述の通り、サンプルをほぼそのまま使うのですが、せっかくなので最近使えるようになったJSON ModeでJSONを出力するように変更します。
 JSON Modeについてはこちらで説明しています。starというプロパティを持つ`{"star":1}`のようなJSONが出力されてることを期待したコードです。
+なお、starは1~5までの間でどれくらい期待値と実測値が似ているかを示すスコアです。いわゆる「星、xつです！」の星の意味ですね。
 プロンプトは長いので変数化しています。具体的なプロンプトは[Notebook](https://github.com/07JP27/open-ai-test/blob/main/llm-evaluation/evaluation.ipynb)を見てください。
 https://zenn.dev/microsoft/articles/azure-openai-jsom-mode
 
