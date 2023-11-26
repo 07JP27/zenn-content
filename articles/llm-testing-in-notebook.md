@@ -17,7 +17,7 @@ https://zenn.dev/microsoft/articles/llm-testing-using-prompt-flow
 # 評価指標
 [前回](https://zenn.dev/microsoft/articles/llm-testing-using-prompt-flow)の記事では、モデルの評価指標として、「QnA GPT Similarity Evaluation」というプロンプトフロー組み込みの評価指標を使いました。これは期待値と実測値の類似度を評価してくれるもので、評価自体にもLLMが使われています。
 プロンプトフローの場合、この評価指標で使われているプロンプトなどの実装部分がブラックボックスなので、ローカルで評価を行う場合は、自分で評価指標を作る必要があります。
-とはいえ、実はプロンプトフローにはQnA Evaluationというテンプレートがあり、これをクローンすると組み込みで使うことができる評価指標の実装がフロートして見ることができます。
+とはいえ、実はプロンプトフローにはQnA Evaluationというテンプレートがあり、これをクローンすると組み込みで使うことができる評価指標の実装がフローとして見ることができます。
 ![](/images/llm-testing-in-notebook/template.png)
 ![](/images/llm-testing-in-notebook/template2.png)
 
