@@ -131,6 +131,12 @@ https://zenn.dev/microsoft/articles/b050574ad7dfe2
 0613というバージョンのgpt-35-turboとgpt-4モデルが新しくリリースされました。前バージョンである0301との比較を各項目で行っています。
 https://zenn.dev/microsoft/articles/ed503d31efb434
 
+#### OpenAIのモデルアップデートに備えて評価Notebookを作る
+https://zenn.dev/microsoft/articles/llm-testing-in-notebook
+
+#### OpenAIのモデルアップデートに備えてPrompt Flowでモデルの評価フローを作る
+https://zenn.dev/microsoft/articles/llm-testing-using-prompt-flow
+
 ## トークン
 #### OpenAI 言語モデルで日本語を扱う際のトークン数推定指標
 https://zenn.dev/microsoft/articles/dcf32f3516f013
@@ -424,6 +430,15 @@ https://qiita.com/sakue_103/items/2b4eeb7fa6384f68e132
 
 #### Redmine で課題が起票された際に Azure OpenAI Service を利用して自動返信する
 https://zenn.dev/skmkzyk/articles/openai-redmine-plugin
+
+#### 超長文をChatGPTに要約させてみる
+https://qiita.com/shyamagu/items/67ef879c313bcccc9109
+
+#### ChatGPT にプログラムを分析・可視化させてみた
+https://qiita.com/shyamagu/items/0f9fea01e5f9aeb685fd
+
+#### 【ChatGPT縛りプレイ】システム開発をさせてみた
+https://qiita.com/shyamagu/items/77d527ab43fb57d48e42
 
 # 事例
 #### 【事例大全】Azure OpenAI を利用する Digital Native/Startup まとめ
