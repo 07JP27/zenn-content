@@ -3,16 +3,18 @@ title: "OpenAIとMicrosoft Graph Search APIでM365の組織内データを検索
 emoji: "🙆"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "openai", "microsoftgraph"]
-published: false
+published: true
 publication_name: "microsoft"
 ---
-共著者：[@maruryupro](https://twitter.com/maruryupro)
+共著者：[@maruryupro](https://twitter.com/maruryupro) / [@kazuyan](https://twitter.com/D_kazuyan)
 
-社内ナレッジを検索するRAGアプリを作ろうとする場合、さまざまな文献でAzure Cognitive Searchを使うケースを多く目にします。Azure Cognitive Searchは非常に高機能で組織専用の検索エンジンを作ることができる一方、データの前処理やインデクサーのカスタマイズなど様々なテクニックが必要になり、実現したいこととコストのトレードオフが発生するケースが多いように感じています。
-この記事では、M365テナント内の情報をWeb API経由で検索できる「Microsoft Search Graph API」を使って、社内の情報を検索してOpenAIを通したチャット形式で返答するRAGアプリについて紹介します。
+社内ナレッジを検索するRAGアプリを作ろうとする場合、さまざまな文献でAzure AI Search(旧称Cognitive Search)を使うケースを多く目にします。Azure AI Searchは非常に高機能で組織専用の検索エンジンを作ることができる一方、データの前処理やインデクサーのカスタマイズなど様々なテクニックが必要になり、実現したいこととコストのトレードオフが発生するケースが多いように感じます。
+この記事では、M365テナント内の情報をWeb API経由で検索できる「Microsoft Search Graph API」を使って、専用のインデックスを作成する必要なく社内の情報を検索してOpenAIを通したチャット形式で返答するRAGアプリの実装アプローチについて紹介します。
+
+![](/images/azure-openai-graph-rag-pattern/chat-sample.png)
 
 # TL;DR サンプルアプリのリポジトリ
-とりあえずコードを読みたい方はこちらからどうぞ！
+とりあえずコードを読みたい方はこちらからどうぞ。
 https://github.com/07JP27/azureopenai-internal-microsoft-search
 
 # アプローチ
@@ -34,6 +36,7 @@ Microsoft Search Graph APIの説明をする前に「Microsoft Search」につ�
 この「職場」タブはMicrosoft Searchによって提供されている機能で、以下のようにM365テナント内のデータを検索できます。
 （ダミーデータを使っています）
 ![](/images/azure-openai-graph-rag-pattern/mssearch.png)
+![](/images/azure-openai-graph-rag-pattern/ms-search-sample.png)
 
 Bing以外にもWord OnlineやSharePoint Onlineなどさまざまなアプリで検索エリアが提供されており、Microsoft Searchによる検索を行うことができます。
 ![](/images/azure-openai-graph-rag-pattern/search_bar.png)
@@ -64,21 +67,40 @@ Bing以外にもWord OnlineやSharePoint Onlineなどさまざまなアプリで
 
 
 
-## Azure　Cognitive Searchとの比較
+## Azure　AI Searchとの比較
 冒頭にも述べたように組織ないのナレッジRAGアプリを作る場合、データの検索にはAzure Cognitve Searchを使うケースを多くみかけます。ではAzure Cognitve Searchでデータソースをインデックス化し、それを検索に使用する場合とMicrosoft Search Graph APIを使用する場合ではどのような違いがあるのでしょうか？簡単に以下の表にまとめてみました。
 
-| 比較項目 | Microsoft Search Graph API | Cognitive Search |
+| 比較項目 | Microsoft Search Graph API | AI Search |
 | --- | --- | --- |
 | 情報の鮮度 | ほぼリアルタイム | インデクサーが実行された時点 |
-| 権限を考慮した検索 | ユーザーごとのトークンを使うと検索の際に自動フィルターされる | [セキュリティフィルター](https://learn.microsoft.com/ja-jp/azure/search/search-security-trimming-for-azure-search)を使ってインデックスを作成するように構成・実装する必要がある |
+| 権限を考慮した検索 | ユーザーごとのトークンを使うと検索の際に自動フィルターされる | [セキュリティフィルター](https://learn.microsoft.com/ja-jp/azure/search/search-security-trimming-for-azure-search)を反映してインデックスを作成するように構成・実装する必要がある |
 | 検索精度 | ブラックボックス | 全文検索/セマンティック検索/ハイブリッド |
-| カスタマイズ性 | カスタマイズできる部分が少ない | インデクサーのスキルやアナライザーなど細かいカスタマイズが可能 |
+| カスタマイズ性 | 検索処理の部分はカスタマイズ不可 | インデクサーのスキルやアナライザーなど細かいカスタマイズが可能 |
 | ベクトル検索 | 不可 | 可 |
+| コスト発生箇所 | Webアプリ | AI Search,Webアプリ、インデックス作成 |
+
+
+## 考慮事項
+ほとんどのアプローチは銀の弾丸ではないように、このアプローチもすべての社内検索シナリオに最適なわけではありません。以下にいくつかの考慮事項を挙げます。
+#### 検索範囲を考える
+テナント内をまるっと検索できることは非常に汎用的である反面、検索タスクに適用するシナリオが膨大になってしまう懸念があります。
+例えばすでに用意されている出張規定の中から旅費規程を見つけるよりも、社内に膨大に存在するドキュメントの中から旅費規程を探す方が難易度が高いのは想像が付きます。
+このことは2023年11月に開催されたOpenAI DevDayの中でもRAGのプラクティスとして[「シグナル/ノイズ比」という考え方で紹介されています](https://youtu.be/ahnGLM-RC1Y?si=-VFIoYLiMfPt3AYz&t=1286)。
+例えば業務範囲や検索範囲がすでに絞ることができる場合は検索対象をそれらのリストやライブラリに限定することで検索精度の向上が期待できます。
+Microsoft Search APIでは[特定のサイトやデータの種類を制限して検索することもできます](https://learn.microsoft.com/ja-jp/graph/search-concept-files#example-5-use-filters-in-search-queries)。
+
+#### 文章形式と文章量を考える
+元データをインデックス化する際に整形するAI Searchを使用した方法と異なり、このアプローチは元データをそのまま検索します。つまりCognitive Serachにインデックス化をする際に行う画像のOCRや音声の文字起こし、文章の整形などの処理を行うことができません。これが意味することは、このアプローチは元データがテキストデータで最も効果を発揮するということです。
+また、元データの文章量も考慮する必要があります。AI Searchを使用した方法ではデータソースをLLMに入力することができる上限を超えないようにデータソースを分割する「チャンキング」が行われますが、このアプローチでは元データをそのまま使用するため、元データの文章量が多い場合は回答の生成ができない、または回答生成の精度が低下する可能性があります。
 
 
 # よくありそうなQA
 ## 精度はどうなの？
-精度と一口に言っても様々な指標がありますが、ここでは「望んだ回答が返ってくる&その回答が誤ってない」という若干ふわっとした定義をします。（実際に本番適用のための評価であれば「[再現率](https://predictionone.sony.biz/cloud_manual/terminology/recall/)​」や「[正解率](https://predictionone.sony.biz/cloud_manual/terminology/accuracy/index.html)」など定量的な指標を使うことをお勧めします。）
+当たり前といえば当たり前ですが、専用に設計されたAI Searchの方が体感的に良いです。
+上記の「Azure　AI Searchとの比較」からもわかる通り、このアプローチのメリットは精度を多少犠牲にして構築/運用コストを下げることができるという点です。
+また、適用範囲(業務)・データ形式によっても精度は大きく変わります。
+
+### 参考：RAGアーキテクチャにおける精度影響箇所
 RAGアーキテクチャにおいて「精度」に影響する箇所は大きく3点があります。
 - クエリ生成精度：入力文→検索クエリの生成。多くの場合はLLMが担う。
 - 検索精度：クエリに対して検索エンジンが返す結果の精度。今回のアプローチの場合はMicrosoft Search (Graph API)が担う。
@@ -86,7 +108,7 @@ RAGアーキテクチャにおいて「精度」に影響する箇所は大き�
 
 ここでクエリ生成と回答生成はLLMが担うためプロンプトエンジニアリングの世界になります。つまり自前開発をする場合はプロンプトを工夫することでなんとでもなります。
 よってこのシステムを評価する上で最も重要な点はブラックボックス化されているMicrosoft Search Graph APIの検索精度ですが、これは前述したとおり、組織アカウントでBingにログインしていると使用することができるMicrosoft Searchと同じものなので、まずはBingのMicrosoft Searchを使って検索精度を試してみることをお勧めします。
-完全に主観にはなりますがMicrosoft Search単体でもMicrosoft Search Graph APIを組み込んだサンプルアプリでも特に精度が悪いとは感じませんでした。特にMicrosoft Searchは私も普通に仕事で使っており検索精度には、満足しています。
+
 
 
 ## まるっと検索とは言っても検索対象にできるのってM365内のデータだけなんでしょ？
@@ -106,7 +128,7 @@ Microsoft Graphコネクタは「Microsoft提供」と「パートナー提供�
 * プロンプト：検索のためのクエリを生成したり、回答を生成するためのプロンプトを開発者が完全に制御できる。
 * その他のデータソースとの連携：Microsoft Graph APIだけではなくてその他のサービスのレスポンスも組み合わせた回答を生成する
 
-## Graph APIの利用に追加費用はかかる？
+## Graph APIの利用に追加費用はかかるの？
 基本的にはかかりません。＝M365のユーザーライセンスに内包されています。今回紹介したアプリを実装する場合は追加費用なしで実装可能です。
 https://learn.microsoft.com/ja-jp/graph/metered-api-overview
 
@@ -117,10 +139,16 @@ https://learn.microsoft.com/ja-jp/graph/metered-api-list
 # サンプルアプリ
 上記のアプローチを実装したサンプルアプリを公開しています。
 #### 機能・特徴
-- Microsoft 365内のドキュメントやサイト、Teamsの投稿などを基にしたLLMによるチャット形式の内部ナレッジ検索
-- Microsoft 365でも使用されるMicrosoft Search APIを使用したシンプルかつ高精度なRAGアーキテクチャ
+- Microsoft 365内のドキュメントやサイト、Teamsの投稿などをデータソースにしたLLMによるチャット形式の内部ナレッジ検索
+- Microsoft 365でも使用されるMicrosoft Search APIを使用したシンプルなRAGアーキテクチャ
 - [On-Behalf-Of フロー](https://learn.microsoft.com/ja-jp/entra/identity-platform/v2-oauth2-on-behalf-of-flow)によるユーザーの権限に応じた検索
 
 https://github.com/07JP27/azureopenai-internal-microsoft-search
 
 リポジトリへのPull Requestも歓迎です。
+
+# 利用に最適なシナリオ
+個人的には以下のような理由からTeamsのチャットをデータソースとして回答したい場合はこのアプローチが最適なんじゃないかと考えています。
+- ユーザーごとに権限を考慮した検索が可能
+- リアルタイムに近い情報の検索
+- テキストデータの検索が最適
