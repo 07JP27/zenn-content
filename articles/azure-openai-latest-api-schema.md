@@ -24,13 +24,13 @@ Azure OpenAIのAPIバージョンはとても早いスパンで更新されて�
 
 
 # 確認する方法
-Azure OpenAIに限らずAzureサービスのAPIインターフェースは基本的にはSwaggerで定義されてGitHubで公開されているのでこれを使います。
+Azure OpenAIに限らずAzureサービスのAPIインターフェースは基本的にはOpenAPI形式で定義され、GitHubで公開されています。
 https://github.com/Azure/azure-rest-api-specs/tree/main
 
 Azure OpenAIのAPIバージョンには安定版の**stable**とプレビュー版の**preview**があります。
-特にPreviewは安定版ではないためリリースされてもアナウンスが大々的に行われることは少ない一方で、最近だとJSON Modeが使えるようになったり、と最新の機能がPreviewでリリースされていることが多いです。ただしpreview版はその名の通りプレビュー状態なので、問題が発生した場合でもサポートが受けられない可能性や、仕様が変更されたり、早めにディスコンになったりする可能性があります。
+特にPreviewは安定版ではないためリリースされてもアナウンスが大々的に行われることは少ない一方で、最近だとJSON Modeが使えるようになったり、と最新の機能がPreviewでリリースされていることが多いです。ただしPreview版はその名の通りプレビュー状態なので、問題が発生した場合でもサポートが受けられない可能性や、仕様が変更されたり、早めにディスコンになったりする可能性があります。
 
-以下のリンクからStable,PreviewのAPI定義を確認できます。パスを見るとわかりますがどちらも上記のAzureのAPI定義が置かれているリポジトリの中にあります。
+以下のリンクからStable/PreviewのAPI定義を確認できます。パスを見るとわかりますがどちらも上記のAzureのAPI定義が置かれているリポジトリの中にあります。
 
 #### Stable
 https://github.com/Azure/azure-rest-api-specs/tree/main/specification/cognitiveservices/data-plane/AzureOpenAI/inference/stable
