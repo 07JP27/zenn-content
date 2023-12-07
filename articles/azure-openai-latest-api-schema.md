@@ -11,14 +11,13 @@ publication_name: "microsoft"
 Azure OpenAIのAPIバージョンはとても早いスパンで更新されています。
 それゆえ、公式ドキュメントへの反映が間に合っていないことがあります。
 例えば以下の画像は、2023/12/7時点での[公式ドキュメント](https://learn.microsoft.com/ja-jp/azure/ai-services/openai/reference#chat-completions)に記載されている「サポートされているAPIバージョン」の一覧です。
+
+![](/images/azure-openai-latest-api-schema/docs.png)
+
 実際にはこの時点で以下の３つのバージョンがドキュメントに掲載されいないが、実際にはすでに定義されてCallできる状態になっています。
 - 2023-09-01-preview
 - 2023-10-01-preview
 - 2023-12-01-preview
-
-
-![](/images/azure-openai-latest-api-schema/docs.png)
-
 
 この記事では、最新のAzure OpenAIのAPIバージョンとその中のインターフェース（スキーマ）を確認する方法を紹介します。
 
