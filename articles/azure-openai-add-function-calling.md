@@ -7,6 +7,15 @@ published: true
 publication_name: "microsoft"
 ---
 
+:::message
+本記事で紹介する`functions`プロパティは本家OpenAIで非推奨になりました。今後は`tools`プロパティの使用が推奨されています。
+今すぐにではないですが、Azure OpenAIもそれに追従する可能性が高く、最新のAPIバージョンでは`tools`プロパティが追加されています。
+`tools`プロパティはFunction Callingの上位互換なので、基礎的な知識として本記事で紹介している内容は無駄ではありませんが、今後に備えて以下の`tools`プロパティの使い方も併せてご覧ください。
+
+https://zenn.dev/microsoft/articles/azure-openai-tools
+
+:::
+
 本家OpenAIに続き、Azure OpenAI ServiceでもFunction Callingが利用可能になりました。本記事ではFunction Callingの概要や仕組み、利用方法などをお伝えします。
 
 # なぜFunction Callingが必要なのか
