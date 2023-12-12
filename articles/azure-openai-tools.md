@@ -25,7 +25,12 @@ https://x.com/07JP27/status/1730515000744419520?s=20
 
 # toolsプロパティの使い方
 ## 前提
-前提としておそらく**GPT-3.5とGPT-4のモデルバージョンが1106-previewでないと使えない**と思います。おそらくというのは、この記事で紹介しているtoolsプロパティをはじめ、使い方のドキュメントがAPI定義しかないからです。実際に試してみると少なくとも0613ではエラーが発生して使えませんでした。
+前提としておそらく**GPT-3.5とGPT-4のモデルバージョンが1106-previewでないと使えない**と思います。おそらくというのは、~~この記事で紹介しているtoolsプロパティをはじめ、使い方のドキュメントがAPI定義しかないからです。~~
+
+2023/12/12に確認したところ追加されていました。
+https://learn.microsoft.com/ja-jp/azure/ai-services/openai/reference#chat-completions
+
+実際に試してみると少なくとも0613ではエラーが発生して使えませんでした。
 API定義のtoolsプロパティもたまたま以下の記事を書いているときに見つけました。
 https://zenn.dev/microsoft/articles/azure-openai-latest-api-schema
 
