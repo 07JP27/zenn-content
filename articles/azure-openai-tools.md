@@ -23,6 +23,10 @@ https://zenn.dev/microsoft/articles/azure-openai-add-function-calling
 https://x.com/07JP27/status/1730515000744419520?s=20
 
 
+https://learn.microsoft.com/ja-jp/azure/ai-services/openai/how-to/function-calling?tabs=python
+> API の 2023-12-01-preview バージョンのリリースに伴い、functions および function_call パラメーターは非推奨になりました。 functions に置き換わるのは tools パラメーターです。 function_call に置き換わるのは tool_choice パラメーターです。
+
+
 # toolsプロパティの使い方
 ## 前提
 前提としておそらく**GPT-3.5とGPT-4のモデルバージョンが1106-previewでないと使えない**と思います。おそらくというのは、~~この記事で紹介しているtoolsプロパティをはじめ、使い方のドキュメントがAPI定義しかないからです。~~
