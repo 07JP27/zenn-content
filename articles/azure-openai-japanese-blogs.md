@@ -49,10 +49,16 @@ https://qiita.com/lazy-kz/items/32e8e7c86bdce67beb48
 https://zenn.dev/microsoft/articles/openai-performance
 
 ## API
+#### Azure OpenAIの最新APIスキーマを確認する方法
+https://zenn.dev/microsoft/articles/azure-openai-latest-api-schema
+
 #### Azure OpenAI に REST API を使用して質問するサンプルコードの作成方法
 アプリを作るときはライブラリやSDKを使うことが多いと思いますが、REST APIでの呼び出しはサービスとのインターフェイスを理解する上で大切です。
 この記事で紹介されているAPI呼び出しはAzureポータルのAzure CLIから実行する方法のため、ローカルの開発環境がなくても試せます。
 https://cptechweb.teldevice.co.jp/hc/ja/articles/20253365966233-Azure-OpenAI-%E3%81%AB-REST-API-%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E4%BD%9C%E6%88%90%E6%96%B9%E6%B3%95
+
+#### Azure OpenAIでJSON Modeを使う！
+https://zenn.dev/microsoft/articles/azure-openai-jsom-mode
 
 ## プロンプトエンジニアリング
 #### [メモ] 責任あるAIのためのプロンプトエンジニアリング
@@ -76,6 +82,9 @@ https://zenn.dev/microsoft/articles/22d03aa3b2462c
 
 #### Cognitive Searchの生成AI用ベクトルDBの構築手順書
 https://qiita.com/tmiyata25/items/875f563ba7a91f3da823
+
+#### 【Golang】Azure OpenAI で Embedding したベクトルを使って、自前検索エンジンを作ろう
+https://zenn.dev/microsoft/articles/20231208_go_aoai_pg_vector
 
 ## Fine-tuning
 #### Azure OpenAI ServiceのChatGPTモデルでのFine-Tuningを試してみた
@@ -286,6 +295,10 @@ https://qiita.com/tmiyata25/items/7a04096342241d8a2b4c
 
 
 # 特定機能
+## Vision
+#### Azure OpenAI Service で GPT-4 Turbo with Vision を使う
+https://zenn.dev/microsoft/articles/cd3060cbcf0303
+
 ## Add your data（On your data）
 #### 独自ナレッジをノーコードでChatGPTに連携！Azure OpenAI「Add your data」
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data
@@ -311,6 +324,9 @@ https://zenn.dev/microsoft/articles/06063068b75a91
 ## Function calling
 #### Azure OpenAIでFunction Callingを使う！
 https://zenn.dev/microsoft/articles/azure-openai-add-function-calling
+
+### Azure OpenAIのAPIにtoolsプロパティが追加されたぞ！
+https://zenn.dev/microsoft/articles/azure-openai-tools
 
 #### Azure OpenAI の Function calling を Golang で試す
 https://zenn.dev/microsoft/articles/aoai-function-calling-with-golang
@@ -439,6 +455,9 @@ https://qiita.com/shyamagu/items/0f9fea01e5f9aeb685fd
 
 #### 【ChatGPT縛りプレイ】システム開発をさせてみた
 https://qiita.com/shyamagu/items/77d527ab43fb57d48e42
+
+#### OpenAIとMicrosoft Graph Search APIでM365の組織内データを検索するRAGアプリを作る
+https://zenn.dev/microsoft/articles/azure-openai-graph-rag-pattern
 
 # 事例
 #### 【事例大全】Azure OpenAI を利用する Digital Native/Startup まとめ
