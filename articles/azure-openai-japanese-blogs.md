@@ -13,7 +13,7 @@ publication_name: "microsoft"
 
 **この記事は[GitHub](https://github.com/07JP27/zenn-content/blob/2dc0249a7e74ba8ced2ac4355b063dbfb8b05c0f/articles/azure-openai-japanese-blogs.md)で管理されています。まとめへの追加修正はプルリクエストまたはIssuesでお気軽にお寄せください！**
 
-また、以前に本記事をご覧いただき、そこからの差分を知りたい場合は[GitHubのHistory](https://github.com/07JP27/zenn-content/commits/main/articles/azure-openai-japanese-blogs.md)も合わせてご覧いただけると把握しやすいかと思います。
+また、以前に本記事をご覧いただき、そこからの差分を知りたい場合は[GitHubのHistory](https://github.com/07JP27/zenn-content/commits/main/articles/azure-openai-japanese-blogs.md)も併せてご覧いただけると把握しやすいかと思います。
 
 # 概要
 ## まずはここから
