@@ -34,9 +34,9 @@ Microsoftの無料EラーニングプラットフォームMicrosoft Learnで提�
 https://qiita.com/k-kimino/items/7a55ac364201b8da228e
 
 #### 生成 AI アプリケーションの開発を始めるために必要な全知識を学べる 12 講座
-様々なLLMの基礎から主にAzure OpenAIに関する様々なことが学べる無料のラーニングパスです。
+様々なLLMの基礎から主にAzure OpenAIに関することが学べる無料のラーニングパスです。
 日本語もサポートしていて、Microsoftでクラウド・アドボケイトを務める[寺田佳央](https://twitter.com/yoshioterada)さんが日本語訳をされています。
-非常に充実した内容で、Azure OpenAIのハンズオンやサンプルなど様々なコンテンツが含まれています。
+非常に充実した内容で、Azure OpenAIのハンズオンやサンプルなどコンテンツがあふれるほど含まれています。
 https://microsoft.github.io/generative-ai-for-beginners/#/translations/ja-jp/
 
 ## 本家OpenAI と Azure OpenAIの違い
