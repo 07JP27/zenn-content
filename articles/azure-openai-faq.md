@@ -3,12 +3,12 @@ title: "Azure OpenAIについてよくある質問"
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Azure", "openai"]
-published: false,
+published: false
 publication_name: "microsoft"
 ---
 
 Azure OpenAI利用について仕事などでよく聞かれる質問についてまとめてみました。
-**この記事は[GitHub]()で管理されています。これも追加したら？という内容はプルリクエストまたは本記事へのコメントでお気軽にお寄せください！**
+**この記事は[GitHub](https://github.com/07JP27/zenn-content/blob/main/articles/azure-openai-faq.md)で管理されています。これも追加したらいいんじゃない？という内容はプルリクエストまたは本記事へのコメントでお気軽にお寄せください！**
 
 
 ## 実際にOpenAIのモデルを使わなくても基本料金はかかりますか？
