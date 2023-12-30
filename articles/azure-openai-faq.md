@@ -35,13 +35,13 @@ OpenAI のモデルを改善するために使用されることはありませ�
 微調整されたAzure OpenAIモデルは、お客様の使用に限定されます。
 ```
 
-
 ## 入力されたデータはMicrosoftには保存されないんですか？
 いいえ。特に何も構成されない場合、最大30日感は不正利用関しのために限られたメンバーのみが閲覧できる状態でMicrosoftが保存します、
 ただし、これは不正利用監視のためであり、前述の通りモデルの再学習のために保存されたデータが使われることはありません。
 また、この不正監視のためのデータ保存はオプトアウトを申請することができます。
 https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/abuse-monitoring
 
-## コンテンツフィルターがトリガーされて出力が得られなかった場合でもトークン数は課金されますか？
+
+## コンテンツフィルターがトリガーされて出力が得られなかった場合でも入力トークン数は課金されますか？
 おそらく、はい。ただし公式なドキュメントが見つけられませんでした。
 https://stackoverflow.com/questions/77354628/token-usage-of-content-filtered-messages-in-azure-openai-services
