@@ -64,7 +64,7 @@ https://learn.microsoft.com/ja-jp/azure/ai-services/disable-local-auth
 おそらく、はい。ただし公式なドキュメントが見つけられませんでした。
 https://stackoverflow.com/questions/77354628/token-usage-of-content-filtered-messages-in-azure-openai-services
 
-## Stremをオンにした時に出力される単位が本家OpenAIと異なるのはなぜですか？
+## Streamをオンにした時に出力される単位が本家OpenAIと異なるのはなぜですか？
 ソースが見つからなかったのですが、おそらくAzure OpenAI独自の「コンテンツフィルター」のためです。
 コンテンツフィルターは入力または出力に対して不適切な内容が含まれていないかを判定します。そのため、出力をある程度の単位でまとめて判定する必要があり、その単位ごとのレスポンスになっていると考えられます。
 https://learn.microsoft.com/ja-jp/azure/ai-services/openai/concepts/content-filter
