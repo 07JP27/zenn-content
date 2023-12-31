@@ -22,7 +22,7 @@ Azure OpenAIだけではプロンプトのログを取る機能はありませ�
 https://zenn.dev/microsoft/articles/azure-openai-nocode-logging
 
 ## やっぱりGPT-3.5と比べてGPT-4は精度がいいですか？
-精度の定義によりますが、一般的にははい。たとえば複数のタスクにおいて正しく指示理解を行うことを指す指標のMulti-task Language Understanding（MMLU）はGPT-3.5が70%に対してGPT-4は86.4%となっています。
+精度の定義によりますが、一般的にははい。たとえば複数のタスクにおいて正しく指示理解を行うことを指す指標のMassive Multitask Language Understanding（MMLU）はGPT-3.5が70%に対してGPT-4は86.4%となっています。
 https://openai.com/research/gpt-4
 
 ## 入力したデータがモデルの再学習に再利用されないって本当ですか？ソースはありますか？
