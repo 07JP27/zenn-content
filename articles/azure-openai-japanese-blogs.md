@@ -68,6 +68,11 @@ https://cptechweb.teldevice.co.jp/hc/ja/articles/20253365966233-Azure-OpenAI-%E3
 #### Azure OpenAIでJSON Modeを使う！
 https://zenn.dev/microsoft/articles/azure-openai-jsom-mode
 
+#### Azure OpenAI Service の使用中に発生する可能性がある一般的なエラー コードについて
+日本マイクロソフトのサポートチームブログです。
+Azure OpenAI Serviceの使用中に発生する可能性がある一般的なエラーコードの内容や原因、解決策について記載されています。
+https://jpaiblog.github.io/blog/2023/12/29/AzureOpenAIService-error-codes/
+
 ## プロンプトエンジニアリング
 #### [メモ] 責任あるAIのためのプロンプトエンジニアリング
 https://zenn.dev/microsoft/articles/3a946a22bc6f76
