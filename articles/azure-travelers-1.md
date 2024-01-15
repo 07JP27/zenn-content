@@ -3,7 +3,7 @@ title: "Azure OpenAIと周辺機能を活用して​ 堅牢なLLMアプリケ�
 emoji: "👋"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'openai', 'llm']
-published: false
+published: true
 publication_name: "microsoft"
 ---
 
