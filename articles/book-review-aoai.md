@@ -82,5 +82,5 @@ https://amzn.asia/d/bRDJVro
 - フレンチクルーラーが食べたくなる
     表紙がドーナツなのもそういうことやで？
 
-https://x.com/corpdesign_TN/status/1672118213776388101?s=20
+https://twitter.com/corpdesign_TN/status/1672118213776388101?s=20
 
