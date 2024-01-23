@@ -440,6 +440,14 @@ https://zenn.dev/microsoft/articles/5c937466f09d98
 公式情報にはなりますが、[Azure OpenAI Serviceリファレンスアーキテクチャ](https://www.microsoft.com/ja-jp/events/azurebase/blog/aoai-referencearchitecture-release/)の実装サンプルリポジトリです。
 https://github.com/Azure-Samples/jp-azureopenai-samples
 
+#### azureopenai-essential-notebooks
+筆者がオーナーになっているAzure OpenAIを使ったさまざまなシナリオの基本を学ぶためのプリミティブなJupyter Notebookサンプル集です。
+https://github.com/07JP27/azureopenai-essential-notebooks
+
+#### ChatGPT-Prompt-Sample-Japanese
+Azure OpenAIには限りませんが、ChatGPTで使用できるシナリオ別プロンプトサンプル集です。
+https://github.com/dahatake/ChatGPT-Prompt-Sample-Japanese
+
 #### 社内向けChatGPTを費用を押さえつつ爆速で構築する方法をMicrosoftが提供してくれていた件
 Microsoftの公式リポジトリで公開されているChatGPTサンプルアプリをデプロイして使う方法が記載されています。
 https://qiita.com/keitomatsuri/items/aeacb527fbc5de34cacc
