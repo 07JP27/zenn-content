@@ -175,10 +175,10 @@ https://github.com/07JP27/azureopenai-internal-microsoft-search
 1. 指定した権限を持つファイルのみをチャンク分割した状態でAI Searchの結果から取得できます。
 1. AI Searchから帰ってきた情報を使って最終回答を生成します。
 
-## メリット
+### メリット
 - 外部サービスへのアクセス回数が少ない＝高速
 
-## デメリット
+### デメリット
 - 最初の検索精度がGraph APIの検索精度に依存する（Graphで取れてこないものはそもそもAI Searchの検索条件に含まれない）
 
 ![](/images/azure-openai-graph-rag-pattern/hybrid1.png)
@@ -194,10 +194,10 @@ https://github.com/07JP27/azureopenai-internal-microsoft-search
 1. アクセスできれば権限あり、アクセスできない場合は権限なし、or削除済みと判定します。
 1. アクセスできた情報のみをコンテキストとして最終回答を生成します。
 
-## メリット
+### メリット
 - AI Searchの高い検索精度を実現
 
-## デメリット
+### デメリット
 - Graph API呼び出しが複数回発生するため速度やスロットリングに懸念がある
 ![](/images/azure-openai-graph-rag-pattern/hybrid2.png)
 ![](/images/azure-openai-graph-rag-pattern/hybrid2_seq.png)
