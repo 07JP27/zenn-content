@@ -3,7 +3,7 @@ title: "Azure OpenAIでHyDEを使ったRAGの検索精度向上を目指す！"
 emoji: "📈"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'openai', 'hyde']
-published: false
+published: true
 publication_name: "microsoft"
 ---
 
