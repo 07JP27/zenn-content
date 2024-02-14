@@ -312,6 +312,9 @@ https://qiita.com/tmiyata25/items/7a04096342241d8a2b4c
 #### Azure OpenAI Service で GPT-4 Turbo with Vision を使う
 https://zenn.dev/microsoft/articles/cd3060cbcf0303
 
+## Assitant API
+https://zenn.dev/microsoft/articles/533488db14e442
+
 ## Add your data（On your data）
 #### 独自ナレッジをノーコードでChatGPTに連携！Azure OpenAI「Add your data」
 https://zenn.dev/microsoft/articles/azure-openai-add-your-data
