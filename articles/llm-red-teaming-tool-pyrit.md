@@ -10,6 +10,9 @@ publication_name: "microsoft"
 
 ## PyRIT
 Microsoftが2024年2月22日に、LLMのリスクを特定する自動化ツール「PyRIT」をGitHubで公開しました。
+日本でもGigazineなどで取り上げられていたのでニュースを見た方もいらっしゃるかもしれません。
+https://gigazine.net/news/20240227-microsoft-generative-ai-red-team-pyrit/
+
 PyRITはPython Risk Identification Toolkit for generative AI（生成AI用リスク特定ツール）の略で、生成AIのレッドチーミングのためのツールです。
 for generative AIとなっていますが、本記事の執筆時点では生成AIの中でもLLMに特化しているように見えます。
 
