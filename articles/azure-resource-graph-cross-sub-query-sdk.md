@@ -32,7 +32,6 @@ foreach (var record in resultRecords)
     Console.WriteLine($"Id: {record.Id}");
 }
 
-;
 class RGRecord
 {
     [JsonPropertyName("id")]
