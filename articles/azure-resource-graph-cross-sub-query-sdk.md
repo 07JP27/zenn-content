@@ -1,5 +1,5 @@
 ---
-title: "Azyre .NET SDKでAzure Resource Graphのクロスサブスクリプションクエリを発行する"
+title: "Azure .NET SDKでAzure Resource Graphのクロスサブスクリプションクエリを発行する"
 emoji: "🐙"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'dotnet', 'resourcegraph']
@@ -32,7 +32,6 @@ foreach (var record in resultRecords)
     Console.WriteLine($"Id: {record.Id}");
 }
 
-;
 class RGRecord
 {
     [JsonPropertyName("id")]
