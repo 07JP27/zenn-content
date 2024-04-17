@@ -61,7 +61,14 @@ https://learn.microsoft.com/ja-jp/legal/cognitive-services/openai/data-privacy#h
 https://learn.microsoft.com/ja-jp/azure/ai-services/disable-local-auth
 
 ## コンテンツフィルターがトリガーされて出力が得られなかった場合でも入力トークン数は課金されますか？
-おそらく、はい。ただし公式なドキュメントが見つけられませんでした。
+基本的には、はい。「基本的には」というのはコンテンツフィルターがどちらでトリガーされたかによって若干変わります。
+- ユーザーの入力に対してコンテンツフィルターがトリガーされた場合：入力トークン数は課金される**場合があります。**
+- モデルの出力に対してコンテンツフィルターがトリガーされた場合：出力トークン数は課金**されます。**
+
+https://learn.microsoft.com/ja-jp/azure/ai-services/openai/concepts/content-filter?tabs=warning%2Cpython#sample-response-stream-blocked-by-filters
+
+> プロンプトに対してコンテンツ フィルタリングがトリガーされ、応答の一部として "status": 400 が受信されると、サービスによってプロンプトが評価されたときに、この要求に対して料金が発生する場合があります。"finish_reason": "content_filter" で "status":200 が受信されたときにも料金が発生します。
+
 https://stackoverflow.com/questions/77354628/token-usage-of-content-filtered-messages-in-azure-openai-services
 
 ## Streamをオンにした時に出力される単位が本家OpenAIと異なるのはなぜですか？
