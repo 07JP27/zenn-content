@@ -13,7 +13,7 @@ Azure OpenAI利用について、よく聞かれる質問についてまとめ�
 
 ## 実際にOpenAIのモデルを使わなくても基本料金はかかりますか？
 いいえ。基本的には使った分（トークン≒入出力をさせた文量）だけの従量課金制です、使わなければ課金されないし、逆に使った分だけ青天井で課金されます。
-「基本的には」というのはファインチューニング（微調整）をしたモデルを使う場合にはホスティング費用が基本料金としてかかります。
+「基本的には」というのはファインチューニング（微調整）をしたモデルを使う場合にはホスティング費用が基本料金としてかかったり、[PTU](https://learn.microsoft.com/ja-jp/azure/ai-services/openai/concepts/provisioned-throughput)と呼ばれる特殊な料金形態（前払い容量予約のようなイメージ）の場合は使用量にかかわらず予約分だけ課金されます。
 https://azure.microsoft.com/ja-jp/pricing/details/cognitive-services/openai-service/
 
 ## プロンプトのログを取りたいのですが、標準機能でできますか？
