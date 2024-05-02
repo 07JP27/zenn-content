@@ -119,4 +119,4 @@ WebアプリのChatGPTがそのような実装なので、ユーザー起点で�
 
 試行錯誤しながらできたものなのでリファクタの余地は多分にありますが、部分的に参考にしていただければ幸いです。
 
-https://github.com/07JP27/GPTEnglishCoachingApps
+https://github.com/07JP27/GPTEnglishCoachingApp/
