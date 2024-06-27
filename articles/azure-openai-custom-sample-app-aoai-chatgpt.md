@@ -63,7 +63,7 @@ Azure OpenAI StudioやAzure AI Studioからデプロイできるチャットア�
 https://github.com/microsoft/sample-app-aoai-chatGPT?tab=readme-ov-file#environment-variables
 
 ## 余談2 - コーディングを伴うカスタマイズ
-ポータルのデプロイボタンからデプロイされるコードをオープンソースで公開されているのでローカルで動かしてみたり、さらに深いコーディングを伴うカスタマイズも可能です。
+ポータルのデプロイボタンからデプロイされるコードはオープンソースで公開されているの、ローカルで動かしてみたり、さらに深いコーディングを伴うカスタマイズも可能です。
 ローカルデバッグの方法やローカルからAzureへのデプロイ方法はリポジトリのREADMEにステップバイステップで記載してあるのでより詳細なカスタマイズを行いたい読者はこの方法を試してみてください。
 
 https://github.com/microsoft/sample-app-aoai-chatGPT
