@@ -32,8 +32,8 @@ Azure OpenAI StudioやAzure AI Studioからデプロイできるチャットア�
 - App Serviceの左側のメニューから「環境変数」を選択します。
 - 環境変数の「追加」をクリックして名前に「UI_CHAT_TITLE」、値に「チャットを始めよう」と入力して「適用」をクリックします。
 ![](/images/azure-openai-custom-sample-app-aoai-chatgpt/1.png)
-- 環境変数に変更があれば環境変数一覧の下部の「適用」がクリックできるようになっているので「適用」をクリックします。**App Serviceが再起動します。本番運用への適用は慎重に行ってください。**
 ![](/images/azure-openai-custom-sample-app-aoai-chatgpt/2.png)
+- 環境変数に変更があれば環境変数一覧の下部の「適用」がクリックできるようになっているので「適用」をクリックします。**App Serviceが再起動します。本番運用への適用は慎重に行ってください。**
 ![](/images/azure-openai-custom-sample-app-aoai-chatgpt/3.png)
 - しばらくしてからアプリにアクセスしてタイトルの表示が設定した値に変わったことを確認します。
 ![](/images/azure-openai-custom-sample-app-aoai-chatgpt/4.png)
