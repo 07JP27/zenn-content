@@ -1,5 +1,5 @@
 ---
-title: "PromptyでプロンプトセントリックなAIアプリ開発をしよう"
+title: "Promptyでプロンプトセントリックな生成AIアプリ開発をしよう"
 emoji: "🤖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Azure', 'OpenAI', 'Prompty', 'VSCode', 'プロンプト']
