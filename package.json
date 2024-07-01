@@ -24,7 +24,7 @@
   "homepage": "https://github.com/07JP27/zenn-content#readme",
   "dependencies": {
     "textlint-filter-rule-allowlist": "^4.0.0",
-    "zenn-cli": "^0.1.153"
+    "zenn-cli": "^0.1.154"
   },
   "devDependencies": {
     "textlint": "^12.1.1",
