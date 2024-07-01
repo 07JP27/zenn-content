@@ -153,7 +153,7 @@ user:
 ```
 
 ### 実行
-実行はPromptyファイルを開いて、右上の「Run」ボタンをクリックするか、`control + shift + P`でコマンドパレットを開いて`Prompty: Run`を選択します。
+実行はPromptyファイルを開いて、右上の再生マークの「Run」ボタンをクリックするか、`control + shift + P`でコマンドパレットを開いて`Prompty: Run`を選択します。
 実行に成功すると`OUTPUT`に結果が表示されます。
 ![](/images/azure-openai-prompty/result1.png)
 また、`OUTPUT`内のドロップダウンから「Promptu Ouput(Verbose)」を選択することでAPIからの生データを確認できます。たとえばusageで使用したトークン数やコンテンツフィルターの適用状況などが確認できます。
