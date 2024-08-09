@@ -169,10 +169,22 @@ https://learn.microsoft.com/ja-jp/azure/role-based-access-control/role-assignmen
 
 ## アプリケーションへの組み込み
 VS Codeでのプロンプトの構築が完了したら、いよいよそれをアプリケーションに組み込んでいきます。
-執筆時点で対応しているライブラリやツールはLangChain、Semantic Kernel、Prompt Flowの３つです。
+執筆時点で対応しているライブラリやツールはpython、LangChain、Semantic Kernel、Prompt Flowの4つです。
 それぞれのコードをゼロからコーディングしても良いですし、`control + shift + P`でコマンドパレットを開いて`Prompty:Add xxx code`を選択することでこれらのコードを生成してくれるオプションもあります。
 
 それぞれPromptyファイルを読み込んで、プロンプトを実行するためのコードを見ていきましょう。本記事ではPromptyに関係する部分のみを抜粋します。実際のコードは依存関係のimportなどが必要です。
+
+### Prompty Core (python)
+https://pypi.org/project/prompty/
+
+```python
+import prompty
+
+response = prompty.execute("path/to/prompty.prompty")
+
+print(response)
+```
+prompty.loadメソッドを使うことで、Promptyファイルを読み込んで設定値などを上書きして実行することも可能です。
 
 
 ### LangChain
@@ -233,7 +245,7 @@ result = prompty_obj(firstName = "ジュンペイ", context = "アルパイン �
 Prompty自体がまだプレビューということもあり、まだまだ機能追加や改善が期待されます。以下は今回実際に使ってみて感じた現在のPromptyに対する要望です。
 ### 標準ライブラリへの対応
 LangChain、Semantic Kernel、Prompt Flowには対応していますが、openai-pythonライブラリやAzure.AI.OpenAIライブラリはまだ未対応です。
-これについてはすでにissueが上がっており、対応予定とのことです。
+これについてはすでにissueが上がっており、対応予定とのことです。→Pythonライブラリはリリースされました。
 https://github.com/microsoft/prompty/issues/6
 
 ただ、上記のissueにもコメントがありますが、実際には独自フォーマットのファイルをパースしているだけなので、パース処理を独自実装すればどのようなライブラリやフレームワークでもPromptyを利用できます（もちろん公式サポートしてくれるのが一番ですが・・・）。参考として、以下はPromptFlowのパース実装です。
