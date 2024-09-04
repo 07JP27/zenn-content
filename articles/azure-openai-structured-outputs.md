@@ -4,6 +4,7 @@ emoji: "🐥"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Azure', 'OpenAI']
 published: true
+publication_name: "microsoft"
 ---
 
 2024年8月7日に本家OpenAIから発表されたStructured Outputsに続き、9月4日にAzure OpenAI ServiceでもStructured Outputsが利用可能になりました。
