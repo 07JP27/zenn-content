@@ -62,7 +62,7 @@ class IngredientsToMakeDish(BaseModel):
 
 #呼び出すメソッドが通常のChatCompletionとは異なるので注意
 completion = client.beta.chat.completions.parse( 
-    model=os.environ['DPLOYMENT'],
+    model=os.environ['DEPLOYMENT'],
     messages=[
         {"role": "system", "content": "Extract the dish name and ingredients that already have and need to buy information."},
         {"role": "user", "content": "今日はぶり大根を作ろうと思います。ブリは家にありますが、ネギと大根がないです。そういえばぶり大根には普通入れないタコもあるので入れてみましょう。"},
