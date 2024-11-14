@@ -250,9 +250,17 @@ result = prompty_obj(firstName = "ジュンペイ", context = "アルパイン �
 ## 今後への期待
 Prompty自体がまだプレビューということもあり、まだまだ機能追加や改善が期待されます。以下は今回実際に使ってみて感じた現在のPromptyに対する要望です。
 ### 標準ライブラリへの対応
-LangChain、Semantic Kernel、Prompt Flowには対応していますが、openai-pythonライブラリやAzure.AI.OpenAIライブラリはまだ未対応です。
-これについてはすでにissueが上がっており、対応予定とのことです。→Pythonライブラリはリリースされました。
-https://github.com/microsoft/prompty/issues/6
+~~LangChain、Semantic Kernel、Prompt Flowには対応していますが、openai-pythonライブラリやAzure.AI.OpenAIライブラリはまだ未対応です~~
+~~これについてはすでにissueが上がっており、対応予定とのことです。~~
+~~https://github.com/microsoft/prompty/issues/6~~
+
+
+→PythonとC#に対応しました🎉
+https://github.com/microsoft/prompty/tree/main/runtime/prompty
+
+https://github.com/microsoft/prompty/tree/main/runtime/promptycs
+
+
 
 ただ、上記のissueにもコメントがありますが、実際には独自フォーマットのファイルをパースしているだけなので、パース処理を独自実装すればどのようなライブラリやフレームワークでもPromptyを利用できます（もちろん公式サポートしてくれるのが一番ですが・・・）。参考として、以下はPromptFlowのパース実装です。
 https://github.com/microsoft/promptflow/blob/1826b3e55e36132281d68e1765f43aa13b6e5241/src/promptflow-core/promptflow/core/_flow.py#L218
@@ -261,6 +269,8 @@ https://github.com/microsoft/promptflow/blob/1826b3e55e36132281d68e1765f43aa13b6
 VS Codeでの実行時にMicrosoft Entra ID認証を利用する場合、現状はデフォルトテナントが指定されるようです。テナントIDを指定する方法も見当たらなかったので、デフォルトテナント以外のテナントにデプロイしているモデルにはMicrosoft Entra ID認証が使えないようです。
 これについてはissueを作成しました。
 https://github.com/microsoft/prompty/issues/29
+
+→対応版がリリースされました🎉詳細はissueをご覧ください。
 
 ## まとめ 
 プロンプトの管理は単純なシステムプロンプトだけではなくtemperatureやmax_tokensなどのパラメーターを含めた複雑なプロンプトを管理する必要があります。
