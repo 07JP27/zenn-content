@@ -35,7 +35,7 @@ VS Codeであえて無効にしたい場合も同様に[設定](https://docs.git
  `.github/`ディレクトリもGitHub ActionsやPull Requestテンプレートなどの設定ファイルを置く場所として使われているので、この場所に置くのは確かに自然な流れだと思います。あっぱれGitHubエコシステム・・・！
 
 #### VS Codeのローカル設定
-VS Codeの設定 [github.copilot.chat.codeGeneration.instructions](vscode://settings/github.copilot.chat.codeGeneration.instructions)からユーザー環境ごとにカスタムインストラクションを与えることもできます。執筆時点ではJSONで書く必要がありますが、インストラクションをMarkdownで書いておいて、そのファイルを参照させることもできるようになっています。
+VS Codeの設定`github.copilot.chat.codeGeneration.instructions`からユーザー環境ごとにカスタムインストラクションを与えることもできます。執筆時点ではJSONで書く必要がありますが、インストラクションをMarkdownで書いておいて、そのファイルを参照させることもできるようになっています。
 ```json
 "github.copilot.chat.codeGeneration.instructions": [
   {
