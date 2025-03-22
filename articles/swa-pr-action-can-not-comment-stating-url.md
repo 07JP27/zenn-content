@@ -1,5 +1,5 @@
 ---
-title: "Azure Static Web AppsのPull RequestのActionでステージングURLがコメントされない"
+title: "Azure Static Web AppsのPull RequestのActionでプレビューURLがコメントされない"
 emoji: "👌"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "github", "staticwebapps"]
