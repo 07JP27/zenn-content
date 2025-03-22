@@ -8,7 +8,7 @@ publication_name: "microsoft"
 ---
 
 ## 事象
-Azure Static Web Appsは紐づけたリポジトリにActionsのワークフローファイルを自動で作成されます。
+Azure Static Web Appsは紐づけたリポジトリにGitHub Actionsのワークフローファイルが自動で作成されます。
 そのワークフローファイルはPull Requestを作成するとPRのコードで自動的にAzureにプレビュー用の環境を作成してくれます。
 ドキュメントによると、プレビュー用の環境が作成されると、PRのコメントにURLが自動でコメントされるはずなのですが、私の環境ではコメントされない事象が発生しました。
 
