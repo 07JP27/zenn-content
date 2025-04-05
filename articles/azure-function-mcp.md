@@ -143,6 +143,9 @@ func start
 テンプレートを使用してAzure Functionsを作成した場合、デバッグ起動のためのlaunch.jsonが自動生成されているはずです。
 「Run and Debug」メニューから「Attach to .NET Functions」を選択してデバッグ起動します。
 
+![MCPサーバーの起動](/images/azure-function-mcp/launch.png)
+
+
 起動に成功するとMCPツールトリガーの関数が起動されたことが確認できます。
 ![MCPサーバーの起動](/images/azure-function-mcp/launched.png)
 
