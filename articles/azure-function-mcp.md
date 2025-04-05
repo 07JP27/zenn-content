@@ -3,7 +3,7 @@ title: "Azure FunctionsでMCPサーバーを作る！"
 emoji: "🐡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["mcp", "azure", "azurefunctions"]
-published: false
+published: true
 publication_name: "microsoft"
 ---
 
