@@ -225,6 +225,10 @@ MCPはまだまだ新しい技術ですが、標準のプロトコルがあり�
         }
     },
 ```
+
+なお、本記事の執筆時点ではWindowsのAzure Functions上ではうまく動作しないという報告があるようです(Linuxでは問題ない模様)。
+https://github.com/Azure-Samples/remote-mcp-functions-dotnet/issues/8
+
 ## 参考
 Azure FunctionsでのMCPサーバーの実装サンプル
 https://github.com/Azure-Samples/remote-mcp-functions-dotnet/tree/main
