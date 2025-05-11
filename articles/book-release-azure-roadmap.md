@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Azureの入門書「Azureの知識地図」を出版します！〜経緯と内容の紹介"
+title: "Microsoft Azureの入門書「Azureの知識地図」を出版します！ 〜 経緯と内容の紹介"
 emoji: "📘"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ['azure', 'book']
