@@ -127,6 +127,8 @@ https://www.amazon.co.jp/dp/4297149036
 
 
 ## キュレーション：いただいた書評の数々
+https://qiita.com/Takashi_Masumori/items/14301219f0fcf670286a
+
 https://logico-jp.dev/2025/05/11/knowledge-map-for-azure/
 
 https://x.com/xin9le/status/1919038875973878239
