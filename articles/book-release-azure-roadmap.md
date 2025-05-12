@@ -131,6 +131,8 @@ https://qiita.com/Takashi_Masumori/items/14301219f0fcf670286a
 
 https://logico-jp.dev/2025/05/11/knowledge-map-for-azure/
 
+https://ymd65536.hatenablog.com/entry/2025/05/12/114334
+
 https://x.com/xin9le/status/1919038875973878239
 
 https://x.com/ymd65536/status/1918539975693361212
