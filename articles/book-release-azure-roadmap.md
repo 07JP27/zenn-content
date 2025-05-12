@@ -126,32 +126,9 @@ https://x.com/yuma_prog/status/1919737371634860389
 https://www.amazon.co.jp/dp/4297149036
 
 
-## キュレーション：いただいた書評の数々
-https://qiita.com/Takashi_Masumori/items/14301219f0fcf670286a
-
-https://logico-jp.dev/2025/05/11/knowledge-map-for-azure/
-
-https://ymd65536.hatenablog.com/entry/2025/05/12/114334
-
-https://x.com/xin9le/status/1919038875973878239
-
-https://x.com/ymd65536/status/1918539975693361212
-
-https://x.com/dahatake/status/1919571286675824743
-
-https://x.com/hiro_gamo/status/1918696178755293539
-
-https://x.com/chack411/status/1921435385697091884
-
-https://x.com/okazuki/status/1919534487542603792
-
-https://x.com/yuma_prog/status/1919737371634860389
-
-https://x.com/tmiyata25/status/1919741816422989928
-
-https://x.com/kongou_ae/status/1919661696676986983
-
-https://x.com/tsubakimoto_s/status/1919338747184787851
+## いただいた書評の数々
+以下のスクラップにまとめています。購入を検討されている方はぜひご覧ください。
+https://zenn.dev/07jp27/scraps/ba70cd967b66e5
 
 ## 余談
 私は普段地方からリモートで仕事をしています。
