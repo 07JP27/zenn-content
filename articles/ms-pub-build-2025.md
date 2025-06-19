@@ -69,6 +69,14 @@ https://www.youtube.com/watch?v=-cu9S7mGmBY
 Azure の CTO である Mark Russinovich が、 Azure のインフラストラクチャや、Azure Boost、Confidential Computing など、Azure を支えるための様々な技術の進化について解説しているセッションです。 Build は開発者向けのセッションではありますが、その中でも珍しく Cloud Platform 全体について触れているセッションです。
 https://www.youtube.com/watch?v=lHBo_lDWFcI
 
+## [Ryosuke Hyakuta（rhyakuta）](https://zenn.dev/momosuke)
+### Build and protect MCPs faster with governance in Azure API Management | DEM545
+API Management にインポートしている通常の API を Azure ポータル上で MCP サーバー化させる機能の紹介セッションです。これによって API サーバーを MCP 対応するためのオーバーヘッドが取り除かれることが期待され、かつ改めて API Management を使った API の統合管理の重要性が再認識できるセッションです。
+https://www.youtube.com/watch?v=pr8ltV8XY7g
+
+
+
+
 ## セッションアーカイブ一覧
 全てのセッションは以下のリンクからアーカイブ動画を視聴できます。
 https://build.microsoft.com/en-US/sessions
