@@ -204,20 +204,10 @@ def setup_graph():
 ```python
 async def route_research(state: SummaryState):
     if state.research_loop_count <= 3:
-        # Send update to client
-        if state.websocket_id in active_connections:
-            await active_connections[state.websocket_id].send({
-                "type": "routing", 
-                "data": {"decision": "continue", "loop_count": state.research_loop_count}
-            })
+        # ...省略
         return "web_research"
     else:
-        # Send update to client
-        if state.websocket_id in active_connections:
-            await active_connections[state.websocket_id].send({
-                "type": "routing", 
-                "data": {"decision": "finalize", "loop_count": state.research_loop_count}
-            })
+        # ...省略
         return "finalize_summary"
 ```
 
@@ -225,17 +215,39 @@ async def route_research(state: SummaryState):
 
 ### 各ノード処理を理解する
 ノードとして定義されている関数は以下の通りで、[全体の流れを理解する](###全体の流れを理解する)の流れをイメージすると大体名前から処理が想像できます。
-- generate_query
-- web_research
-- summarize_sources
-- reflect_on_summary
-- finalize_summary
+- [generate_query](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L74)：ユーザー入力から検索クエリを作成する（LLM利用）
+- [web_research](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L113)：Webを検索する
+- [summarize_sources](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L145)：サマリーを生成する（LLM利用）
+- [reflect_on_summary](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L194)：サマリーをリフレクションして不足している部分を補うためのクエリを生成（LLM利用）
+- [finalize_summary](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L245)：ここまでの検索結果のサマリーを使って最終的なレポートを生成する。あくまで機械的に生成するだけでLLMは利用していない。
+
+ノードの関数から呼ばれるUtil関数として[`strip_thinking_tokens`](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L59C5-L59C26)が`main.py`の中で定義されています。この関数は`generate_query`、`summarize_sources`、`reflect_on_summary`関数から呼び出されています。READMEやコードからこのアプリケーションは推論のLLMとして[Deep Seekのモデルを使用することが想定されている](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L50)ようです。Deep Seekの推論では思考過程を<think>~</think>というトークンで囲って出力されるため、そのトークンで囲まれた思考の文字列とそれ以外のユーザーへの回答の文字列を分離するためにこの関数が使用されています。
 
 ### プロンプトを読み解く
+プロンプトは各ノードの関数でLLMを使用している3つ分のプロンプトが定義されています。
+原文はもちろん英語ですが、ここでは理解を助けるために日本語訳で記載します。
 
+- [query_writer_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L7)：ユーザーからのトピックに関する情報をもとに、最適な検索クエリを生成するためのプロンプト
+:::details query_writer_instructions プロンプト（日本語訳）
+:::
+
+- [summarizer_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L35)：収集した情報を要約するためのプロンプト
+:::details summarizer_instructions プロンプト（日本語訳）
+:::
+
+- [reflection_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L65)：要約結果をもとに、さらなる調査が必要な場合のクエリを生成するためのプロンプト
+:::details reflection_instructions プロンプト（日本語訳）
+:::
 
 ## まとめと改善と発展
-- リフレクション機構の改善：現在は固定値で3回までの繰り返し検索を行うようになっていますが、ゴールの判定自体もLLMが行うことにより、より確実かつ柔軟な調査が可能になると考えられます。
+- リフレクション機構の改善
+現在は固定値で3回までの繰り返し検索を行うようになっていますが、ゴールの判定自体もLLMが行うことにより、より確実かつ柔軟な調査が可能になると考えられます。
+
+- 構造化オプションの利用
+現在は、Deep Researchの結果をテキスト形式で出力していますが、JSON Modeなど構造化されたデータ形式（例えばJSONやXML）で出力することで確実なアプリケーションへの組み込みが期待できます。ただし、JSON Modeは、AzureではAzure OpenAI Serviceの機能として提供されているため、Azure OpenAI Serviceを利用する必要があります。
+
+- Deep Seek以外のモデルへの対応
+
 
 ## C#で実装しなおす
 残念ながらLangGraphはC#ではサポートされていないため、状態遷移を独自に実装する必要があります。
