@@ -76,98 +76,8 @@ https://zenn.dev/microsoft/articles/59787e7a8fc2a9
 ![](https://github.com/Azure-Samples/deepresearch/raw/main/images/deep_researcher_architecture.png)
 
 ### コードを理解する
-ここまでのリポジトリの全体像を踏まえると、基本的には`app/main.py`のDeep Research機構で行なっている処理を理解できそうです。
-
-```mermaid
-graph TD
-    %% エントリーポイント
-    get_html[get_html]
-    websocket_endpoint[websocket_endpoint]
-    
-    %% グラフ関連
-    setup_graph[setup_graph]
-    stream_graph_updates[stream_graph_updates]
-    
-    %% 研究プロセス
-    generate_query[generate_query]
-    web_research[web_research]
-    summarize_sources[summarize_sources]
-    reflect_on_summary[reflect_on_summary]
-    finalize_summary[finalize_summary]
-    route_research[route_research]
-    
-    %% ヘルパー関数
-    strip_thinking_tokens[strip_thinking_tokens]
-    
-    %% 接続管理
-    ConnectionManager[ConnectionManager]
-    connect[ConnectionManager.connect]
-    disconnect[ConnectionManager.disconnect]
-    send[ConnectionManager.send]
-    
-    %% 外部依存（プロジェクト内）
-    get_current_date[get_current_date - prompts.py]
-    deduplicate_and_format_sources[deduplicate_and_format_sources - formatting.py]
-    format_sources[format_sources - formatting.py]
-    SummaryState[SummaryState - states.py]
-    SummaryStateInput[SummaryStateInput - states.py]
-    SummaryStateOutput[SummaryStateOutput - states.py]
-    
-    %% 依存関係
-    websocket_endpoint --> setup_graph
-    websocket_endpoint --> stream_graph_updates
-    websocket_endpoint --> ConnectionManager
-    
-    setup_graph --> generate_query
-    setup_graph --> web_research
-    setup_graph --> summarize_sources
-    setup_graph --> reflect_on_summary
-    setup_graph --> finalize_summary
-    setup_graph --> route_research
-    
-    generate_query --> strip_thinking_tokens
-    generate_query --> get_current_date
-    
-    web_research --> deduplicate_and_format_sources
-    web_research --> format_sources
-    
-    summarize_sources --> strip_thinking_tokens
-    
-    reflect_on_summary --> strip_thinking_tokens
-    
-    finalize_summary --> finalize_summary
-    
-    %% 全ての研究プロセス関数はSummaryStateを使用
-    generate_query -.-> SummaryState
-    web_research -.-> SummaryState
-    summarize_sources -.-> SummaryState
-    reflect_on_summary -.-> SummaryState
-    finalize_summary -.-> SummaryState
-    route_research -.-> SummaryState
-    
-    %% setup_graphでの状態クラス使用
-    setup_graph -.-> SummaryState
-    setup_graph -.-> SummaryStateInput
-    setup_graph -.-> SummaryStateOutput
-    
-    %% ConnectionManagerの内部メソッド
-    ConnectionManager --> connect
-    ConnectionManager --> disconnect
-    ConnectionManager --> send
-    
-    %% 実線は直接的な関数呼び出し
-    %% 点線は型定義やデータ構造の使用
-    
-    classDef processNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    classDef helperNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef externalNode fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef managerNode fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    
-    class generate_query,web_research,summarize_sources,reflect_on_summary,finalize_summary,route_research processNode
-    class strip_thinking_tokens,setup_graph,stream_graph_updates helperNode
-    class get_current_date,deduplicate_and_format_sources,format_sources,SummaryState,SummaryStateInput,SummaryStateOutput externalNode
-    class ConnectionManager,connect,disconnect,send managerNode
-```
+リポジトリの全体像を踏まえると、基本的に`app/main.py`を見ればDeep Research機構で行なっている処理を理解できそうです。
+以後、`main.py`のコードを中心にDeep Researchの機構を見ていきます。
 
 ### エンドポイント
 エンドポイントは以下の2つが定義されています。
@@ -227,28 +137,192 @@ async def route_research(state: SummaryState):
 プロンプトは各ノードの関数でLLMを使用している3つ分のプロンプトが定義されています。
 原文はもちろん英語ですが、ここでは理解を助けるために日本語訳で記載します。
 
-- [query_writer_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L7)：ユーザーからのトピックに関する情報をもとに、最適な検索クエリを生成するためのプロンプト
+##### [query_writer_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L7)：ユーザーからのトピックに関する情報をもとに、最適な検索クエリを生成するためのプロンプト
 :::details query_writer_instructions プロンプト（日本語訳）
+```
+目標は、ターゲットを絞ったWeb検索クエリを生成することです。
+
+<コンテキスト>
+現在の日付: {current_date}
+クエリには、この日付時点で入手可能な最新の情報が含まれていることを確認してください。
+</コンテキスト>
+
+<トピック>
+{research_topic}
+</トピック>
+
+<フォーマット>
+レスポンスは、以下の3つのキーをすべて含むJSONオブジェクトとしてフォーマットしてください。
+- "query": 実際の検索クエリ文字列
+- "rationale": このクエリが関連する理由の簡単な説明
+</フォーマット>
+
+<例>
+出力例:
+{{
+"query": "machine learning transformer architecture explained",
+"rationale": "Understanding the fundamentalstructure of transformer models"
+}}
+</例>
+
+レスポンスはJSON形式で提供してください。タグやバッククォートは含めないでください。
+例のように、JSONのみを返してください。
+```
 :::
 
-- [summarizer_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L35)：収集した情報を要約するためのプロンプト
+ポイント
+- いわゆるRAGのクエリ生成のステップと同じようなプロンプトですが、クエリを生成するだけでなく「なぜそのクエリを生成しているのか」という理由も説明させている。
+- JSON形式での出力が求められていますが、JSON Modeなど構造を保証するオプションは使用されていないようです。そのためまれに不正なJSONが生成されることがあると考えられます。
+
+##### [summarizer_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L35)：収集した情報を要約するためのプロンプト
 :::details summarizer_instructions プロンプト（日本語訳）
+```
+<目標>
+提供されたコンテキストに基づいて、質の高い要約を生成する。
+</目標>
+
+<要件>
+新しい要約を作成する場合：
+1. 検索結果から、ユーザーのトピックに最も関連性の高い情報を強調表示する。
+2. 情報の流れが一貫していることを確認する。
+
+既存の要約を拡張する場合：
+1. 既存の要約と新しい検索結果を注意深く読む。
+2. 新しい情報を既存の要約と比較する。
+3. 新しい情報ごとに：
+    a. 既存のポイントに関連する場合は、関連する段落に統合する。
+    b. 全く新しい情報だが関連性がある場合は、スムーズな遷移を持つ新しい段落を追加する。
+    c. ユーザーのトピックに関連しない場合は、その情報をスキップする。
+4. すべての追加情報がユーザーのトピックに関連していることを確認する。
+5. 最終的な出力が入力要約と異なることを確認する。
+< /要件 >
+
+< フォーマット >
+- 序文やタイトルを付けずに、更新された要約から直接始めます。出力にはXMLタグを使用しないでください。
+< /フォーマット >
+
+<タスク>
+まず、提供されたコンテキストについて慎重に検討します。次に、ユーザー入力に対応するコンテキストの要約を生成します。
+</タスク>
+```
 :::
 
-- [reflection_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L65)：要約結果をもとに、さらなる調査が必要な場合のクエリを生成するためのプロンプト
+ポイント
+- RAGの回答生成ステップと同じようなプロンプト
+- 要約を生成する際に一貫性に注意する旨が記載されている。
+- 既存の情報がすでに存在する場合はマージする
+
+##### [reflection_instructions](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/prompts.py#L65)：要約結果をもとに、さらなる調査が必要な場合のクエリを生成するためのプロンプト
 :::details reflection_instructions プロンプト（日本語訳）
+```
+あなたは、{research_topic} に関する概要を分析する、専門のリサーチアシスタントです。
+
+<GOAL>
+1. 知識ギャップや、より深く掘り下げる必要がある領域を特定する。
+2. 理解を深めるのに役立つフォローアップの質問を作成する。
+3. 十分にカバーされていない技術的な詳細、実装の詳細、または新たなトレンドに焦点を当てる。
+</GOAL>
+
+<REQUIREMENTS>
+フォローアップの質問が自己完結的であり、Web 検索に必要なコンテキストが含まれていることを確認する。
+</REQUIREMENTS>
+
+<FORMAT>
+回答は、以下のキーを含む JSON オブジェクトとしてフォーマットしてください。
+- knowledge_gap: 不足している情報、または明確化が必要な情報を記述する。
+- follow_up_query: このギャップに対処するための具体的な質問を記述する。
+</FORMAT>
+
+<Task>
+概要をよく検討し、知識ギャップを特定してフォローアップの質問を作成する。次に、次のJSON形式に従って出力を作成してください。
+{{
+"knowledge_gap": "概要にはパフォーマンス指標とベンチマークに関する情報が不足しています",
+"follow_up_query": "[特定のテクノロジー]を評価するために使用される一般的なパフォーマンスベンチマークと指標は何ですか？"
+}}
+</Task>
+
+分析結果はJSON形式で提供してください。タグやバッククォートは含めないでください。例のように、JSONのみを返してください。
+```
 :::
+
+ポイント
+- 現在まで収集した情報とゴールの間のギャップを確認し、より深く調べる必要がある領域を特定するためのプロンプトが用意されています。これはAzure OpenAIでいう[oシリーズ](https://learn.microsoft.com/ja-jp/azure/ai-foundry/openai/concepts/models?tabs=global-standard%2Cstandard-chat-completions#o-series-models)のような推論モデルが得意とする分野のように思えます。
+
+- JSON形式での出力が求められていますが、JSON Modeなど構造を保証するオプションは使用されていないようです。そのためまれに不正なJSONが生成されることがあると考えられます。
 
 ## まとめと改善と発展
+Deep Researchの機構に注目すると以下のような流れで構成されています。
+
+```mermaid
+flowchart TD
+    A[ユーザーからトピック入力] 
+    
+    subgraph DR ["Deep Research機構"]
+        B[クエリ生成<br/>generate_query<br/>LLMでトピックから検索クエリを作成]
+        
+        C[Web検索<br/>web_research<br/>Tavily APIで情報収集]
+        
+        D[要約<br/>summarize_sources<br/>LLMで収集情報を分析・要約]
+        
+        E[リフレクション<br/>reflect_on_summary<br/>LLMで現在の状態とゴールのギャップを特定]
+        
+        F{繰り返し判定<br/>route_research<br/>3回以下？}
+        
+        G[追加クエリ生成<br/>不足情報を補うクエリ作成]
+        
+        H[最終レポート生成<br/>finalize_summary<br/>包括的なレポート作成]
+        
+        B --> C
+        C --> D
+        D --> E
+        E --> F
+        F -->|Yes<br/>| G
+        G --> C
+        F -->|No<br/>| H
+    end
+    
+    I[完了]
+    
+    A --> B
+    H --> I
+    
+    style B fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style D fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style E fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    style C fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    style F fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style H fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    
+    classDef llmNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef webNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef routeNode fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef finalNode fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+```
+こうしてみるとDeep Researchの機構はそこまで複雑ではなく、LLMによって計画とリフレクションが自律的に行われるシンプルな機構であることがわかります。
+また、クエリの生成とその検索結果からのサマリーの作成についてのプロンプトは、Deep Researchを実現しない単純なRAGでも参考になりそうな内容でした。
+
+
+一方で、ハンズオンコンテンツゆえのあえての簡略化だと思われますが、以下の様な改善点も発見できました。
 - リフレクション機構の改善
 現在は固定値で3回までの繰り返し検索を行うようになっていますが、ゴールの判定自体もLLMが行うことにより、より確実かつ柔軟な調査が可能になると考えられます。
+
+- Deep Seek以外のモデルへの対応
+おそらくAzureを利用するユーザーの多くは企業やエンタープライズ系の組織が多く、今回のDeep SeekのようなサードパーティやOSSのモデルではなくAzure OpenAIの様な商用モデルを利用することが多いと考えられます。そのため、Azure OpenAIのモデルへの対応ニーズがありそうです。また次の「構造化オプションの利用」にもそれが関係してきます。
 
 - 構造化オプションの利用
 現在は、Deep Researchの結果をテキスト形式で出力していますが、JSON Modeなど構造化されたデータ形式（例えばJSONやXML）で出力することで確実なアプリケーションへの組み込みが期待できます。ただし、JSON Modeは、AzureではAzure OpenAI Serviceの機能として提供されているため、Azure OpenAI Serviceを利用する必要があります。
 
-- Deep Seek以外のモデルへの対応
+- 各ステップにおけるモデルの使い分け
+クエリの生成やリフレクションはモデルによって結果が大きく変わりそうですが、要約ステップはいわゆる従来からのRAGの回答生成に相当するため、経験上比較的軽量かつ安価なモデルを使用しても良いかもしれません。例えば、前者にはo4-mini、後者はGPT-4oなど。
 
 
 ## C#で実装しなおす
-残念ながらLangGraphはC#ではサポートされていないため、状態遷移を独自に実装する必要があります。
+著者はC#を使用することが多いため、今後の持ち駒としてC#でDeep Researchの機構を実装しなおしてみます。
+基本的には本記事で紹介したサンプルリポジトリの機構を再現しつつも、前述した改善点を踏まえた以下のような実装を目指します。
 
+- LangGraphはC#ではサポートされていないため、状態遷移を独自に実装する。
+- LLMは各ステップにおいて、Azure OpenAI Serviceのモデルを使い分ける。
+  - クエリ生成とリフレクション：o4-mini
+  - 要約：GPT-4o
+- Azure OpenAI ServiceのJSON Modeを使用して、構造化されたデータ形式で出力する。
+- リフレクションステップのゴール判定をLLMに行わせる。
