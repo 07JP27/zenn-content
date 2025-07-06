@@ -19,7 +19,7 @@ publication_name: "microsoft"
 課題点としては以下の様な点が見られた。
 - リフレクションのゴール判定が固定値としてのループ回数で行われている
 - 最終レポートの生成コンテキストに最初のクエリ生成からの検索結果も含める方が良い
-- Deep Seek以外のモデルへの対応と構造化オプションの利用
+- DeepSeek以外のモデルへの対応と構造化オプションの利用
 ---
 C#で実装しなおしたコードは以下のリポジトリに公開した。
 https://github.com/07JP27/DeepResearch-dotnet
@@ -148,7 +148,7 @@ async def route_research(state: SummaryState):
 - [reflect_on_summary](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L194)：サマリーをリフレクションして不足している部分を補うためのクエリを生成（LLM利用）
 - [finalize_summary](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L245)：ここまでの検索結果のサマリーを使って最終的なレポートを生成する。あくまで機械的に生成するだけでLLMは利用していない。
 
-ノードの関数から呼ばれるUtil関数として[`strip_thinking_tokens`](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L59C5-L59C26)が`main.py`の中で定義されています。この関数は`generate_query`、`summarize_sources`、`reflect_on_summary`関数から呼び出されています。READMEやコードからこのアプリケーションは推論のLLMとして[Deep Seekのモデルを使用することが想定されている](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L50)ようです。Deep Seekの推論では思考過程を<think>~</think>というトークンで囲って出力されるため、そのトークンで囲まれた思考の文字列とそれ以外のユーザーへの回答の文字列を分離するためにこの関数が使用されています。
+ノードの関数から呼ばれるUtil関数として[`strip_thinking_tokens`](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L59C5-L59C26)が`main.py`の中で定義されています。この関数は`generate_query`、`summarize_sources`、`reflect_on_summary`関数から呼び出されています。READMEやコードからこのアプリケーションは推論のLLMとして[DeepSeekのモデルを使用することが想定されている](https://github.com/Azure-Samples/deepresearch/blob/92dad3ba0ec27651a6858c5110482bfb25a7d15d/app/main.py#L50)ようです。DeepSeekの推論では思考過程を<think>~</think>というトークンで囲って出力されるため、そのトークンで囲まれた思考の文字列とそれ以外のユーザーへの回答の文字列を分離するためにこの関数が使用されています。
 
 #### プロンプトを読み解く
 プロンプトは各ノードの関数でLLMを使用している3つ分のプロンプトが定義されています。
@@ -328,8 +328,8 @@ flowchart TD
 - 最終レポートの生成に含むコンテキスト
 最終レポートに含まれるコンテキストは、直近のリフレクションステップで取得された検索結果のみとなっています。これを、最初のクエリ生成からの検索結果も含めることで、より包括的なレポートが生成できると考えられます。
 
-- Deep Seek以外のモデルへの対応
-おそらくAzureを利用するユーザーの多くは企業やエンタープライズ系の組織が多く、今回のDeep SeekのようなサードパーティやOSSのモデルではなくAzure OpenAIの様な商用モデルを利用することが多いと考えられます。そのため、Azure OpenAIのモデルへの対応ニーズがありそうです。また次の「構造化オプションの利用」にもそれが関係してきます。
+- DeepSeek以外のモデルへの対応
+おそらくAzureを利用するユーザーの多くは企業やエンタープライズ系の組織が多く、今回のDeepSeekのようなサードパーティやOSSのモデルではなくAzure OpenAIの様な商用モデルを利用することが多いと考えられます。そのため、Azure OpenAIのモデルへの対応ニーズがありそうです。また次の「構造化オプションの利用」にもそれが関係してきます。
 
 - 構造化オプションの利用
 現在は、Deep Researchの結果をテキスト形式で出力していますが、JSON Modeなど構造化されたデータ形式（例えばJSONやXML）で出力することで確実なアプリケーションへの組み込みが期待できます。ただし、JSON Modeは、AzureではAzure OpenAI Serviceの機能として提供されているため、Azure OpenAI Serviceを利用する必要があります。
