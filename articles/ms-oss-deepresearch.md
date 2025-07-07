@@ -32,7 +32,7 @@ LLMの発展は目覚ましく、直近ではChatGPTやGeminiなどさまざま�
 このようにDeep ResearchはWeb上のソースだけでなく自社の情報資産を活用して調査を行うこともできます。
 同様に自社でLLMを組み込んだサービスを社内外向けに開発している開発者にとっても、そのサービスにDeep Researchを実装したい場面があると考えられます。
 
-そこで今回はMicrosoftはGitHubにて公開しているDeep Researchのサンプルコードを理解することを目的に紐解いていきます。
+そこで本記事ではMicrosoftがGitHubで公開しているDeep Researchのサンプルコードを紐解いていきます。
 また、併せてPythonで実装されている本家コードをC#で実装しなおしてみます。
 
 https://github.com/Azure-Samples/deepresearch
