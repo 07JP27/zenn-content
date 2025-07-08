@@ -282,6 +282,8 @@ flowchart TD
         
         D[要約<br/>summarize_sources<br/>LLMで収集情報を分析・要約]
         
+        X[(【状態】要約)]
+
         E[リフレクション<br/>reflect_on_summary<br/>LLMで現在の状態とゴールのギャップを特定]
         
         F{繰り返し判定<br/>route_research<br/>3回以下？}
@@ -293,6 +295,8 @@ flowchart TD
         B --> C
         C --> D
         D --> E
+        D -->|今回の要約を保持| X
+        X -->|前回の要約をコンテキスト注入| D
         E --> F
         F -->|Yes<br/>| G
         G --> C
