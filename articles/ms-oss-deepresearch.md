@@ -2,7 +2,7 @@
 title: "Microsoftが公開しているDeep Researchのサンプルコードを理解してみる（ついでにC＃ライブラリ化も）"
 emoji: "😸"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["azure","llm", "openai", "deepresearch", "csharp", "microsoft"]
+topics: ["azure","llm", "openai", "deepresearch", "microsoft"]
 published: true
 publication_name: "microsoft"
 ---
@@ -433,7 +433,7 @@ flowchart TD
 ### 残課題
 以下は残課題として今後実装予定です。
 - リフレクションステップのゴール判定をLLMに行わせる。
-- 最終レポートの生成のコンテキストに、最初のクエリ生成からの検索結果も含める。
+- ~~最終レポートの生成のコンテキストに、最初のクエリ生成からの検索結果も含める。~~  → 実装完了
 - Web検索結果が0件だった場合にはリフレクションステップにサイドクエリを生成させるなどの改善を実装。
 - azd upコマンドでAzureリソースの作成とアプリデプロイできるようにする。
 - 各ステップにおけるモデルの使い分け
