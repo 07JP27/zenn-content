@@ -10,7 +10,7 @@ publication_name: "microsoft"
 Microsoftが提供している開発プラットフォームの「Azure DevOps」と「GitHub」ですが、まれにどちらを選ぶべきか質問を受けることがあります。
 この記事では私の考えとそれぞれの製品の強みを踏まえて、どのような観点で選択すればよいかをフローチャート形式で示してみます。
 
-この記事の内容がすべての観点を網羅しているわけではありませんが、私の経験上ほとんどのケースでは以下のフローに沿って考えることが多いです。
+この記事の内容がすべての観点を網羅しているわけではありませんが、私の経験上ほとんどのケースで以下のフローに沿って考えることが多いです。
 追加の観点などがあればぜひコメントなどで教えてください。
 
 :::message
@@ -49,7 +49,7 @@ flowchart TD
 
 ### Azure DevOpsよりはGitHubの方が投資対象になりやすい。
 Microsoftが両方の製品をサポートしている以上、大々的に「Azure DevOpsをやめてGitHubを使ってください」とガイドをすることはもちろんありませんが、製品のアップデートや各種ドキュメントなどから比較的GitHubの方が優先的に開発投資されていることがうかがえます。
-例えばGitHub Advanced Security (GHAS) のほうが、Azure DevOps 向けの同等機能（GitHub Advanced Security for Azure DevOps, GHAzDO）よりも先行して機能が提供されていますし、今を賑わせるAIコーディングエージェントもGitHubはGitHub Copilotの製品名でリリースしていますが、Azure DevOpsでの同等の機能は提供されていません。
+例えばGitHub Advanced Security (GHAS) のほうが、Azure DevOps 向けの同等機能（GitHub Advanced Security for Azure DevOps, GHAzDO）よりも先行して機能が提供されていますし、今を賑わせるAIコーディングエージェントもGitHubはGitHub Copilotの機能名でリリースしていますが、Azure DevOpsでの同等の機能は提供されていません。
 
 DevOps製品戦略を記したMicrosoftのドキュメント「[Resources for DevOps](https://microsoft.github.io/PartnerResources/skilling/developer-velocity-academy/resources/devops?utm_source=chatgpt.com)」でも以下のような記述があります。
 > Our strategy is to bring the best of both products together into a single product experience - in GitHub - to provide the broadest set of software development capabilities that meet the needs of every developer and enterprise.
