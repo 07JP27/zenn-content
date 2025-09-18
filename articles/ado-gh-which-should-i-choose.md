@@ -75,7 +75,7 @@ GitHubにもIssuesやProjectsの機能があり、簡単なタスク管理であ
 MicrosoftのドキュメントでもGitHubとAzure Boardsのハイブリッド利用ガイドを出しています。
 https://developer.microsoft.com/blog/getting-the-most-out-of-azure-devops-and-github?utm_source=chatgpt.com
 
-ちなみにAzure DevOpsにはAzure Boardsの他にAzure Repos, Azure Pipelines, Azure Test Plans, Azure Artifactsなどの機能があり、これらを選択して使う、使わないを決めることができます。詳しくは拙著の以下を参照してください。
+ちなみにAzure DevOpsにはAzure Boardsの他にAzure Repos, Azure Pipelines, Azure Test Plans, Azure Artifactsなどの機能があり、これらを選択して使う、使わないを決めることができます。詳しくは以下の拙著を参照してください。
 https://zenn.dev/microsoft/articles/azure-devops-most-basic-of-basics
 
 
