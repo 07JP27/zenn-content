@@ -23,7 +23,7 @@ flowchart TD
     A[スタート] --> B{すでに開発プラットフォームを使っている？}
     B -->|Azure DevOps利用中| D{GitHub Copilotを最大限使いたい？}
 
-    B -->|GitHub利用中 or はじめての導入| E{タスク管理はissue, Projectの機能で足りる？}
+    B -->|GitHub利用中 or はじめての導入| E{タスク管理はIssues, Projectsの機能で足りる？}
     E -->|はい| F[GitHubを利用]
     E -->|いいえ| G[GitHubとAzure Boardsをハイブリッド利用]
 
@@ -60,11 +60,11 @@ DevOps製品戦略を記したMicrosoftのドキュメント「[Resources for De
 GitHub CopilotはGitHubに統合されているAIコーディングエージェントです。
 いままではCopilotの名前の通り、開発者と共にIDE上でコーディングをすることを基本的な製品スタイルとしてきました。この段階ではどこにソースコードが置かれていてもIDE上でコーディングするため大きな課題にはなりませんでした。
 しかし、2025年に入って「GitHub Coding Agent」という新しい機能が登場し、GitHub上でほぼ全自動のAIコーディングが可能になりました。
-このGitHub Coding AgentはGitHub上でissueをCopilotにアサインすることで、コードの追加や修正、Pull Requestの作成までを自動化することができます。
+このGitHub Coding AgentはGitHub上でIssuesをCopilotにアサインすることで、コードの追加や修正、Pull Requestの作成までを自動化することができます。
 この機能は内部的にGitHub Actionsのランナーを使って動作しており、GitHub上で動作する仕組みになっています。
 
 ### タスク管理はAzure DevOpsのAzure Boardsの方が高機能
-GitHubにもissueやProjectの機能があり、簡単なタスク管理であれば十分に対応できます。
+GitHubにもIssuesやProjectsの機能があり、簡単なタスク管理であれば十分に対応できます。
 しかし、より高度なタスク管理を行いたい場合は現状Azure DevOpsに含まれるAzure Boardsの方が高機能です。
 例えば、以下のような機能が必要な場合はAzure Boardsを選択することをお勧めします。
 - カスタムクエリとダッシュボードの作成
