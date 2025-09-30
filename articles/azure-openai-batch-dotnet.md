@@ -31,7 +31,7 @@ Batch処理は、一般的に広く使われるチャット補完とは異なり
 3. 2で作成したジョブの完了を待つ(ポーリング)
 4. ジョブの結果をJSONL形式でダウンロード
 
-参考（公式ドキュメント）：[Azure OpenAI Batch デプロイの入門](https://learn.microsoft.com/ja-jp/azure/ai-foundry/openai/how-to/batch?tabs=global-batch%2Cstandard-input%2Cpython-secure&pivots=rest-api#upload-batch-file)
+参考（公式ドキュメント）：[Azure OpenAI Batch デプロイの入門](https://learn.microsoft.com/ja-jp/azure/ai-foundry/openai/how-to/batch?tabs=global-batch%2Cstandard-input%2Cpython-secure&pivots=rest-api)
 
 ## .NET SDKを使って実装してみる
 では、前節の各ステップのポイントとなるコードを見ていきます。
