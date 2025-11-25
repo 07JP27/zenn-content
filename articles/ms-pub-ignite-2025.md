@@ -24,18 +24,18 @@ https://news.microsoft.com/ignite-2025-book-of-news
 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
 
 ## [Ryosuke Otaka](https://zenn.dev/ryo117)
-Microsoft Ignite 2025 全体を眺めていて、多くの企業が AI エージェント活用を検証段階から本格運用へ移しつつあるように私には感じられました。こうした流れの中で、次のステップとして示されていたのが “Unified knowledge layer for agents (エージェントのための統合ナレッジレイヤー)” で、これはエージェントに対し複数のナレッジソースを意識させず、“単一のナレッジエンドポイント” として統合的に提供する共通基盤を指す概念とされています。Foundry IQ と Fabric IQ はまさにこの方向性を体現しており、従来個別に構築していた RAG を統合レイヤーへ集約し、エージェントがビジネス文脈を踏まえて自律的に知識を取得できる、より高度なナレッジソースの抽象化へ向けたパラダイムシフトが進んでいると感じました。
+Microsoft Ignite 2025 全体を眺めていて、多くの企業が AI エージェント活用を検証段階から本格運用へ移しつつあるように私には感じられました。こうした流れの中で、次のステップとして示されていたのが **“Unified knowledge layer for agents (エージェントのための統合ナレッジレイヤー)”** で、これはエージェントに対し複数のナレッジソースを意識させず、単一のナレッジエンドポイントとして統合的に提供する共通基盤を指す概念とされています。情報取得を Retriever に任せる Foundry IQ と Fabric IQ はまさにこの方向性を体現しており、従来個別に構築していた RAG を統合レイヤーへ集約し、エージェントがビジネス文脈を踏まえて自律的に知識を取得できる、より高度なナレッジソースの抽象化へ向けたパラダイムシフトが進んでいると感じました。
 
 ### Foundry IQ: the future of RAG with knowledge retrieval and AI Search（BRK196）
-2025年時点でのRAGの現実的な課題 (multiple-question / requireing external knowledge (outside index) / chained queries / etc.)、Azure AI Searchの機能概要のおさらい、Agentic retrieval w/ knowledge bases (multiple knowledge bases)、など
+Microsoft Foundry（旧称 Azure AI Foundry）ポータルでの Foundry IQ 作成デモに沿って、断片化されたデータソースをシームレスに統合する仕組み、開発者体験、基盤技術である Agentic Retrieval、そして Foundry IQ の検索性能について解説されています。
 https://ignite.microsoft.com/en-US/sessions/BRK196
 
 ### Build agents with knowledge, agentic RAG and Azure AI Search（BRK193）
-Agentic Retrieval deep-dive
+Azure AI Search の全体像のおさらい、現実世界での RAG の課題とハイブリッド検索のみでのアプローチの限界、解決策としての Agentic Retrieval の機能解説とデモが含まれています。
 https://ignite.microsoft.com/en-US/sessions/BRK193
 
 ### Microsoft Fabric IQ: Turning unified data into unified intelligence (BRK222)
-オントロジーなどでデータに対してコンテキスを与えるナレッジレイヤー
+Fabric IQ の機能紹介デモビデオを交えながら、現実世界で数値データの探索・活用を行う際の課題、解決策としての Fabric IQ およびその中核となるオントロジー、Fabric IQ の活用事例、Foundry IQ との連携などについて解説されています。
 https://ignite.microsoft.com/en-US/sessions/BRK222
 
 
@@ -61,7 +61,7 @@ https://ignite.microsoft.com/en-US/sessions/BRK432
 ## [Yurie Mori](https://zenn.dev/yuriemori)
 この前のBuildで出たAgentic DevOpsがDefender for CloudとGitHubの統合、SRE Agentのサブエージェント、Coding Agent × MCPとかSRE Agent×MCPとかでだいぶ具体化されてきた感じ。そしてGitHub Copilot ×AzureやGitHub × Defender for Cloudなど、GitHubとその他のMicrosoft Techonologyの統合が進んできてる。これまではDevOpsのDev側に体験の改善のための機能が集中してた感があったけど、今回のアップデートでDevOpsのOps側のmodernizeも進んできて、DevOpsの包括的な変革が進んでる感じがとてもエキサイティング。
 
-GitHub, Azure DevOps関連のセッションの詳細なまとめはこちらから: 
+GitHub, Azure DevOps関連のセッションの詳細なまとめはこちらから:
 https://zenn.dev/yuriemori/articles/a748d9bd900ca5
 
 ### AI-powered workflows with GitHub and Azure DevOps（BRK106）
