@@ -131,6 +131,21 @@ Microsoft Agent Framework を中心にワークフローの構築方法やワー
 https://ignite.microsoft.com/en-US/sessions/BRK197?source=sessions
 
 
+## [Junpei Tsuchida](https://zenn.dev/07jp27)
+Ignite 2025の新出キーワードは「IQ」でした。IQは知能指数の他にも英語ネイティブ的には「頭のキレ」みたいな意味があるそうです。
+
+### Make smarter model choices: Anthropic, OpenAI & more on Microsoft Foundry（BRK195）
+今回のイベントで最もインパクトがあるといっても過言ではないAzure上でのClaudeモデルのリリース！
+しかしモデルが溢れてくる昨今において、どのモデルを選択すればよいのか迷う方も多いはず。
+本セッションでは、Anthropic Claudeモデルの特徴や、他の主要モデルとの比較を通じて、ユースケースに最適なモデル選択のポイントを解説しています。
+モデル選択に悩んでいる方は必見のセッションです！
+
+また、このセッションはMicrosoft Foundry全体の概要を掴むのにも最適なセッションとなっていますので、Foundryに興味がある方はぜひご覧ください！
+https://x.com/07JP27/status/1992814251279634901
+
+https://ignite.microsoft.com/en-US/sessions/BRK195
+
+
 ## 全セッションアーカイブ一覧
 全てのセッションは以下のリンクからアーカイブ動画を視聴できます。
 ご興味のあるセッションがありましたら、ぜひ視聴してみてください！
