@@ -1,5 +1,5 @@
 ---
-title: "Azure Cosmos DBの消費RUを時系列データで確認する。"
+title: "Azure Cosmos DBの消費RUを時系列データで確認する"
 emoji: "🌏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "cosmosdb"]
