@@ -146,32 +146,6 @@ https://x.com/07JP27/status/1992814251279634901
 https://ignite.microsoft.com/en-US/sessions/BRK195
 
 
-## [Kazuki Komori](https://zenn.dev/kazuyan)
-### Under the hood and into the magic of GitHub Copilot | BRK108
-GitHub Copilot Coding Agent の機能の紹介です！Issue を作るだけで人間と同じような開発フローで TODO タスクを洗い出してコードを書いてくれます。
-https://www.youtube.com/watch?v=EzP2HTD6wRM
-
-### Building agents in Copilot Studio using Model Context Protocol open standards and more | BRK158
-Copilot Studio で MCP を使う紹介です！ローコードツールで外部サービスとの連携がしやすくなったのもポイント高いですね！
-https://www.youtube.com/watch?v=7AHj1azyPwc
-
-
-## [Nobufumi Murata](https://zenn.dev/nmurata)
-AI 開発をする上でより重要になってきているセキュリティ。Design から Run/Monitor までの開発サイクルの中でより早い段階(Shift Left) でセキュリティを取り込んでいく事が必要になってきていますが、その考え方などが体系的に学べます。
-https://www.youtube.com/watch?v=-cu9S7mGmBY
-
-
-## [Masato Ueda](https://zenn.dev/masatoueda)
-### Inside Azure innovations with Mark Russinovich | BRK195
-Azure の CTO である Mark Russinovich が、 Azure のインフラストラクチャや、Azure Boost、Confidential Computing など、Azure を支えるための様々な技術の進化について解説しているセッションです。 Build は開発者向けのセッションではありますが、その中でも珍しく Cloud Platform 全体について触れているセッションです。
-https://www.youtube.com/watch?v=lHBo_lDWFcI
-
-
-## [Ryosuke Hyakuta](https://zenn.dev/momosuke)
-### Build and protect MCPs faster with governance in Azure API Management | DEM545
-API Management にインポートしている通常の API を Azure ポータル上で MCP サーバー化させる機能の紹介セッションです。これによって API サーバーを MCP 対応するためのオーバーヘッドが取り除かれることが期待され、かつ改めて API Management を使った API の統合管理の重要性が再認識できるセッションです。
-https://www.youtube.com/watch?v=pr8ltV8XY7g
-
 
 ## 全セッションアーカイブ一覧
 全てのセッションは以下のリンクからアーカイブ動画を視聴できます。
