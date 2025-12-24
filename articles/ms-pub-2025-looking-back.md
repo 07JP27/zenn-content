@@ -5,7 +5,7 @@ type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["publication"]
 published: true
 publication_name: "microsoft"
-published_at: 2025-12-25 08:00
+published_at: 2025-12-25 06:00
 ---
 
 こんにちは。[Microsoft (有志)](https://zenn.dev/p/microsoft) Publicationの管理人をしている[07JP27](https://zenn.dev/07jp27)です。
