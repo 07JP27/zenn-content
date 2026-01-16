@@ -59,7 +59,7 @@ private ChatOptions options = new ChatOptions
 ```
 
 ### 選択2：配列を展開し、ターゲット型推論を使用する
-配列を使用していると、実行中に動的にツールを出し入れする処理が書きづらい場合があります。
+配列を使用していると、実行中に動的にツールを出し入れする処理が書きづらい場合などがあります。
 その場合、ターゲット型推論を利用して、`ChatOptions`のToolsプロパティに直接配列を展開する方法があります。
 ```csharp
 List<AIFunction> tools =  new List<AIFunction>{
