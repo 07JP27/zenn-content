@@ -8,7 +8,7 @@ publication_name: "microsoft"
 ---
 
 ## 何が問題か
-かなり細かい話題ですが、Microsoft.Extensions.AIを使用してC#でTool Callingのツール（関数）を定義使用とする場合、`AIFunction`が使えます。
+かなり細かい話題ですが、Microsoft.Extensions.AIを使用してC#でTool Callingのツール（関数）を定義しようとする場合、`AIFunction`型が使えます。
 ```csharp
 List<AIFunction> tools =  new List<AIFunction>{
     AIFunctionFactory.Create(Hoge),
@@ -17,7 +17,7 @@ List<AIFunction> tools =  new List<AIFunction>{
 };
 ```
 
-そしてそれを`ChatOptions`に登録する際、以下のように書くのが直感的ではありますが、残念ながらこの書き方はエラーになります。
+そしてそれを`ChatOptions`に対して登録する際、以下のように書くのが直感的ではありますが、残念ながらこの書き方はエラーになります。
 
 ```csharp
 List<AIFunction> tools =  new List<AIFunction>{
