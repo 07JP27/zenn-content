@@ -44,7 +44,7 @@ flowchart TB
     end
     subgraph row2["生成・検証"]
         direction LR
-        D["Step.4 スクリプト生成&実行でPPTX生成"] --> E[Step.5 スライドごとに画像化] --> F[Step.6 画像チェックで内容確認]
+        D["Step.4 スクリプト生成・実行でPPTX生成"] --> E[Step.5 スライドごとに画像化] --> F[Step.6 画像チェックで内容確認]
     end
     subgraph row3["修正・出力"]
         direction LR
