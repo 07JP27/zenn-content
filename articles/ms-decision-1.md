@@ -25,7 +25,7 @@ https://zenn.dev/microsoft/articles/llm-magi-system
 
 
 ## Microsoft-Decision-1
-というわけでMicrosoftからもDecisionモデル「Microsoft-Decision-1」が登場しました。
+2026年10月10日にMicrosoftからもDecisionモデル「Microsoft-Decision-1」が登場しました。
 
 ### 価格
 インプットは100万トークンあたり$0.042。アウトプットは無料です。
