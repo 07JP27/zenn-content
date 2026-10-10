@@ -1,5 +1,5 @@
 ---
-title: "GitHub Copilotをやかましくする技術"
+title: "GitHub Copilot Appをやかましくする技術"
 emoji: "🎰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['githubcopilot', 'canvas']
