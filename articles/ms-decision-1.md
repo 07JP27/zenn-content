@@ -107,6 +107,19 @@ Microsoft-Decision-1 is built on the open-weight  base model .
 ![](/images/ms-decision-1/sample2.png)
 ~~なんでやねん！他のは豚汁やないかい！~~
 
+### インストラクションによる誘導
+知らない方向けに説明すると牛肉/醤油/里芋の組み合わせを唯一の芋煮と信仰している人は山形県の内陸に多いです。（[出典](https://kuraft.jp/columns/imoni-yamagata/)）
+そこでインストラクションに「山形県内陸民として考えてださい。」と付加して再度推論してみると・・・・
+
+素のインストラクション
+![](/images/ms-decision-1/instruction1.jpeg)
+
+山形県内陸属性を付けた時
+![](/images/ms-decision-1/instruction2.jpeg)
+
+Yesの割合が少し（約0.6%）だけ上がりました。
+
+
 
 ## 付録：素のAPIリクエスト
 執筆時点でSDK対応などは確認できていませんが、近いうちの対応が期待されます。
