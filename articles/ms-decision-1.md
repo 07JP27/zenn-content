@@ -28,7 +28,8 @@ https://zenn.dev/microsoft/articles/llm-magi-system
 というわけでMicrosoftからもDecisionモデル「Microsoft-Decision-1」が登場しました。
 
 ### 価格
-インプットは100万トークンあたり$0.042。なんとアウトプットは無料です。
+インプットは100万トークンあたり$0.042。アウトプットは無料です。
+(Jevのインプットは同じく$0.042、OpenAIのDecisions APIは$0.1)
 ```
 Input tokens cost $0.042 USD per million tokens. Output tokens are free.
 ```
