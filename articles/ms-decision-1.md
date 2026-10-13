@@ -27,6 +27,9 @@ https://zenn.dev/microsoft/articles/llm-magi-system
 ## Microsoft-Decision-1
 2026年10月10日にMicrosoftからもDecisionモデル「Microsoft-Decision-1」が登場しました。
 
+2026年10月13日追記：公式の技術ドキュメントは以下です。
+https://learn.microsoft.com/ja-jp/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision
+
 ### 価格
 インプットは100万トークンあたり$0.042。アウトプットは無料です。
 (Jevのインプットは同じく$0.042、OpenAIのDecisions APIは$0.1)
@@ -89,14 +92,17 @@ Microsoft-Decision-1 is built on the open-weight  base model .
 ポイントはDecisions JSONで、ここの中でどのような意思判定をしてほしいのか、その判定項目のタイプは何か、ということを指定することでそれに応じたレスポンスが返ってきます。
 これらのプロパティを見るとOpenAIのDecision APIとJevのパラメーター名を混在させたような命名規則になっているようです。([出典](https://dev.classmethod.jp/articles/openai-decisions-overview/#:~:text=%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84-,2.1%20%E9%81%95%E3%81%84%E3%81%AE%E4%B8%80%E8%A6%A7,-%E9%A0%85%E7%9B%AE))
 
-判定タイプの一覧は執筆時点で見つけることができなかったのですが、サンプルとして動いたものは以下の通りです。
-（見つけ次第記事を更新します。）
+判定タイプの一覧は
+~~執筆時点で見つけることができなかったのですが、サンプルとして動いたものは以下の通りです。（見つけ次第記事を更新します。）~~
+以下の3タイプです。
+https://learn.microsoft.com/ja-jp/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision#choose-a-question-type
 
-|type|種別|
+
+|type|内容|
 |---|---|
-|noul|trueの確率|
-|choice|どれかを選択|
-|score|100%を選択肢で配分|
+|noul|0 から 1 までの確率。|
+|choice|1 つの選択されたオプションと各オプションの確率。|
+|score|順序付けられたスケールの値と、各レベルの確率。|
 
 ## サンプル
 というわけでMAGIシステムの記事でも使ったいつものサンプル質問です。
