@@ -3,7 +3,7 @@ title: "Microsoft-Decision-1.1公開！Microsoft-Decision-1との差はどれく
 emoji: "🍲"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["microsoft","jev","foundry"]
-published: false
+published: true
 publication_name: "microsoft"
 ---
 
